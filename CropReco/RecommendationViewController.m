@@ -40,7 +40,12 @@
     locationManager=[[CLLocationManager alloc]init];
     [locationManager requestWhenInUseAuthorization];
     locationManager.desiredAccuracy=kCLLocationAccuracyBest;
-    NSLog(@"%f",locationManager.location.coordinate.latitude);
-    NSLog(@"%f",locationManager.location.coordinate.longitude);
+    
+    CLGeocoder *geocoder =[[CLGeocoder alloc] init];
+    [geocoder reverseGeocodeLocation:locationManager.location completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
+       NSLog(@"locality %@",[placemarks objectAtIndex:0].locality);
+    }];
+    NSLog(@"latitude  %f",locationManager.location.coordinate.latitude);
+    NSLog(@"longitude  %f",locationManager.location.coordinate.longitude);
 }
 @end
