@@ -1,5 +1,5 @@
 //
-//  SecondViewController.h
+//  WeatherDataViewController.h
 //  CropReco
 //
 //  Created by Purnima Naik on 8/4/19.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SecondViewController : UIViewController
+@interface WeatherDataViewController : UIViewController
 
 
 @end

@@ -1,18 +1,18 @@
 //
-//  SecondViewController.m
+//  WeatherDataViewController.m
 //  CropReco
 //
 //  Created by Purnima Naik on 8/4/19.
 //  Copyright © 2019 Purnima Naik. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "WeatherDataViewController.h"
 
-@interface SecondViewController ()
+@interface WeatherDataViewController ()
 
 @end
 
-@implementation SecondViewController
+@implementation WeatherDataViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

@@ -1,18 +1,19 @@
 //
-//  FirstViewController.m
+//  CropListViewController.m
 //  CropReco
 //
-//  Created by Purnima Naik on 8/4/19.
+//  Created by Purnima Naik on 8/5/19.
 //  Copyright © 2019 Purnima Naik. All rights reserved.
 //
 
-#import "FirstViewController.h"
+#import <Foundation/Foundation.h>
+#import "CropListViewController.h"
 
-@interface FirstViewController ()
+@interface CropListViewController ()
 
 @end
 
-@implementation FirstViewController
+@implementation CropListViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

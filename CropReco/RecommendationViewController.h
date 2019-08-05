@@ -1,5 +1,5 @@
 //
-//  FirstViewController.h
+//  RecommendationViewController.h
 //  CropReco
 //
 //  Created by Purnima Naik on 8/4/19.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstViewController : UIViewController
+@interface RecommendationViewController : UIViewController
 
 
 @end
