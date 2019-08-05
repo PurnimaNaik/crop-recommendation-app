@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface RecommendationViewController : UIViewController
+@interface RecommendationViewController : UIViewController{
+    CLLocationManager *locationManager;
+}
 
 
 @end
