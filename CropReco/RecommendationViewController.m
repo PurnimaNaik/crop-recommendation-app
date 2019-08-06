@@ -36,17 +36,33 @@ NSString *searchQuery = [NSString stringWithFormat:@"%@,%@", [placemarks objectA
         
 //        https://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=YOUR_API_KEY
         
+     NSString *url = [NSString stringWithFormat:@"%@%@%@%@",
+                      @"https://api.openweathermap.org/data/2.5/weather?q=",
+                      searchQuery,
+                      @"&appid=",
+                      @"4c1aa9e27863af68e069647e446328f3"];
         
          NSLog(@"searchQuery  %@",searchQuery);
+         NSLog(@"url  %@",url);
     }];
 }
 
-- (NSDictionary *)JSONFromFile
-{
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"cityList" ofType:@"json"];
-//    NSLog(@"path in function->  %@ <-",path);
-    NSData *data = [NSData dataWithContentsOfFile:path];
-    return [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-}
+
+//- (NSString *) getDataFrom:(NSString *)url withParams:(NSDictionary*)params{
+//    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+//    [request setHTTPMethod:@"GET"];
+//    [request setURL:[NSURL URLWithString:url]];
+//    NSError *error = nil;
+//    NSHTTPURLResponse *responseCode = nil;
+//
+//    NSData *oResponseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&responseCode error:&error];
+//
+//    if([responseCode statusCode] != 200){
+//        NSLog(@"Error getting %@, HTTP status code %i", url, [responseCode statusCode]);
+//        return nil;
+//    }
+//
+//    return [[NSString alloc] initWithData:oResponseData encoding:NSUTF8StringEncoding];
+//}
 
 @end
