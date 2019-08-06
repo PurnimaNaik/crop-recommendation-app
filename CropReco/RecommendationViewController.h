@@ -13,7 +13,7 @@
     CLLocationManager *locationManager;
     
 }
-
+ @property (nonatomic,strong) NSMutableArray *childrenArray;
 
 @end
 
