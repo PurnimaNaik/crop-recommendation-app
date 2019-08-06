@@ -75,59 +75,30 @@ NSString *searchQuery = [NSString stringWithFormat:@"%@,%@", [placemarks objectA
                 
             }
             else{
-                NSString *responseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-                
-                NSError *err = nil;
-                NSArray *jsonData = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&err];
-                NSLog(@"jsonData %@", jsonData);
-                
-                [self parseChildrenArray:jsonData];
-                
-//
-//                NSMutableArray *arrResult = [NSMutableArray array];
-//                for (NSDictionary *dict in jsonData) {
-//                  NSString* dictString=[NSString stringWithFormat:@"%@", dict];
-//                    if([dictString isEqual:@"wind"] ||
-//                       [dictString isEqual:@"main"] ||
-//                       [dictString isEqual:@"timezone"] ||
-//                       [dictString isEqual:@"weather"]){
-//                         [arrResult addObject:dict];
-//                    }
-//                }
-//                 NSLog(@"arrResult %@", arrResult);
+                //works
+//                NSError *err = nil;
+//                NSArray *jsonData = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&err];
+//                NSLog(@"jsonData %@", jsonData);
+                ///<-
+                NSError *jsonError;
+   NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data
+                                             options:NSJSONReadingMutableContainers
+                                             error:&jsonError];
+                NSLog(@"json %@", json[@"main"]);
+                NSLog(@"temp- %@", json[@"main"][@"temp"]);
+                NSLog(@"temp_max- %@", json[@"main"][@"temp_max"]);
+                NSLog(@"temp_min- %@", json[@"main"][@"temp_min"]);
+                NSLog(@"humidity- %@", json[@"main"][@"humidity"]);
+                NSLog(@"pressure- %@", json[@"main"][@"pressure"]);
             }
         }
         }];
     [task resume];
     }
 
-- (void) parseChildrenArray : (NSArray *) arr {
-
-    for(NSDictionary *child in arr) {
-//        CategoryChild *createdChild = [self createCategory:child];
-//        [self.childrenArray addObject:child];
-//        if ([child[@"child"] count] > 0) {
-//            [self parseChildrenArray:child[@"child"]];
-//        }
-         NSLog(@"child %@", child);
-    }
-    
-}
-
-//-(CategoryChild *)createCategory: (NSDictionary *)child {
-//    CategoryChild *ch = [[CategoryChild alloc] init];
-//    ch.id = child[@"id"];
-//    //parse other property
-//    return ch;
-//}
 
 
-//    NSData *oResponseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&responseCode error:&error];
-//    if([responseCode statusCode] != 200){
-//        NSLog(@"Error getting %@, HTTP status code %i", url, [responseCode statusCode]);
-//        return nil;
-//    }
-//    return [[NSString alloc] initWithData:oResponseData encoding:NSUTF8StringEncoding];
+
                               
 
 @end
