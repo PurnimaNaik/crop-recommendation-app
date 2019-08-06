@@ -10,11 +10,6 @@
 
 
 @interface RecommendationViewController (){
-//    NSString *globalAvgTemp;
-//    NSString *globalMinTemp;
-//    NSString *globalMaxTemp;
-//    NSString *globalHumidity;
-//    NSString *globalPressure;
 }
 @end
 
@@ -24,15 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    _avgTempLabel.text=@"hi";
     [self requestPermission];
- 
-//    [self updateUIWithAvgTemp:globalAvgTemp
-//                  withMinTemp:globalMinTemp
-//                  withMaxTemp:globalMaxTemp
-//                 withHumidity:globalHumidity
-//                 withpressure:globalPressure];
 }
 
 -(void)requestPermission{
@@ -42,8 +29,6 @@
     
     CLGeocoder *geocoder =[[CLGeocoder alloc] init];
     [geocoder reverseGeocodeLocation:locationManager.location completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
-        //       NSLog(@"locality %@",[placemarks objectAtIndex:0].locality);
-        //        NSLog(@"ISOcountryCode %@",[placemarks objectAtIndex:0].ISOcountryCode);
         
         NSString *searchQuery = [NSString stringWithFormat:@"%@,%@", [placemarks objectAtIndex:0].locality, [placemarks objectAtIndex:0].ISOcountryCode];
         
@@ -71,9 +56,6 @@
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     [request setURL:[NSURL URLWithString:url]];
     [request setHTTPMethod:@"GET"];
-    //    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-    NSError *error = nil;
-    NSHTTPURLResponse *responseCode = nil;
     
     NSURLSessionTask *task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         if (error) {
@@ -93,40 +75,20 @@
                                                                      options:NSJSONReadingMutableContainers
                                                                        error:&jsonError];
                 NSLog(@"json %@", json[@"main"]);
-                
-                
+
+                dispatch_async(dispatch_get_main_queue(), ^{
                 self.avgTempLabel.text =[NSString stringWithFormat:@"%@", json[@"main"][@"temp"] ];
                 self.minTempLabel.text =[NSString stringWithFormat:@"%@", json[@"main"][@"temp_min"] ];
                 self.maxTempLabel.text =[NSString stringWithFormat:@"%@", json[@"main"][@"temp_max"] ];
                 self.humidityLabel.text =[NSString stringWithFormat:@"%@", json[@"main"][@"humidity"] ];
                 self.pressureLabel.text =[NSString stringWithFormat:@"%@", json[@"main"][@"pressure"] ];
-                
-//                _avgTempLabel.text=avgTemp;
-//                _minTempLabel.text=minTemp;
-//                _maxTempLabel.text=maxTemp;
-//                _humidityLabel.text=humidity;
-//                _pressureLabel.text=pressure;
+                });
             }
         }
     }];
     [task resume];
 }
 
-
--(void) updateUIWithAvgTemp:(NSString*) avgTemp
-                withMinTemp:(NSString*) minTemp
-                withMaxTemp:(NSString*) maxTemp
-               withHumidity:(NSString*) humidity
-               withpressure:(NSString*) pressure{
-    
-    _avgTempLabel.text=avgTemp;
-    _minTempLabel.text=minTemp;
-    _maxTempLabel.text=maxTemp;
-    _humidityLabel.text=humidity;
-    _pressureLabel.text=pressure;
-    
-    
-}
 
 
 @end
