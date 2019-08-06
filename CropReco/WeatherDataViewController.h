@@ -8,7 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WeatherDataViewController : UIViewController
+@interface WeatherDataViewController : UIViewController <UISearchBarDelegate>
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBarOutlet;
+@property (weak, nonatomic) IBOutlet UILabel *avgTempLabel;
+@property (weak, nonatomic) IBOutlet UILabel *minTempLabel;
+@property (weak, nonatomic) IBOutlet UILabel *maxTempLabel;
+@property (weak, nonatomic) IBOutlet UILabel *humidityLabel;
+@property (weak, nonatomic) IBOutlet UILabel *pressureLabel;
 
 
 @end
