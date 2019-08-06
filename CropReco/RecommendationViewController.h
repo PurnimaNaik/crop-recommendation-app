@@ -13,7 +13,12 @@
     CLLocationManager *locationManager;
     
 }
- @property (nonatomic,strong) NSMutableArray *childrenArray;
+
+@property (weak, nonatomic) IBOutlet UILabel *avgTempLabel;
+@property (weak, nonatomic) IBOutlet UILabel *minTempLabel;
+@property (weak, nonatomic) IBOutlet UILabel *maxTempLabel;
+@property (weak, nonatomic) IBOutlet UILabel *humidityLabel;
+@property (weak, nonatomic) IBOutlet UILabel *pressureLabel;
 
 @end
 
