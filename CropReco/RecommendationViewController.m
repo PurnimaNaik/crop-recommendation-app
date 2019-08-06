@@ -9,43 +9,44 @@
 #import "RecommendationViewController.h"
 
 
-@interface RecommendationViewController ()
+@interface RecommendationViewController (){
+}
 
 @end
 
 @implementation RecommendationViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
-    
-//    if ([CLLocationManager locationServicesEnabled]){
-//
-//        NSLog(@"Location Services Enabled");
-//
-//        if ([CLLocationManager authorizationStatus]==kCLAuthorizationStatusDenied){
-//            alert = [[UIAlertView alloc] initWithTitle:@"App Permission Denied"
-//                                               message:@"To re-enable, please go to Settings and turn on Location Service for this app."
-//                                              delegate:nil
-//                                     cancelButtonTitle:@"OK"
-//                                     otherButtonTitles:nil];
-//            [alert show];
-//        }
-//    }
-    // Do any additional setup after loading the view, typically from a nib.
 }
 
--(void)viewDidAppear:(BOOL)animated{
+-(void)viewWillAppear:(BOOL)animated{
     locationManager=[[CLLocationManager alloc]init];
     [locationManager requestWhenInUseAuthorization];
     locationManager.desiredAccuracy=kCLLocationAccuracyBest;
     
     CLGeocoder *geocoder =[[CLGeocoder alloc] init];
     [geocoder reverseGeocodeLocation:locationManager.location completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
-       NSLog(@"locality %@",[placemarks objectAtIndex:0].locality);
+//       NSLog(@"locality %@",[placemarks objectAtIndex:0].locality);
+//        NSLog(@"ISOcountryCode %@",[placemarks objectAtIndex:0].ISOcountryCode);
+     
+NSString *searchQuery = [NSString stringWithFormat:@"%@,%@", [placemarks objectAtIndex:0].locality, [placemarks objectAtIndex:0].ISOcountryCode];
+        
+//        https://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=YOUR_API_KEY
+        
+        
+         NSLog(@"searchQuery  %@",searchQuery);
     }];
-    NSLog(@"latitude  %f",locationManager.location.coordinate.latitude);
-    NSLog(@"longitude  %f",locationManager.location.coordinate.longitude);
 }
+
+- (NSDictionary *)JSONFromFile
+{
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"cityList" ofType:@"json"];
+//    NSLog(@"path in function->  %@ <-",path);
+    NSData *data = [NSData dataWithContentsOfFile:path];
+    return [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+}
+
 @end

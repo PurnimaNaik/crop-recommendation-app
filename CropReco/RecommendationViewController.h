@@ -11,6 +11,7 @@
 
 @interface RecommendationViewController : UIViewController{
     CLLocationManager *locationManager;
+    
 }
 
 
