@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CropList</key>
+	<array>
+		<dict>
+			<key>CropName</key>
+			<string>rice</string>
+			<key>MinTemp</key>
+			<integer>15</integer>
+			<key>MaxTemp</key>
+			<integer>27</integer>
+			<key>MinRainfall</key>
+			<integer>100</integer>
+			<key>MaxRainfall</key>
+			<integer>150</integer>
+			<key>MinHumidity </key>
+			<integer>25</integer>
+			<key>MaxHumidity</key>
+			<integer>37</integer>
+			<key>SoilType</key>
+			<array>
+				<string>heavy-clayey</string>
+				<string>clayey-loom</string>
+			</array>
+			<key>TopProducers</key>
+			<array>
+				<string>China</string>
+				<string>India</string>
+				<string>Indonesia</string>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>
