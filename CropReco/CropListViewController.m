@@ -10,10 +10,11 @@
 #import "CropListViewController.h"
 
 @interface CropListViewController (){
-    NSMutableArray *cropNameArr;
-    NSMutableArray *minTempArr;
+//    NSMutableArray *cropNameArr;
+//    NSMutableArray *minTempArr;
+    NSMutableArray *mainCropArray;
 }
-
+    @property (nonatomic, strong) NSDictionary *crop;
 @end
 
 @implementation CropListViewController
@@ -24,24 +25,25 @@
 //    _cropTable.delegate = self;
 //    _cropTable.dataSource = self;
     
-    cropNameArr=[[NSMutableArray alloc]init];
-    minTempArr=[[NSMutableArray alloc]init];
+//    cropNameArr=[[NSMutableArray alloc]init];
+//    minTempArr=[[NSMutableArray alloc]init];
+    mainCropArray=[[NSMutableArray alloc]init];
     
     NSDictionary *rootDictinary=[NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"crops" ofType:@"plist"]];
     
     NSArray *arrayList=[NSArray arrayWithArray:[rootDictinary objectForKey:@"CropList"]];
     
-    [arrayList enumerateObjectsUsingBlock:^(id obj, NSUInteger index, BOOL * stop) {
-        [self->cropNameArr addObject:[obj valueForKey:@"CropName"]];
-        [self->minTempArr addObject:[obj valueForKey:@"MinTemp"]];
-    }];
+    mainCropArray=[NSMutableArray arrayWithArray:arrayList];
     
-    // Do any additional setup after loading the view, typically from a nib.
+//    [arrayList enumerateObjectsUsingBlock:^(id obj, NSUInteger index, BOOL * stop) {
+//        [self->cropNameArr addObject:[obj valueForKey:@"CropName"]];
+//        [self->minTempArr addObject:[obj valueForKey:@"MinTemp"]];
+//    }];
+
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    NSLog(@"json %lu", (unsigned long)[cropNameArr count]);
-    return [cropNameArr count];
+    return [mainCropArray count];
     
 }
 
@@ -55,9 +57,23 @@
         cell=[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:tableIdentifier];
     }
     
-    cell.textLabel.text=[cropNameArr objectAtIndex:indexPath.row];
-    NSString *minTempString = [NSString stringWithFormat:@"%@",[minTempArr objectAtIndex:indexPath.row]];
+    _crop=mainCropArray[indexPath.row];
+//    NSLog(@"---------- %@ ---------- %ld", mainCropArray[indexPath.row], (long)indexPath.row);
+    
+//    cell.textLabel.text=[cropNameArr objectAtIndex:indexPath.row];
+//    NSString *minTempString = [NSString stringWithFormat:@"%@",[minTempArr objectAtIndex:indexPath.row]];
+//    cell.detailTextLabel.text= minTempString;
+    
+    
+    NSString *minTempString = [NSString stringWithFormat:@"%@",_crop[@"MinTemp"]];
+    NSString *imageName = _crop[@"ImageName"];
+
+    
+    UIImage *image =[UIImage imageNamed:imageName];
+    
+    cell.textLabel.text=_crop[@"CropName"];
     cell.detailTextLabel.text= minTempString;
+    cell.imageView.image=image;
     
     return cell;
 }
