@@ -9,7 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "CropListViewController.h"
 
-@interface CropListViewController ()
+@interface CropListViewController (){
+    NSMutableArray *cropNameArr;
+    NSMutableArray *minTempArr;
+}
 
 @end
 
@@ -17,8 +20,47 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+//    _cropTable.delegate = self;
+//    _cropTable.dataSource = self;
+    
+    cropNameArr=[[NSMutableArray alloc]init];
+    minTempArr=[[NSMutableArray alloc]init];
+    
+    NSDictionary *rootDictinary=[NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"crops" ofType:@"plist"]];
+    
+    NSArray *arrayList=[NSArray arrayWithArray:[rootDictinary objectForKey:@"CropList"]];
+    
+    [arrayList enumerateObjectsUsingBlock:^(id obj, NSUInteger index, BOOL * stop) {
+        [cropNameArr addObject:[obj valueForKey:@"CropName"]];
+        [cropNameArr addObject:[obj valueForKey:@"MinTemp"]];
+    }];
+    
     // Do any additional setup after loading the view, typically from a nib.
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    NSLog(@"json %lu", (unsigned long)[cropNameArr count]);
+    return [cropNameArr count];
+    
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString *tableIdentifier=@"SimpleTableItem";
+    
+    UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:tableIdentifier];
+    
+    if(cell==nil){
+        cell=[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:tableIdentifier];
+    }
+    
+    cell.textLabel.text=[cropNameArr objectAtIndex:indexPath.row];
+    cell.detailTextLabel .text=[minTempArr objectAtIndex:indexPath.row];
+    
+    return cell;
 }
 
 
 @end
+
