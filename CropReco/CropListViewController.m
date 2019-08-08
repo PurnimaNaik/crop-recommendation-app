@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "CropListViewController.h"
+#import "CustomCell.h"
 
 @interface CropListViewController (){
 //    NSMutableArray *cropNameArr;
@@ -51,11 +52,11 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *tableIdentifier=@"SimpleTableItem";
     
-    UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:tableIdentifier];
+    CustomCell *customCell=[tableView dequeueReusableCellWithIdentifier:tableIdentifier];
     
-    if(cell==nil){
-        cell=[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:tableIdentifier];
-    }
+//    if(customCell==nil){
+//        customCell=[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:tableIdentifier];
+//    }
     
     _crop=mainCropArray[indexPath.row];
 //    NSLog(@"---------- %@ ---------- %ld", mainCropArray[indexPath.row], (long)indexPath.row);
@@ -65,17 +66,25 @@
 //    cell.detailTextLabel.text= minTempString;
     
     
-    NSString *minTempString = [NSString stringWithFormat:@"%@",_crop[@"MinTemp"]];
-    NSString *imageName = _crop[@"ImageName"];
-
+    NSString *tempRange = [NSString stringWithFormat:@"%@-%@ °C",_crop[@"MinTemp"],_crop[@"MaxTemp"]];
+     NSString *rainfallRange = [NSString stringWithFormat:@"%@-%@ cm",_crop[@"MinRainfall"],_crop[@"MaxRainfall"]];
     
+//    [view.layer setShadowColor: [UIColor grayColor].CGColor];
+//    [view.layer setShadowOpacity:0.8];
+//    [view.layer setShadowRadius:3.0];
+//    [view.layer setShadowOffset:CGSizeMake(2.0, 2.0)];
+    
+    NSString *imageName = _crop[@"ImageName"];
     UIImage *image =[UIImage imageNamed:imageName];
     
-    cell.textLabel.text=_crop[@"CropName"];
-    cell.detailTextLabel.text= minTempString;
-    cell.imageView.image=image;
+    customCell.customNameLabel.text=[_crop[@"CropName"] capitalizedString];
+    customCell.customTempLabel.text=tempRange;
+    customCell.customRainfallLabel.text=rainfallRange;
+//    customCell.customSoilLabel.text=_crop[@"CropName"];
+//    customCell.customProducersLabel.text= _crop[@"CropName"];
+    customCell.customImageView.image=image;
     
-    return cell;
+    return customCell;
 }
 
 
