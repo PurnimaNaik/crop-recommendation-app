@@ -171,20 +171,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ni1-Wx-cja">
-                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oWJ-Nx-4cf">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <viewLayoutGuide key="safeArea" id="ezJ-zW-Fhp"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="di8-ca-DUP" id="kgg-Wq-BEa"/>
+                                    <outlet property="delegate" destination="di8-ca-DUP" id="xSi-8M-RSe"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="oWJ-Nx-4cf" firstAttribute="leading" secondItem="eln-OO-gLs" secondAttribute="leading" id="11R-jG-gy8"/>
+                            <constraint firstAttribute="bottom" secondItem="oWJ-Nx-4cf" secondAttribute="bottom" id="BAM-oY-25U"/>
+                            <constraint firstItem="oWJ-Nx-4cf" firstAttribute="trailing" secondItem="eln-OO-gLs" secondAttribute="trailing" id="H8o-sh-reb"/>
+                            <constraint firstItem="oWJ-Nx-4cf" firstAttribute="top" secondItem="eln-OO-gLs" secondAttribute="top" id="Hrx-Sk-3Xo"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="eln-OO-gLs"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Second" image="second" id="W82-WF-Nac"/>
-                    <connections>
-                        <outlet property="cropTable" destination="ni1-Wx-cja" id="2MU-uo-OWb"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XZA-qQ-UEW" sceneMemberID="firstResponder"/>
             </objects>

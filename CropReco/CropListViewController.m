@@ -32,8 +32,8 @@
     NSArray *arrayList=[NSArray arrayWithArray:[rootDictinary objectForKey:@"CropList"]];
     
     [arrayList enumerateObjectsUsingBlock:^(id obj, NSUInteger index, BOOL * stop) {
-        [cropNameArr addObject:[obj valueForKey:@"CropName"]];
-        [cropNameArr addObject:[obj valueForKey:@"MinTemp"]];
+        [self->cropNameArr addObject:[obj valueForKey:@"CropName"]];
+        [self->minTempArr addObject:[obj valueForKey:@"MinTemp"]];
     }];
     
     // Do any additional setup after loading the view, typically from a nib.
@@ -56,7 +56,8 @@
     }
     
     cell.textLabel.text=[cropNameArr objectAtIndex:indexPath.row];
-    cell.detailTextLabel .text=[minTempArr objectAtIndex:indexPath.row];
+    NSString *minTempString = [NSString stringWithFormat:@"%@",[minTempArr objectAtIndex:indexPath.row]];
+    cell.detailTextLabel.text= minTempString;
     
     return cell;
 }

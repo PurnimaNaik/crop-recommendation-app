@@ -10,7 +10,6 @@
 #import <UIKit/UIKit.h>
 
 @interface CropListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
-@property (weak, nonatomic) IBOutlet UITableView *cropTable;
 
 
 @end
