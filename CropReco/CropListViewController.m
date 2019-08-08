@@ -80,9 +80,13 @@
     customCell.customNameLabel.text=[_crop[@"CropName"] capitalizedString];
     customCell.customTempLabel.text=tempRange;
     customCell.customRainfallLabel.text=rainfallRange;
-//    customCell.customSoilLabel.text=_crop[@"CropName"];
-//    customCell.customProducersLabel.text= _crop[@"CropName"];
+    customCell.customSoilLabel.text=_crop[@"SoilTypeToDisplay"];
+    customCell.customProducersLabel.text= _crop[@"ProducersToDisplay"];
     customCell.customImageView.image=image;
+    
+    customCell.customSoilLabel.adjustsFontSizeToFitWidth = true;
+    customCell.customProducersLabel.adjustsFontSizeToFitWidth = true;
+    
     
     return customCell;
 }

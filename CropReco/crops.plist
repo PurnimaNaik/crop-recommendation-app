@@ -17,6 +17,10 @@
 			<integer>150</integer>
 			<key>ImageName</key>
 			<string>rice.png</string>
+			<key>SoilTypeToDisplay</key>
+			<string>heavy clayey to clayey loam </string>
+			<key>ProducersToDisplay</key>
+			<string>China, India, Indonesia</string>
 			<key>SoilType</key>
 			<array>
 				<string>heavy-clayey</string>
@@ -42,6 +46,10 @@
 			<integer>75</integer>
 			<key>ImageName</key>
 			<string>wheat.png</string>
+			<key>SoilTypeToDisplay</key>
+			<string>well drained light clay to heavy clay  </string>
+			<key>ProducersToDisplay</key>
+			<string>China, India, USA</string>
 			<key>SoilType</key>
 			<array>
 				<string>well-drained-light clay</string>
@@ -67,6 +75,10 @@
 			<integer>125</integer>
 			<key>ImageName</key>
 			<string>maize.jpg</string>
+			<key>SoilTypeToDisplay</key>
+			<string>Deep heavy clay to light sandy loam </string>
+			<key>ProducersToDisplay</key>
+			<string>USA, China, Brazil</string>
 			<key>SoilType</key>
 			<array>
 				<string>Deep-heavy clay</string>
@@ -92,6 +104,10 @@
 			<integer>75</integer>
 			<key>ImageName</key>
 			<string>millets.jpg</string>
+			<key>SoilTypeToDisplay</key>
+			<string>sandy loam to clayey loam  </string>
+			<key>ProducersToDisplay</key>
+			<string>China, USA, India</string>
 			<key>SoilType</key>
 			<array>
 				<string>Sandy-loam</string>
@@ -117,6 +133,10 @@
 			<integer>60</integer>
 			<key>ImageName</key>
 			<string>bajra.jpg</string>
+			<key>SoilTypeToDisplay</key>
+			<string>sandy loam to loam</string>
+			<key>ProducersToDisplay</key>
+			<string>India (Rajasthan, Maharashtra, Gujarat)</string>
 			<key>SoilType</key>
 			<array>
 				<string>Sandy loam</string>
@@ -140,6 +160,10 @@
 			<integer>60</integer>
 			<key>ImageName</key>
 			<string>pulses.jpg</string>
+			<key>SoilTypeToDisplay</key>
+			<string>sandy loam</string>
+			<key>ProducersToDisplay</key>
+			<string>India (Madhya Pradesh, Rajasthan, Uttar Pradesh)</string>
 			<key>SoilType</key>
 			<array>
 				<string>Sandy-loam</string>
@@ -162,6 +186,10 @@
 			<integer>50</integer>
 			<key>ImageName</key>
 			<string>lentil.png</string>
+			<key>SoilTypeToDisplay</key>
+			<string>loamy to clayey loam  </string>
+			<key>ProducersToDisplay</key>
+			<string>Europe, Egypt, Greece</string>
 			<key>SoilType</key>
 			<array>
 				<string>Loamy</string>
@@ -187,6 +215,10 @@
 			<integer>50</integer>
 			<key>ImageName</key>
 			<string>oilseeds.png</string>
+			<key>SoilTypeToDisplay</key>
+			<string>loamy to clayey loam  </string>
+			<key>ProducersToDisplay</key>
+			<string>India (Rajasthan, Uttar Pradesh, Madhya Pradesh)</string>
 			<key>SoilType</key>
 			<array>
 				<string>loam</string>
@@ -210,6 +242,10 @@
 			<integer>75</integer>
 			<key>ImageName</key>
 			<string>groundnut.png</string>
+			<key>SoilTypeToDisplay</key>
+			<string>well drained sandy loams, red, black cotton </string>
+			<key>ProducersToDisplay</key>
+			<string>India, China, USA</string>
 			<key>SoilType</key>
 			<array>
 				<string>well-drained-sandy loams</string>
@@ -236,6 +272,10 @@
 			<integer>165</integer>
 			<key>ImageName</key>
 			<string>sugarcane.png</string>
+			<key>SoilTypeToDisplay</key>
+			<string>well drained alluvium, black, red, brown regur</string>
+			<key>ProducersToDisplay</key>
+			<string>Brazil, India, China</string>
 			<key>SoilType</key>
 			<array>
 				<string>Well-drained alluvium</string>
@@ -263,6 +303,10 @@
 			<integer>50</integer>
 			<key>ImageName</key>
 			<string>sugarbeet.png</string>
+			<key>SoilTypeToDisplay</key>
+			<string>well drained loamy</string>
+			<key>ProducersToDisplay</key>
+			<string>France, USA, Germany</string>
 			<key>SoilType</key>
 			<array>
 				<string>Well-drained-loamy</string>
@@ -287,6 +331,10 @@
 			<integer>110</integer>
 			<key>ImageName</key>
 			<string>cotton.png</string>
+			<key>SoilTypeToDisplay</key>
+			<string>well drained loam, regur (black-earth) </string>
+			<key>ProducersToDisplay</key>
+			<string>China, USA, India</string>
 			<key>SoilType</key>
 			<array>
 				<string>well-drained loam</string>
@@ -312,6 +360,10 @@
 			<integer>250</integer>
 			<key>ImageName</key>
 			<string>tea.png</string>
+			<key>SoilTypeToDisplay</key>
+			<string>well drained, light loamy</string>
+			<key>ProducersToDisplay</key>
+			<string>India, China, Sri-Lanka</string>
 			<key>SoilType</key>
 			<array>
 				<string>well-drained, light loamy</string>
@@ -336,6 +388,10 @@
 			<integer>225</integer>
 			<key>ImageName</key>
 			<string>coffee.png</string>
+			<key>SoilTypeToDisplay</key>
+			<string>well drained alluvial</string>
+			<key>ProducersToDisplay</key>
+			<string>Brazil, Colombia, Indonesia</string>
 			<key>SoilType</key>
 			<array>
 				<string>well-drained alluvial</string>
@@ -360,6 +416,10 @@
 			<integer>250</integer>
 			<key>ImageName</key>
 			<string>cocoa.png</string>
+			<key>SoilTypeToDisplay</key>
+			<string>well drained alluvium </string>
+			<key>ProducersToDisplay</key>
+			<string>Ivory-Coast, Ghana, Indonesia</string>
 			<key>SoilType</key>
 			<array>
 				<string>well-drained alluvium  </string>
@@ -384,6 +444,10 @@
 			<integer>250</integer>
 			<key>ImageName</key>
 			<string>rubber.png</string>
+			<key>SoilTypeToDisplay</key>
+			<string>rich well drained alluvial</string>
+			<key>ProducersToDisplay</key>
+			<string>Thailand, Indonesia, Malaysia</string>
 			<key>SoilType</key>
 			<array>
 				<string>rich-well-drained alluvial</string>
@@ -408,6 +472,10 @@
 			<integer>250</integer>
 			<key>ImageName</key>
 			<string>jute.png</string>
+			<key>SoilTypeToDisplay</key>
+			<string>well drained alluvial</string>
+			<key>ProducersToDisplay</key>
+			<string>Bangladesh, India, China</string>
 			<key>SoilType</key>
 			<array>
 				<string>Well drained alluvial</string>
@@ -432,6 +500,10 @@
 			<integer>20</integer>
 			<key>ImageName</key>
 			<string>flax.png</string>
+			<key>SoilTypeToDisplay</key>
+			<string>rich loam or clayey loam</string>
+			<key>ProducersToDisplay</key>
+			<string>India (Himachal Pradesh, Uttarakhand)</string>
 			<key>SoilType</key>
 			<array>
 				<string>Rich loam</string>
@@ -455,6 +527,10 @@
 			<integer>600</integer>
 			<key>ImageName</key>
 			<string>coconut.png</string>
+			<key>SoilTypeToDisplay</key>
+			<string>lateritic red, sandy alluvial sandy</string>
+			<key>ProducersToDisplay</key>
+			<string>India (Kerala , Tamil Nadu, Andhra Pradesh)</string>
 			<key>SoilType</key>
 			<array>
 				<string>lateritic red</string>
@@ -478,6 +554,10 @@
 			<integer>400</integer>
 			<key>ImageName</key>
 			<string>oilpalm.png</string>
+			<key>SoilTypeToDisplay</key>
+			<string>deep loamy, alluvial</string>
+			<key>ProducersToDisplay</key>
+			<string>India (Andhra Pradesh, Karnataka, Assam)</string>
 			<key>SoilType</key>
 			<array>
 				<string>Deep-loamy</string>
@@ -501,6 +581,10 @@
 			<integer>250</integer>
 			<key>ImageName</key>
 			<string>clove.png</string>
+			<key>SoilTypeToDisplay</key>
+			<string>red alluvial</string>
+			<key>ProducersToDisplay</key>
+			<string>India (Kerala, Tamil Nadu, Karnataka)</string>
 			<key>SoilType</key>
 			<array>
 				<string>Red alluvial </string>
@@ -523,6 +607,10 @@
 			<integer>300</integer>
 			<key>ImageName</key>
 			<string>blackpepper.png</string>
+			<key>SoilTypeToDisplay</key>
+			<string>rich in hums, red loam to sandy loam, red lateritic sandy loam</string>
+			<key>ProducersToDisplay</key>
+			<string>India (Kerala, Karnataka, Tamil Nadu)</string>
 			<key>SoilType</key>
 			<array>
 				<string>rich in hums</string>
@@ -548,6 +636,10 @@
 			<integer>400</integer>
 			<key>ImageName</key>
 			<string>cardamom.png</string>
+			<key>SoilTypeToDisplay</key>
+			<string>well drained lateritic </string>
+			<key>ProducersToDisplay</key>
+			<string>India (Kerala, Karnataka, Tamil Nadu)</string>
 			<key>SoilType</key>
 			<array>
 				<string>well-drained lateritic   </string>
@@ -570,6 +662,10 @@
 			<integer>250</integer>
 			<key>ImageName</key>
 			<string>turmeric.png</string>
+			<key>SoilTypeToDisplay</key>
+			<string>well drained clayey loam or red loamy</string>
+			<key>ProducersToDisplay</key>
+			<string>India (Andhra Pradesh, Karnataka, Kerala)</string>
 			<key>SoilType</key>
 			<array>
 				<string>well-drained clayey loam</string>
