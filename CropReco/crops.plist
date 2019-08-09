@@ -35,6 +35,32 @@
 		</dict>
 		<dict>
 			<key>CropName</key>
+			<string>Pulses</string>
+			<key>MinTemp</key>
+			<integer>20</integer>
+			<key>MaxTemp</key>
+			<integer>27</integer>
+			<key>MinRainfall</key>
+			<integer>25</integer>
+			<key>MaxRainfall</key>
+			<integer>60</integer>
+			<key>ImageName</key>
+			<string>pulses.jpg</string>
+			<key>SoilTypeToDisplay</key>
+			<string>sandy loam</string>
+			<key>ProducersToDisplay</key>
+			<string>India (Madhya Pradesh, Rajasthan, Uttar Pradesh)</string>
+			<key>SoilType</key>
+			<array>
+				<string>Sandy-loam</string>
+			</array>
+			<key>TopProducers</key>
+			<array>
+				<string>India</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CropName</key>
 			<string>Wheat</string>
 			<key>MinTemp</key>
 			<integer>12</integer>
@@ -60,6 +86,35 @@
 				<string>China</string>
 				<string>India</string>
 				<string>USA</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CropName</key>
+			<string>Lentil</string>
+			<key>MinTemp</key>
+			<integer>15</integer>
+			<key>MaxTemp</key>
+			<integer>25</integer>
+			<key>MinRainfall</key>
+			<integer>25</integer>
+			<key>MaxRainfall</key>
+			<integer>50</integer>
+			<key>ImageName</key>
+			<string>lentil.jpg</string>
+			<key>SoilTypeToDisplay</key>
+			<string>loamy to clayey loam  </string>
+			<key>ProducersToDisplay</key>
+			<string>Europe, Egypt, Greece</string>
+			<key>SoilType</key>
+			<array>
+				<string>Loamy</string>
+				<string>clayey-loom</string>
+			</array>
+			<key>TopProducers</key>
+			<array>
+				<string>Europe</string>
+				<string>Egypt</string>
+				<string>Greece</string>
 			</array>
 		</dict>
 		<dict>
@@ -149,61 +204,6 @@
 		</dict>
 		<dict>
 			<key>CropName</key>
-			<string>Pulses</string>
-			<key>MinTemp</key>
-			<integer>20</integer>
-			<key>MaxTemp</key>
-			<integer>27</integer>
-			<key>MinRainfall</key>
-			<integer>25</integer>
-			<key>MaxRainfall</key>
-			<integer>60</integer>
-			<key>ImageName</key>
-			<string>pulses.jpg</string>
-			<key>SoilTypeToDisplay</key>
-			<string>sandy loam</string>
-			<key>ProducersToDisplay</key>
-			<string>India (Madhya Pradesh, Rajasthan, Uttar Pradesh)</string>
-			<key>SoilType</key>
-			<array>
-				<string>Sandy-loam</string>
-			</array>
-			<key>TopProducers</key>
-			<array>
-				<string>India</string>
-			</array>
-		</dict>
-		<dict>
-			<key>CropName</key>
-			<string>Lentil</string>
-			<key>MinTemp</key>
-			<integer>15</integer>
-			<key>MaxTemp</key>
-			<integer>25</integer>
-			<key>MinRainfall</key>
-			<integer>25</integer>
-			<key>MaxRainfall</key>
-			<integer>50</integer>
-			<key>ImageName</key>
-			<string>lentil.png</string>
-			<key>SoilTypeToDisplay</key>
-			<string>loamy to clayey loam  </string>
-			<key>ProducersToDisplay</key>
-			<string>Europe, Egypt, Greece</string>
-			<key>SoilType</key>
-			<array>
-				<string>Loamy</string>
-				<string>clayey-loom</string>
-			</array>
-			<key>TopProducers</key>
-			<array>
-				<string>Europe</string>
-				<string>Egypt</string>
-				<string>Greece</string>
-			</array>
-		</dict>
-		<dict>
-			<key>CropName</key>
 			<string>Oilseeds</string>
 			<key>MinTemp</key>
 			<integer>15</integer>
@@ -214,7 +214,7 @@
 			<key>MaxRainfall</key>
 			<integer>50</integer>
 			<key>ImageName</key>
-			<string>oilseeds.png</string>
+			<string>oilseed.jpg</string>
 			<key>SoilTypeToDisplay</key>
 			<string>loamy to clayey loam  </string>
 			<key>ProducersToDisplay</key>
@@ -241,7 +241,7 @@
 			<key>MaxRainfall</key>
 			<integer>75</integer>
 			<key>ImageName</key>
-			<string>groundnut.png</string>
+			<string>groundnut.jpg</string>
 			<key>SoilTypeToDisplay</key>
 			<string>well drained sandy loams, red, black cotton </string>
 			<key>ProducersToDisplay</key>
@@ -271,7 +271,7 @@
 			<key>MaxRainfall</key>
 			<integer>165</integer>
 			<key>ImageName</key>
-			<string>sugarcane.png</string>
+			<string>sugarcane.jpg</string>
 			<key>SoilTypeToDisplay</key>
 			<string>well drained alluvium, black, red, brown regur</string>
 			<key>ProducersToDisplay</key>
@@ -302,7 +302,7 @@
 			<key>MaxRainfall</key>
 			<integer>50</integer>
 			<key>ImageName</key>
-			<string>sugarbeet.png</string>
+			<string>sugarbeet.jpg</string>
 			<key>SoilTypeToDisplay</key>
 			<string>well drained loamy</string>
 			<key>ProducersToDisplay</key>
@@ -359,7 +359,7 @@
 			<key>MaxRainfall</key>
 			<integer>250</integer>
 			<key>ImageName</key>
-			<string>tea.png</string>
+			<string>tea.jpg</string>
 			<key>SoilTypeToDisplay</key>
 			<string>well drained, light loamy</string>
 			<key>ProducersToDisplay</key>
@@ -387,7 +387,7 @@
 			<key>MaxRainfall</key>
 			<integer>225</integer>
 			<key>ImageName</key>
-			<string>coffee.png</string>
+			<string>coffee.jpg</string>
 			<key>SoilTypeToDisplay</key>
 			<string>well drained alluvial</string>
 			<key>ProducersToDisplay</key>
@@ -415,7 +415,7 @@
 			<key>MaxRainfall</key>
 			<integer>250</integer>
 			<key>ImageName</key>
-			<string>cocoa.png</string>
+			<string>cocoa.jpg</string>
 			<key>SoilTypeToDisplay</key>
 			<string>well drained alluvium </string>
 			<key>ProducersToDisplay</key>
@@ -471,7 +471,7 @@
 			<key>MaxRainfall</key>
 			<integer>250</integer>
 			<key>ImageName</key>
-			<string>jute.png</string>
+			<string>jute.jpg</string>
 			<key>SoilTypeToDisplay</key>
 			<string>well drained alluvial</string>
 			<key>ProducersToDisplay</key>
@@ -499,7 +499,7 @@
 			<key>MaxRainfall</key>
 			<integer>20</integer>
 			<key>ImageName</key>
-			<string>flax.png</string>
+			<string>flax.jpg</string>
 			<key>SoilTypeToDisplay</key>
 			<string>rich loam or clayey loam</string>
 			<key>ProducersToDisplay</key>
@@ -553,7 +553,7 @@
 			<key>MaxRainfall</key>
 			<integer>400</integer>
 			<key>ImageName</key>
-			<string>oilpalm.png</string>
+			<string>oilpalm.jpg</string>
 			<key>SoilTypeToDisplay</key>
 			<string>deep loamy, alluvial</string>
 			<key>ProducersToDisplay</key>
@@ -580,7 +580,7 @@
 			<key>MaxRainfall</key>
 			<integer>250</integer>
 			<key>ImageName</key>
-			<string>clove.png</string>
+			<string>clove.jpg</string>
 			<key>SoilTypeToDisplay</key>
 			<string>red alluvial</string>
 			<key>ProducersToDisplay</key>
@@ -606,7 +606,7 @@
 			<key>MaxRainfall</key>
 			<integer>300</integer>
 			<key>ImageName</key>
-			<string>blackpepper.png</string>
+			<string>blackpepper.jpg</string>
 			<key>SoilTypeToDisplay</key>
 			<string>rich in hums, red loam to sandy loam, red lateritic sandy loam</string>
 			<key>ProducersToDisplay</key>
@@ -635,7 +635,7 @@
 			<key>MaxRainfall</key>
 			<integer>400</integer>
 			<key>ImageName</key>
-			<string>cardamom.png</string>
+			<string>cardamon.jpg</string>
 			<key>SoilTypeToDisplay</key>
 			<string>well drained lateritic </string>
 			<key>ProducersToDisplay</key>
@@ -661,7 +661,7 @@
 			<key>MaxRainfall</key>
 			<integer>250</integer>
 			<key>ImageName</key>
-			<string>turmeric.png</string>
+			<string>tumeric.jpg</string>
 			<key>SoilTypeToDisplay</key>
 			<string>well drained clayey loam or red loamy</string>
 			<key>ProducersToDisplay</key>

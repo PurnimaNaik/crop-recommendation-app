@@ -7,17 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9661E51422FC71E5000675F4 /* cotton.png in Resources */ = {isa = PBXBuildFile; fileRef = 9661E51022FC71E5000675F4 /* cotton.png */; };
-		9661E51522FC71E5000675F4 /* rice.png in Resources */ = {isa = PBXBuildFile; fileRef = 9661E51122FC71E5000675F4 /* rice.png */; };
-		9661E51622FC71E5000675F4 /* wheat.png in Resources */ = {isa = PBXBuildFile; fileRef = 9661E51222FC71E5000675F4 /* wheat.png */; };
-		9661E51722FC71E5000675F4 /* coconut.png in Resources */ = {isa = PBXBuildFile; fileRef = 9661E51322FC71E5000675F4 /* coconut.png */; };
 		9661E51B22FC7B5F000675F4 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9661E51A22FC7B5F000675F4 /* CustomCell.m */; };
 		96855A2122FB64700030411C /* crops.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96855A2022FB64700030411C /* crops.plist */; };
 		969A995022F88D05009513F5 /* CropListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 969A994F22F88D05009513F5 /* CropListViewController.m */; };
-		96A0128A22FCA962008315FF /* maize.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96A0128922FCA962008315FF /* maize.jpg */; };
-		96A0128E22FCAC05008315FF /* bajra.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96A0128B22FCAC04008315FF /* bajra.jpg */; };
-		96A0128F22FCAC05008315FF /* millets.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96A0128C22FCAC04008315FF /* millets.jpg */; };
-		96A0129022FCAC05008315FF /* pulses.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96A0128D22FCAC04008315FF /* pulses.jpg */; };
+		96A012AA22FD250A008315FF /* tumeric.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96A0129122FD2508008315FF /* tumeric.jpg */; };
+		96A012AB22FD250A008315FF /* oilpalm.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96A0129222FD2508008315FF /* oilpalm.jpg */; };
+		96A012AC22FD250A008315FF /* lentil.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96A0129322FD2508008315FF /* lentil.jpg */; };
+		96A012AD22FD250A008315FF /* cocoa.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96A0129422FD2509008315FF /* cocoa.jpg */; };
+		96A012AE22FD250A008315FF /* coffee.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96A0129522FD2509008315FF /* coffee.jpg */; };
+		96A012AF22FD250A008315FF /* pulses.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96A0129622FD2509008315FF /* pulses.jpg */; };
+		96A012B022FD250A008315FF /* clove.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96A0129722FD2509008315FF /* clove.jpg */; };
+		96A012B122FD250A008315FF /* millets.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96A0129822FD2509008315FF /* millets.jpg */; };
+		96A012B222FD250A008315FF /* blackpepper.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96A0129922FD2509008315FF /* blackpepper.jpg */; };
+		96A012B322FD250A008315FF /* bajra.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96A0129A22FD2509008315FF /* bajra.jpg */; };
+		96A012B422FD250A008315FF /* jute.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96A0129B22FD2509008315FF /* jute.jpg */; };
+		96A012B522FD250A008315FF /* tea.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96A0129C22FD2509008315FF /* tea.jpg */; };
+		96A012B622FD250A008315FF /* rubber.png in Resources */ = {isa = PBXBuildFile; fileRef = 96A0129D22FD2509008315FF /* rubber.png */; };
+		96A012B722FD250A008315FF /* rice.png in Resources */ = {isa = PBXBuildFile; fileRef = 96A0129E22FD2509008315FF /* rice.png */; };
+		96A012B822FD250A008315FF /* cotton.png in Resources */ = {isa = PBXBuildFile; fileRef = 96A0129F22FD2509008315FF /* cotton.png */; };
+		96A012B922FD250A008315FF /* maize.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96A012A022FD2509008315FF /* maize.jpg */; };
+		96A012BA22FD250A008315FF /* flax.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96A012A122FD2509008315FF /* flax.jpg */; };
+		96A012BB22FD250A008315FF /* sugarcane.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96A012A222FD2509008315FF /* sugarcane.jpg */; };
+		96A012BC22FD250A008315FF /* sugarbeet.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96A012A322FD2509008315FF /* sugarbeet.jpg */; };
+		96A012BD22FD250A008315FF /* groundnut.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96A012A422FD2509008315FF /* groundnut.jpg */; };
+		96A012BE22FD250A008315FF /* coconut.png in Resources */ = {isa = PBXBuildFile; fileRef = 96A012A522FD2509008315FF /* coconut.png */; };
+		96A012BF22FD250A008315FF /* oilseed.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96A012A622FD250A008315FF /* oilseed.jpg */; };
+		96A012C022FD250A008315FF /* wheat.png in Resources */ = {isa = PBXBuildFile; fileRef = 96A012A722FD250A008315FF /* wheat.png */; };
+		96A012C122FD250A008315FF /* pearl-millet-500x500.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96A012A822FD250A008315FF /* pearl-millet-500x500.jpg */; };
+		96A012C222FD250A008315FF /* cardamon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96A012A922FD250A008315FF /* cardamon.jpg */; };
 		96D7F21222F7D35E000DD8EC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 96D7F21122F7D35E000DD8EC /* AppDelegate.m */; };
 		96D7F21522F7D35E000DD8EC /* WeatherDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96D7F21422F7D35E000DD8EC /* WeatherDataViewController.m */; };
 		96D7F21822F7D35E000DD8EC /* RecommendationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96D7F21722F7D35E000DD8EC /* RecommendationViewController.m */; };
@@ -39,19 +56,36 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9661E51022FC71E5000675F4 /* cotton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cotton.png; sourceTree = "<group>"; };
-		9661E51122FC71E5000675F4 /* rice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rice.png; sourceTree = "<group>"; };
-		9661E51222FC71E5000675F4 /* wheat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wheat.png; sourceTree = "<group>"; };
-		9661E51322FC71E5000675F4 /* coconut.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coconut.png; sourceTree = "<group>"; };
 		9661E51A22FC7B5F000675F4 /* CustomCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
 		9661E51C22FC7BE5000675F4 /* CustomCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
 		96855A2022FB64700030411C /* crops.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = crops.plist; sourceTree = "<group>"; };
 		969A994F22F88D05009513F5 /* CropListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CropListViewController.m; sourceTree = "<group>"; };
 		969A995122F88D1A009513F5 /* CropListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CropListViewController.h; sourceTree = "<group>"; };
-		96A0128922FCA962008315FF /* maize.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = maize.jpg; sourceTree = "<group>"; };
-		96A0128B22FCAC04008315FF /* bajra.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bajra.jpg; sourceTree = "<group>"; };
-		96A0128C22FCAC04008315FF /* millets.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = millets.jpg; sourceTree = "<group>"; };
-		96A0128D22FCAC04008315FF /* pulses.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pulses.jpg; sourceTree = "<group>"; };
+		96A0129122FD2508008315FF /* tumeric.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tumeric.jpg; sourceTree = "<group>"; };
+		96A0129222FD2508008315FF /* oilpalm.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = oilpalm.jpg; sourceTree = "<group>"; };
+		96A0129322FD2508008315FF /* lentil.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lentil.jpg; sourceTree = "<group>"; };
+		96A0129422FD2509008315FF /* cocoa.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cocoa.jpg; sourceTree = "<group>"; };
+		96A0129522FD2509008315FF /* coffee.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = coffee.jpg; sourceTree = "<group>"; };
+		96A0129622FD2509008315FF /* pulses.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pulses.jpg; sourceTree = "<group>"; };
+		96A0129722FD2509008315FF /* clove.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = clove.jpg; sourceTree = "<group>"; };
+		96A0129822FD2509008315FF /* millets.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = millets.jpg; sourceTree = "<group>"; };
+		96A0129922FD2509008315FF /* blackpepper.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blackpepper.jpg; sourceTree = "<group>"; };
+		96A0129A22FD2509008315FF /* bajra.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bajra.jpg; sourceTree = "<group>"; };
+		96A0129B22FD2509008315FF /* jute.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = jute.jpg; sourceTree = "<group>"; };
+		96A0129C22FD2509008315FF /* tea.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tea.jpg; sourceTree = "<group>"; };
+		96A0129D22FD2509008315FF /* rubber.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rubber.png; sourceTree = "<group>"; };
+		96A0129E22FD2509008315FF /* rice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rice.png; sourceTree = "<group>"; };
+		96A0129F22FD2509008315FF /* cotton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cotton.png; sourceTree = "<group>"; };
+		96A012A022FD2509008315FF /* maize.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = maize.jpg; sourceTree = "<group>"; };
+		96A012A122FD2509008315FF /* flax.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = flax.jpg; sourceTree = "<group>"; };
+		96A012A222FD2509008315FF /* sugarcane.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sugarcane.jpg; sourceTree = "<group>"; };
+		96A012A322FD2509008315FF /* sugarbeet.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sugarbeet.jpg; sourceTree = "<group>"; };
+		96A012A422FD2509008315FF /* groundnut.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = groundnut.jpg; sourceTree = "<group>"; };
+		96A012A522FD2509008315FF /* coconut.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coconut.png; sourceTree = "<group>"; };
+		96A012A622FD250A008315FF /* oilseed.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = oilseed.jpg; sourceTree = "<group>"; };
+		96A012A722FD250A008315FF /* wheat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wheat.png; sourceTree = "<group>"; };
+		96A012A822FD250A008315FF /* pearl-millet-500x500.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "pearl-millet-500x500.jpg"; sourceTree = "<group>"; };
+		96A012A922FD250A008315FF /* cardamon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cardamon.jpg; sourceTree = "<group>"; };
 		96D7F20D22F7D35E000DD8EC /* CropReco.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CropReco.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96D7F21022F7D35E000DD8EC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		96D7F21122F7D35E000DD8EC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -90,14 +124,31 @@
 		9661E50F22FC708D000675F4 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				96A0128B22FCAC04008315FF /* bajra.jpg */,
-				96A0128C22FCAC04008315FF /* millets.jpg */,
-				96A0128D22FCAC04008315FF /* pulses.jpg */,
-				96A0128922FCA962008315FF /* maize.jpg */,
-				9661E51322FC71E5000675F4 /* coconut.png */,
-				9661E51022FC71E5000675F4 /* cotton.png */,
-				9661E51122FC71E5000675F4 /* rice.png */,
-				9661E51222FC71E5000675F4 /* wheat.png */,
+				96A0129A22FD2509008315FF /* bajra.jpg */,
+				96A0129922FD2509008315FF /* blackpepper.jpg */,
+				96A012A922FD250A008315FF /* cardamon.jpg */,
+				96A0129722FD2509008315FF /* clove.jpg */,
+				96A0129422FD2509008315FF /* cocoa.jpg */,
+				96A012A522FD2509008315FF /* coconut.png */,
+				96A0129522FD2509008315FF /* coffee.jpg */,
+				96A0129F22FD2509008315FF /* cotton.png */,
+				96A012A122FD2509008315FF /* flax.jpg */,
+				96A012A422FD2509008315FF /* groundnut.jpg */,
+				96A0129B22FD2509008315FF /* jute.jpg */,
+				96A0129322FD2508008315FF /* lentil.jpg */,
+				96A012A022FD2509008315FF /* maize.jpg */,
+				96A0129822FD2509008315FF /* millets.jpg */,
+				96A0129222FD2508008315FF /* oilpalm.jpg */,
+				96A012A622FD250A008315FF /* oilseed.jpg */,
+				96A012A822FD250A008315FF /* pearl-millet-500x500.jpg */,
+				96A0129622FD2509008315FF /* pulses.jpg */,
+				96A0129E22FD2509008315FF /* rice.png */,
+				96A0129D22FD2509008315FF /* rubber.png */,
+				96A012A322FD2509008315FF /* sugarbeet.jpg */,
+				96A012A222FD2509008315FF /* sugarcane.jpg */,
+				96A0129C22FD2509008315FF /* tea.jpg */,
+				96A0129122FD2508008315FF /* tumeric.jpg */,
+				96A012A722FD250A008315FF /* wheat.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -233,18 +284,35 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96A0128E22FCAC05008315FF /* bajra.jpg in Resources */,
-				96A0128A22FCA962008315FF /* maize.jpg in Resources */,
+				96A012B522FD250A008315FF /* tea.jpg in Resources */,
+				96A012C222FD250A008315FF /* cardamon.jpg in Resources */,
+				96A012BA22FD250A008315FF /* flax.jpg in Resources */,
+				96A012C022FD250A008315FF /* wheat.png in Resources */,
+				96A012B322FD250A008315FF /* bajra.jpg in Resources */,
+				96A012B922FD250A008315FF /* maize.jpg in Resources */,
+				96A012B722FD250A008315FF /* rice.png in Resources */,
+				96A012B422FD250A008315FF /* jute.jpg in Resources */,
+				96A012B622FD250A008315FF /* rubber.png in Resources */,
+				96A012AE22FD250A008315FF /* coffee.jpg in Resources */,
+				96A012AB22FD250A008315FF /* oilpalm.jpg in Resources */,
+				96A012C122FD250A008315FF /* pearl-millet-500x500.jpg in Resources */,
+				96A012AC22FD250A008315FF /* lentil.jpg in Resources */,
+				96A012BD22FD250A008315FF /* groundnut.jpg in Resources */,
+				96A012B822FD250A008315FF /* cotton.png in Resources */,
+				96A012BC22FD250A008315FF /* sugarbeet.jpg in Resources */,
+				96A012AF22FD250A008315FF /* pulses.jpg in Resources */,
 				96D7F22022F7D35F000DD8EC /* LaunchScreen.storyboard in Resources */,
-				9661E51722FC71E5000675F4 /* coconut.png in Resources */,
-				96A0128F22FCAC05008315FF /* millets.jpg in Resources */,
-				96A0129022FCAC05008315FF /* pulses.jpg in Resources */,
+				96A012BF22FD250A008315FF /* oilseed.jpg in Resources */,
+				96A012B222FD250A008315FF /* blackpepper.jpg in Resources */,
+				96A012AA22FD250A008315FF /* tumeric.jpg in Resources */,
 				96855A2122FB64700030411C /* crops.plist in Resources */,
-				9661E51522FC71E5000675F4 /* rice.png in Resources */,
+				96A012AD22FD250A008315FF /* cocoa.jpg in Resources */,
+				96A012B122FD250A008315FF /* millets.jpg in Resources */,
 				96D7F21D22F7D35F000DD8EC /* Assets.xcassets in Resources */,
+				96A012BB22FD250A008315FF /* sugarcane.jpg in Resources */,
+				96A012B022FD250A008315FF /* clove.jpg in Resources */,
+				96A012BE22FD250A008315FF /* coconut.png in Resources */,
 				96D7F21B22F7D35E000DD8EC /* Main.storyboard in Resources */,
-				9661E51622FC71E5000675F4 /* wheat.png in Resources */,
-				9661E51422FC71E5000675F4 /* cotton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
