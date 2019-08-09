@@ -69,10 +69,10 @@
     NSString *tempRange = [NSString stringWithFormat:@"%@-%@ °C",_crop[@"MinTemp"],_crop[@"MaxTemp"]];
      NSString *rainfallRange = [NSString stringWithFormat:@"%@-%@ cm",_crop[@"MinRainfall"],_crop[@"MaxRainfall"]];
     
-//    [view.layer setShadowColor: [UIColor grayColor].CGColor];
-//    [view.layer setShadowOpacity:0.8];
-//    [view.layer setShadowRadius:3.0];
-//    [view.layer setShadowOffset:CGSizeMake(2.0, 2.0)];
+    [customCell.customImageView.layer setShadowColor: [UIColor grayColor].CGColor];
+    [customCell.customImageView.layer setShadowOpacity:0.8];
+    [customCell.customImageView.layer setShadowRadius:3.0];
+    [customCell.customImageView.layer setShadowOffset:CGSizeMake(2.0, 2.0)];
     
     NSString *imageName = _crop[@"ImageName"];
     UIImage *image =[UIImage imageNamed:imageName];
@@ -80,7 +80,7 @@
     customCell.customNameLabel.text=[_crop[@"CropName"] capitalizedString];
     customCell.customTempLabel.text=tempRange;
     customCell.customRainfallLabel.text=rainfallRange;
-    customCell.customSoilLabel.text=_crop[@"SoilTypeToDisplay"];
+    customCell.customSoilLabel.text=[_crop[@"SoilTypeToDisplay"] capitalizedString];
     customCell.customProducersLabel.text= _crop[@"ProducersToDisplay"];
     customCell.customImageView.image=image;
     

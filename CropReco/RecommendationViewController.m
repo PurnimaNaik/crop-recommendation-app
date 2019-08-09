@@ -8,7 +8,6 @@
 
 #import "RecommendationViewController.h"
 
-
 @interface RecommendationViewController (){
 }
 @end
@@ -34,11 +33,12 @@
         
         //        https://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=YOUR_API_KEY
         
-        NSString *url = [NSString stringWithFormat:@"%@%@%@%@",
+        NSString *url = [NSString stringWithFormat:@"%@%@%@%@%@",
                          @"https://api.openweathermap.org/data/2.5/weather?q=",
                          searchQuery,
+                         @"&units=metric",
                          @"&appid=",
-                         @"4c1aa9e27863af68e069647e446328f3"];
+                @"4c1aa9e27863af68e069647e446328f3"];
         
         NSLog(@"searchQuery  %@",searchQuery);
         
@@ -76,12 +76,21 @@
                                                                        error:&jsonError];
                 NSLog(@"json %@", json[@"main"]);
 
+                NSNumber* pressureInHPA=json[@"main"][@"pressure"];
+//              NSNumber *divider = @([loadTempValue doubleValue] * 0.420);
+                NSNumber* pressureInINHG= @([pressureInHPA doubleValue]/33.86);
+              
+                NSNumberFormatter *fmt = [[NSNumberFormatter alloc] init];
+                [fmt setPositiveFormat:@"0.##"];
+                NSString* truncatedPressure=[fmt stringFromNumber:pressureInINHG];
+
+                
                 dispatch_async(dispatch_get_main_queue(), ^{
                 self.avgTempLabel.text =[NSString stringWithFormat:@"%@", json[@"main"][@"temp"] ];
                 self.minTempLabel.text =[NSString stringWithFormat:@"%@", json[@"main"][@"temp_min"] ];
                 self.maxTempLabel.text =[NSString stringWithFormat:@"%@", json[@"main"][@"temp_max"] ];
                 self.humidityLabel.text =[NSString stringWithFormat:@"%@", json[@"main"][@"humidity"] ];
-                self.pressureLabel.text =[NSString stringWithFormat:@"%@", json[@"main"][@"pressure"] ];
+                    self.pressureLabel.text =truncatedPressure;
                 });
             }
         }
