@@ -80,9 +80,31 @@
     customCell.customNameLabel.text=[_crop[@"CropName"] capitalizedString];
     customCell.customTempLabel.text=tempRange;
     customCell.customRainfallLabel.text=rainfallRange;
-    customCell.customSoilLabel.text=[_crop[@"SoilTypeToDisplay"] capitalizedString];
-    customCell.customProducersLabel.text= _crop[@"ProducersToDisplay"];
     customCell.customImageView.image=image;
+    
+//    customCell.customSoilLabel.text=[_crop[@"SoilTypeToDisplay"] capitalizedString];
+    customCell.customProducersLabel.text= _crop[@"ProducersToDisplay"];
+    
+    NSString* soilTypes=[_crop[@"SoilTypeToDisplay"] capitalizedString];
+    NSMutableAttributedString* attsoilTypes = [[NSMutableAttributedString alloc]initWithString:soilTypes];
+    NSMutableParagraphStyle *soilParagraphStyle = [[NSMutableParagraphStyle alloc]init];
+    soilParagraphStyle.firstLineHeadIndent=25.0f;
+    [attsoilTypes addAttribute:NSParagraphStyleAttributeName value:soilParagraphStyle range:NSMakeRange(0, attsoilTypes.length)];
+    [attsoilTypes addAttribute:NSParagraphStyleAttributeName
+            value:soilParagraphStyle
+            range:NSMakeRange(0, attsoilTypes.length)];
+    customCell.customSoilLabel.attributedText = attsoilTypes;
+    
+    NSString* producerList=_crop[@"ProducersToDisplay"];
+    NSMutableAttributedString* attproducerList = [[NSMutableAttributedString alloc]initWithString:producerList];
+    NSMutableParagraphStyle *producerParagraphStyle = [[NSMutableParagraphStyle alloc]init];
+    producerParagraphStyle.firstLineHeadIndent=30.0f;
+    [attproducerList addAttribute:NSParagraphStyleAttributeName value:producerParagraphStyle range:NSMakeRange(0, attproducerList.length)];
+    [attproducerList addAttribute:NSParagraphStyleAttributeName
+                         value:producerParagraphStyle
+                         range:NSMakeRange(0, attproducerList.length)];
+    customCell.customProducersLabel.attributedText = attproducerList;
+    
     
     customCell.customSoilLabel.adjustsFontSizeToFitWidth = true;
     customCell.customProducersLabel.adjustsFontSizeToFitWidth = true;
