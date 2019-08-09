@@ -74,7 +74,14 @@
                 NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data
                                                                      options:NSJSONReadingMutableContainers
                                                                        error:&jsonError];
-                NSLog(@"json %@", json[@"main"]);
+                NSLog(@"json %@", json);
+                NSLog(@"sunrise %@", json[@"sys"][@"sunrise"]);
+                NSLog(@"sunset %@", json[@"sys"][@"sunset"]);
+                NSLog(@"visibility %@", json[@"visibility"]);
+                NSLog(@"weather %@", json[@"weather"]);
+                NSLog(@"wind deg %@", json[@"wind"][@"deg"]);
+                NSLog(@"wind speed %@", json[@"wind"][@"speed"]);
+              
 
                 NSNumber* pressureInHPA=json[@"main"][@"pressure"];
 //              NSNumber *divider = @([loadTempValue doubleValue] * 0.420);

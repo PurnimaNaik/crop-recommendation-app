@@ -15,6 +15,16 @@
 @property (weak, nonatomic) IBOutlet UILabel *maxTempLabel;
 @property (weak, nonatomic) IBOutlet UILabel *humidityLabel;
 @property (weak, nonatomic) IBOutlet UILabel *pressureLabel;
+@property (weak, nonatomic) IBOutlet UITextView *disclaimerLabel;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBarWeatherTab;
+@property (weak, nonatomic) IBOutlet UILabel *sunriseLabel;
+@property (weak, nonatomic) IBOutlet UILabel *sunsetLabel;
+@property (weak, nonatomic) IBOutlet UILabel *chanceOfRainLabel;
+@property (weak, nonatomic) IBOutlet UILabel *windLabel;
+@property (weak, nonatomic) IBOutlet UILabel *feelsLikeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *precipitationLabel;
+@property (weak, nonatomic) IBOutlet UILabel *visibilityLabel;
+@property (weak, nonatomic) IBOutlet UILabel *uvIndexLabel;
 
 
 @end

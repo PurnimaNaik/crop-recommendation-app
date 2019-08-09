@@ -18,6 +18,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.searchBarOutlet.delegate=self;
+    [self.disclaimerLabel setTextContainerInset:UIEdgeInsetsZero];
+    self.disclaimerLabel.textContainer.lineFragmentPadding = 0;
+    self.disclaimerLabel.textContainer.lineFragmentPadding = 0;
 }
 
 
@@ -65,7 +68,15 @@
                 NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data
                                                                      options:NSJSONReadingMutableContainers
                                                                        error:&jsonError];
-                NSLog(@"json %@", json[@"main"]);
+                NSLog(@"json %@", json);
+                
+                NSLog(@"json %@", json);
+                NSLog(@"sunrise %@", json[@"sys"][@"sunrise"]);
+                NSLog(@"sunset %@", json[@"sys"][@"sunset"]);
+                NSLog(@"visibility %@", json[@"visibility"]);
+                NSLog(@"weather %@", json[@"weather"]);
+                NSLog(@"wind deg %@", json[@"wind"][@"deg"]);
+                NSLog(@"wind speed %@", json[@"wind"][@"speed"]);
                 
                 NSNumber* pressureInHPA=json[@"main"][@"pressure"];
                 NSNumber* pressureInINHG= @([pressureInHPA doubleValue]/33.86);
@@ -74,12 +85,50 @@
                 [fmt setPositiveFormat:@"0.##"];
                 NSString* truncatedPressure=[fmt stringFromNumber:pressureInINHG];
                 
+                NSNumber* visibilityInMeters=json[@"visibility"];
+                NSNumber* visibilityInMiles= @(ceil([visibilityInMeters doubleValue]*0.00062137));
+                
+                double sunriseTimestampval =  [json[@"sys"][@"sunrise"]doubleValue];
+                NSTimeInterval sunriseTimestamp = (NSTimeInterval)sunriseTimestampval;
+                NSDateFormatter *sunriseDateFormatter = [[NSDateFormatter alloc] init];
+                sunriseDateFormatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
+                [sunriseDateFormatter setDateFormat:@"hh:mm"];
+                  NSDate* sunriseDate = [NSDate dateWithTimeIntervalSince1970:sunriseTimestamp];
+                NSCalendar *sunriseCalendar = [NSCalendar currentCalendar];
+                NSDateComponents *sunriseComponents = [sunriseCalendar components:(NSCalendarUnitHour | NSCalendarUnitMinute) fromDate:sunriseDate];
+                NSInteger sunriseHour = [sunriseComponents hour];
+                NSInteger sunriseMinute = [sunriseComponents minute];
+                
+                double sunsetTimestampval =  [json[@"sys"][@"sunset"]doubleValue];
+                NSTimeInterval sunsetTimestamp = (NSTimeInterval)sunsetTimestampval;
+                NSDateFormatter *sunsetDateFormatter = [[NSDateFormatter alloc] init];
+                sunsetDateFormatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
+                [sunsetDateFormatter setDateFormat:@"hh:mm"];
+                NSDate* sunsetDate = [NSDate dateWithTimeIntervalSince1970:sunsetTimestamp];
+                NSCalendar *sunsetCalendar = [NSCalendar currentCalendar];
+                NSDateComponents *sunsetComponents = [sunsetCalendar components:(NSCalendarUnitHour | NSCalendarUnitMinute) fromDate:sunsetDate];
+                NSInteger sunsetHour = [sunsetComponents hour];
+                NSInteger sunsetMinute = [sunsetComponents minute];
+                
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    self.avgTempLabel.text =[NSString stringWithFormat:@"%@", json[@"main"][@"temp"] ];
-                    self.minTempLabel.text =[NSString stringWithFormat:@"%@", json[@"main"][@"temp_min"] ];
-                    self.maxTempLabel.text =[NSString stringWithFormat:@"%@", json[@"main"][@"temp_max"] ];
-                    self.humidityLabel.text =[NSString stringWithFormat:@"%@", json[@"main"][@"humidity"] ];
-                    self.pressureLabel.text =truncatedPressure;
+                    self.avgTempLabel.text =[NSString stringWithFormat:@"%@%@", json[@"main"][@"temp"], @"°C" ];
+                    self.minTempLabel.text =[NSString stringWithFormat:@"%@%@", json[@"main"][@"temp_min"], @"°C" ];
+                    self.maxTempLabel.text =[NSString stringWithFormat:@"%@%@", json[@"main"][@"temp_max"], @"°C" ];
+                    self.humidityLabel.text =[NSString stringWithFormat:@"%@%@", json[@"main"][@"humidity"], @"%" ];
+                    self.pressureLabel.text =[NSString stringWithFormat:@"%@ %@", truncatedPressure, @"inHg" ];
+                    self.visibilityLabel.text =[NSString stringWithFormat:@"%@ %@", visibilityInMiles, @"mi" ];
+                    
+                    self.sunriseLabel.text =[NSString stringWithFormat:@"%ld:%ld%@", (long)sunriseHour, (long)sunriseMinute, @"AM" ];
+                     self.sunsetLabel.text =[NSString stringWithFormat:@"%ld:%ld%@", (long)sunsetHour, (long)sunsetMinute, @"PM" ];
+                    
+                    self.windLabel.text =[NSString stringWithFormat:@"%@ %@", json[@"wind"][@"speed"], @"mph" ];
+                    
+                    
+                    //                     [self.avgTempLabel sizeToFit];
+                    
+                    
+                    
+                    
                 });
             }
         }
