@@ -69,10 +69,10 @@
     NSString *tempRange = [NSString stringWithFormat:@"%@-%@ °C",_crop[@"MinTemp"],_crop[@"MaxTemp"]];
      NSString *rainfallRange = [NSString stringWithFormat:@"%@-%@ cm",_crop[@"MinRainfall"],_crop[@"MaxRainfall"]];
     
-    [customCell.customImageView.layer setShadowColor: [UIColor grayColor].CGColor];
-    [customCell.customImageView.layer setShadowOpacity:0.8];
-    [customCell.customImageView.layer setShadowRadius:3.0];
-    [customCell.customImageView.layer setShadowOffset:CGSizeMake(2.0, 2.0)];
+//    [customCell.customImageView.layer setShadowColor: [UIColor grayColor].CGColor];
+//    [customCell.customImageView.layer setShadowOpacity:0.8];
+//    [customCell.customImageView.layer setShadowRadius:3.0];
+//    [customCell.customImageView.layer setShadowOffset:CGSizeMake(2.0, 2.0)];
     
     NSString *imageName = _crop[@"ImageName"];
     UIImage *image =[UIImage imageNamed:imageName];
@@ -88,7 +88,7 @@
     NSString* soilTypes=[_crop[@"SoilTypeToDisplay"] capitalizedString];
     NSMutableAttributedString* attsoilTypes = [[NSMutableAttributedString alloc]initWithString:soilTypes];
     NSMutableParagraphStyle *soilParagraphStyle = [[NSMutableParagraphStyle alloc]init];
-    soilParagraphStyle.firstLineHeadIndent=25.0f;
+    soilParagraphStyle.firstLineHeadIndent=0.0f;
     [attsoilTypes addAttribute:NSParagraphStyleAttributeName value:soilParagraphStyle range:NSMakeRange(0, attsoilTypes.length)];
     [attsoilTypes addAttribute:NSParagraphStyleAttributeName
             value:soilParagraphStyle
@@ -98,7 +98,7 @@
     NSString* producerList=_crop[@"ProducersToDisplay"];
     NSMutableAttributedString* attproducerList = [[NSMutableAttributedString alloc]initWithString:producerList];
     NSMutableParagraphStyle *producerParagraphStyle = [[NSMutableParagraphStyle alloc]init];
-    producerParagraphStyle.firstLineHeadIndent=30.0f;
+    producerParagraphStyle.firstLineHeadIndent=0.0f;
     [attproducerList addAttribute:NSParagraphStyleAttributeName value:producerParagraphStyle range:NSMakeRange(0, attproducerList.length)];
     [attproducerList addAttribute:NSParagraphStyleAttributeName
                          value:producerParagraphStyle
@@ -108,7 +108,7 @@
     
     customCell.customSoilLabel.adjustsFontSizeToFitWidth = true;
     customCell.customProducersLabel.adjustsFontSizeToFitWidth = true;
-    
+//    [myLabel sizeToFit];
     
     return customCell;
 }
