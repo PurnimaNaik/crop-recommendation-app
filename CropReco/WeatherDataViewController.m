@@ -24,6 +24,10 @@ NSString* weatherBackgroundImage;
     [self.disclaimerLabel setTextContainerInset:UIEdgeInsetsZero];
     self.disclaimerLabel.textContainer.lineFragmentPadding = 0;
     self.disclaimerLabel.textContainer.lineFragmentPadding = 0;
+//    [self.avgTempLabel sizeToFit];
+    
+    [self.view addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self.view action:@selector(endEditing:)]];
+    
 }
 
 

@@ -25,10 +25,11 @@
                             <searchBar contentMode="redraw" fixedFrame="YES" placeholder="New York, US" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lGo-HL-DJe">
                                 <rect key="frame" x="0.0" y="38" width="375" height="56"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="1" height="0.40000000000000002"/>
                                 <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                             </searchBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="stagingCard.png" translatesAutoresizingMaskIntoConstraints="NO" id="7dU-fm-tYe">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7dU-fm-tYe">
                                 <rect key="frame" x="-8" y="-8" width="393" height="636"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -61,11 +62,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u8y-2q-O5o">
-                                <rect key="frame" x="13" y="86" width="349" height="50"/>
+                                <rect key="frame" x="13" y="94" width="349" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">For precise results, enter the city's name, comma, 2-letter country code (ISO3166). The order is important - the first is city name then comma then country.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mHU-qG-1wV">
@@ -445,7 +446,6 @@
         <image name="rainfall" width="225" height="225"/>
         <image name="second" width="30" height="30"/>
         <image name="soil.png" width="512" height="512"/>
-        <image name="stagingCard.png" width="902" height="1231"/>
         <image name="temperature" width="512" height="512"/>
         <image name="world.png" width="512" height="512"/>
     </resources>
