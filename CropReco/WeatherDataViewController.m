@@ -87,6 +87,7 @@
                 
                 NSNumber* visibilityInMeters=json[@"visibility"];
                 NSNumber* visibilityInMiles= @(ceil([visibilityInMeters doubleValue]*0.00062137));
+                NSString* windDirection=[self checkDirection:[json[@"wind"][@"deg"]doubleValue]];
                 
                 double offset =  [json[@"timezone"]doubleValue];
                 
@@ -109,7 +110,7 @@
                 NSTimeInterval sunsetTimestamp = (NSTimeInterval)sunsetTimestampval;
                 NSDate* sunsetDate = [NSDate dateWithTimeIntervalSince1970:sunsetTimestamp];
                 NSDateFormatter *sunsetDateFormatter = [[NSDateFormatter alloc] init];
-           
+                
                 //for 12 hr
                 [sunsetDateFormatter setDateFormat:@"hh:mm"];
                 //local time
@@ -130,19 +131,44 @@
                     self.sunriseLabel.text =[NSString stringWithFormat:@"%@ %@", sunriseTime, @"AM" ];
                     self.sunsetLabel.text =[NSString stringWithFormat:@"%@ %@", sunsetTime, @"PM" ];
                     
-                    self.windLabel.text =[NSString stringWithFormat:@"%@ %@", json[@"wind"][@"speed"], @"mph" ];
-                    
-                    
-                   
-                    
-                    
-                    
+                    self.windLabel.text =[NSString stringWithFormat:@"%@ %@ %@", json[@"wind"][@"speed"], @"mph", windDirection ];
                     
                 });
             }
         }
     }];
     [task resume];
+}
+
+
+-(NSString*) checkDirection:(double)degree{
+    NSString* direction=@"N";
+    if (degree>337.5) {
+       return direction=@"N";
+    }
+    if (degree>292.5){
+       return direction=@"NW";
+    }
+    if(degree>247.5) {
+       return direction=@"W";
+    }
+    if(degree>202.5)  {
+       return direction=@"SW";
+    }
+    if(degree>157.5) {
+       return direction=@"S";
+    }
+    if(degree>122.5){
+       return direction=@"SE";
+    }
+    if(degree>67.5) {
+       return direction=@"E";
+    }
+    if(degree>22.5){
+       return direction=@"NE";
+    }
+    
+    return direction;
 }
 
 @end
