@@ -14,6 +14,8 @@
 
 @implementation WeatherDataViewController
 NSString* weatherDescripionVar;
+NSString* weatherIconImage;
+NSString* weatherBackgroundImage;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -80,11 +82,13 @@ NSString* weatherDescripionVar;
                 for (NSDictionary *dict in json[@"weather"]) {
                     
                     weatherDescripionVar=dict[@"description"];
+                    weatherIconImage=[NSString stringWithFormat:@"%@.png", dict[@"icon"] ];
+                    weatherBackgroundImage=[NSString stringWithFormat:@"%@.jpg", dict[@"icon"] ];
+                    
                     NSLog(@"description %@", dict[@"description"]);
                     NSLog(@"icon %@", dict[@"icon"]);
                     NSLog(@"id %@", dict[@"id"]);
                     NSLog(@"main %@", dict[@"main"]);
-                   
                 }
                 
 //                 NSLog(@"weather %@", json[@"weather"][description]);
@@ -146,6 +150,9 @@ NSString* weatherDescripionVar;
         self.sunsetLabel.text =[NSString stringWithFormat:@"%@ %@", sunsetTime, @"PM" ];
                     
         self.windLabel.text =[NSString stringWithFormat:@"%@ %@ %@", json[@"wind"][@"speed"], @"mph", windDirection ];
+           
+           self.weatherIcon.image=[UIImage imageNamed:weatherIconImage];
+           self.weatherBackground.image=[UIImage imageNamed:weatherBackgroundImage];
                     
                 });
             }
