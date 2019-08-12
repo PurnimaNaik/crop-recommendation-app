@@ -90,35 +90,40 @@
                 
                 double sunriseTimestampval =  [json[@"sys"][@"sunrise"]doubleValue];
                 NSTimeInterval sunriseTimestamp = (NSTimeInterval)sunriseTimestampval;
+         NSDate* sunriseDate = [NSDate dateWithTimeIntervalSince1970:sunriseTimestamp];
+                
+                //for 12 hr
                 NSDateFormatter *sunriseDateFormatter = [[NSDateFormatter alloc] init];
+                [sunriseDateFormatter setDateFormat:@"hh:mm"];
+                NSString *sunriseTime = [sunriseDateFormatter stringFromDate:sunriseDate];
+                //end of 12 hr
                 
-                [sunriseDateFormatter setTimeZone:[NSTimeZone systemTimeZone]];
-                NSDate* sunriseDate = [NSDate dateWithTimeIntervalSince1970:sunriseTimestamp];
-                NSCalendar *sunriseCalendar = [NSCalendar currentCalendar];
-                NSDateComponents *sunriseComponents = [sunriseCalendar components:(NSCalendarUnitHour | NSCalendarUnitMinute) fromDate:sunriseDate];
-                NSInteger sunriseHour = [sunriseComponents hour];
-                NSInteger sunriseMinute = [sunriseComponents minute];
+//                NSCalendar *sunriseCalendar = [NSCalendar currentCalendar];
+//                NSDateComponents *sunriseComponents = [sunriseCalendar components:(NSCalendarUnitHour | NSCalendarUnitMinute) fromDate:sunriseDate];
+//                NSInteger sunriseHour = [sunriseComponents hour];
+//                NSInteger sunriseMinute = [sunriseComponents minute];
+//
+//                NSString *sunriseHourString = [NSString stringWithFormat:@"%02ld", (long)sunriseHour];
+//                NSString *sunriseMinuteString = [NSString stringWithFormat:@"%02ld", (long)sunriseMinute];
                 
-                NSString *sunriseHourString = [NSString stringWithFormat:@"%02ld", (long)sunriseHour];
-                NSString *sunriseMinuteString = [NSString stringWithFormat:@"%02ld", (long)sunriseMinute];
-                
-                //                _____________________________________________________________________
+                //_____________________________________________________________________
                 
                 double sunsetTimestampval =  [json[@"sys"][@"sunset"]doubleValue];
                 NSTimeInterval sunsetTimestamp = (NSTimeInterval)sunsetTimestampval;
-                //                NSDateFormatter *sunsetDateFormatter = [[NSDateFormatter alloc] init];
-                //                [sunsetDateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:[[NSLocale currentLocale] localeIdentifier]]];
-                //                [sunsetDateFormatter setTimeZone:[NSTimeZone systemTimeZone]];
-                
                 NSDate* sunsetDate = [NSDate dateWithTimeIntervalSince1970:sunsetTimestamp];
-                NSCalendar *sunsetCalendar = [NSCalendar currentCalendar];
-                NSDateComponents *sunsetComponents = [sunsetCalendar components:(NSCalendarUnitHour | NSCalendarUnitMinute) fromDate:sunsetDate];
-                
-                NSInteger sunsetHour = [sunsetComponents hour];
-                NSInteger sunsetMinute = [sunsetComponents minute];
-                
-                NSString *sunsetHourString = [NSString stringWithFormat:@"%02ld", (long)sunsetHour];
-                NSString *sunsetMinuteString = [NSString stringWithFormat:@"%02ld", (long)sunsetMinute];
+                //for 12 hr
+                NSDateFormatter *sunsetDateFormatter = [[NSDateFormatter alloc] init];
+                [sunsetDateFormatter setDateFormat:@"hh:mm"];
+                NSString *sunsetTime = [sunsetDateFormatter stringFromDate:sunsetDate];
+                //end of 12 hr
+//                NSCalendar *sunsetCalendar = [NSCalendar currentCalendar];
+//                NSDateComponents *sunsetComponents = [sunsetCalendar components:(NSCalendarUnitHour | NSCalendarUnitMinute) fromDate:sunsetDate];
+//
+//                NSInteger sunsetHour = [sunsetComponents hour];
+//                NSInteger sunsetMinute = [sunsetComponents minute];
+//
+//                NSString *sunsetHourString = [NSString stringWithFormat:@"%02ld", (long)sunsetHour];
+//                NSString *sunsetMinuteString = [NSString stringWithFormat:@"%02ld", (long)sunsetMinute];
                 
                 
                 dispatch_async(dispatch_get_main_queue(), ^{
@@ -129,8 +134,8 @@
                     self.pressureLabel.text =[NSString stringWithFormat:@"%@ %@", truncatedPressure, @"inHg" ];
                     self.visibilityLabel.text =[NSString stringWithFormat:@"%@ %@", visibilityInMiles, @"mi" ];
                     
-                    self.sunriseLabel.text =[NSString stringWithFormat:@"%@:%@%@", sunriseHourString, sunriseMinuteString, @"AM" ];
-                    self.sunsetLabel.text =[NSString stringWithFormat:@"%@:%@%@", sunsetHourString, sunsetMinuteString, @"PM" ];
+                    self.sunriseLabel.text =[NSString stringWithFormat:@"%@ %@", sunriseTime, @"AM" ];
+                    self.sunsetLabel.text =[NSString stringWithFormat:@"%@ %@", sunsetTime, @"PM" ];
                     
                     self.windLabel.text =[NSString stringWithFormat:@"%@ %@", json[@"wind"][@"speed"], @"mph" ];
                     
@@ -150,3 +155,7 @@
 
 
 @end
+
+//                NSDateFormatter *sunsetDateFormatter = [[NSDateFormatter alloc] init];
+//                [sunsetDateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:[[NSLocale currentLocale] localeIdentifier]]];
+//                [sunsetDateFormatter setTimeZone:[NSTimeZone systemTimeZone]];
