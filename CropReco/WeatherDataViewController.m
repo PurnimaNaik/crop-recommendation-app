@@ -91,24 +91,35 @@
                 double sunriseTimestampval =  [json[@"sys"][@"sunrise"]doubleValue];
                 NSTimeInterval sunriseTimestamp = (NSTimeInterval)sunriseTimestampval;
                 NSDateFormatter *sunriseDateFormatter = [[NSDateFormatter alloc] init];
-                sunriseDateFormatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
-                [sunriseDateFormatter setDateFormat:@"hh:mm"];
-                  NSDate* sunriseDate = [NSDate dateWithTimeIntervalSince1970:sunriseTimestamp];
+                
+                [sunriseDateFormatter setTimeZone:[NSTimeZone systemTimeZone]];
+                NSDate* sunriseDate = [NSDate dateWithTimeIntervalSince1970:sunriseTimestamp];
                 NSCalendar *sunriseCalendar = [NSCalendar currentCalendar];
                 NSDateComponents *sunriseComponents = [sunriseCalendar components:(NSCalendarUnitHour | NSCalendarUnitMinute) fromDate:sunriseDate];
                 NSInteger sunriseHour = [sunriseComponents hour];
                 NSInteger sunriseMinute = [sunriseComponents minute];
                 
+                NSString *sunriseHourString = [NSString stringWithFormat:@"%02ld", (long)sunriseHour];
+                NSString *sunriseMinuteString = [NSString stringWithFormat:@"%02ld", (long)sunriseMinute];
+                
+                //                _____________________________________________________________________
+                
                 double sunsetTimestampval =  [json[@"sys"][@"sunset"]doubleValue];
                 NSTimeInterval sunsetTimestamp = (NSTimeInterval)sunsetTimestampval;
-                NSDateFormatter *sunsetDateFormatter = [[NSDateFormatter alloc] init];
-                sunsetDateFormatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
-                [sunsetDateFormatter setDateFormat:@"hh:mm"];
+                //                NSDateFormatter *sunsetDateFormatter = [[NSDateFormatter alloc] init];
+                //                [sunsetDateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:[[NSLocale currentLocale] localeIdentifier]]];
+                //                [sunsetDateFormatter setTimeZone:[NSTimeZone systemTimeZone]];
+                
                 NSDate* sunsetDate = [NSDate dateWithTimeIntervalSince1970:sunsetTimestamp];
                 NSCalendar *sunsetCalendar = [NSCalendar currentCalendar];
                 NSDateComponents *sunsetComponents = [sunsetCalendar components:(NSCalendarUnitHour | NSCalendarUnitMinute) fromDate:sunsetDate];
+                
                 NSInteger sunsetHour = [sunsetComponents hour];
                 NSInteger sunsetMinute = [sunsetComponents minute];
+                
+                NSString *sunsetHourString = [NSString stringWithFormat:@"%02ld", (long)sunsetHour];
+                NSString *sunsetMinuteString = [NSString stringWithFormat:@"%02ld", (long)sunsetMinute];
+                
                 
                 dispatch_async(dispatch_get_main_queue(), ^{
                     self.avgTempLabel.text =[NSString stringWithFormat:@"%@%@", json[@"main"][@"temp"], @"°C" ];
@@ -118,8 +129,8 @@
                     self.pressureLabel.text =[NSString stringWithFormat:@"%@ %@", truncatedPressure, @"inHg" ];
                     self.visibilityLabel.text =[NSString stringWithFormat:@"%@ %@", visibilityInMiles, @"mi" ];
                     
-                    self.sunriseLabel.text =[NSString stringWithFormat:@"%ld:%ld%@", (long)sunriseHour, (long)sunriseMinute, @"AM" ];
-                     self.sunsetLabel.text =[NSString stringWithFormat:@"%ld:%ld%@", (long)sunsetHour, (long)sunsetMinute, @"PM" ];
+                    self.sunriseLabel.text =[NSString stringWithFormat:@"%@:%@%@", sunriseHourString, sunriseMinuteString, @"AM" ];
+                    self.sunsetLabel.text =[NSString stringWithFormat:@"%@:%@%@", sunsetHourString, sunsetMinuteString, @"PM" ];
                     
                     self.windLabel.text =[NSString stringWithFormat:@"%@ %@", json[@"wind"][@"speed"], @"mph" ];
                     
