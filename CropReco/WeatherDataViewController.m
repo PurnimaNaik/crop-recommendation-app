@@ -13,6 +13,7 @@
 @end
 
 @implementation WeatherDataViewController
+NSString* weatherDescripionVar;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -71,12 +72,24 @@
                 NSLog(@"json %@", json);
                 
                 NSLog(@"json %@", json);
-                NSLog(@"sunrise %@", json[@"sys"][@"sunrise"]);
-                NSLog(@"sunset %@", json[@"sys"][@"sunset"]);
-                NSLog(@"visibility %@", json[@"visibility"]);
+//                NSLog(@"sunrise %@", json[@"sys"][@"sunrise"]);
+//                NSLog(@"sunset %@", json[@"sys"][@"sunset"]);
+//                NSLog(@"visibility %@", json[@"visibility"]);
                 NSLog(@"weather %@", json[@"weather"]);
-                NSLog(@"wind deg %@", json[@"wind"][@"deg"]);
-                NSLog(@"wind speed %@", json[@"wind"][@"speed"]);
+                
+                for (NSDictionary *dict in json[@"weather"]) {
+                    
+                    weatherDescripionVar=dict[@"description"];
+                    NSLog(@"description %@", dict[@"description"]);
+                    NSLog(@"icon %@", dict[@"icon"]);
+                    NSLog(@"id %@", dict[@"id"]);
+                    NSLog(@"main %@", dict[@"main"]);
+                   
+                }
+                
+//                 NSLog(@"weather %@", json[@"weather"][description]);
+//                NSLog(@"wind deg %@", json[@"wind"][@"deg"]);
+//                NSLog(@"wind speed %@", json[@"wind"][@"speed"]);
                 
                 NSNumber* pressureInHPA=json[@"main"][@"pressure"];
                 NSNumber* pressureInINHG= @([pressureInHPA doubleValue]/33.86);
@@ -120,18 +133,19 @@
                 
                 
                 
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    self.avgTempLabel.text =[NSString stringWithFormat:@"%@%@", json[@"main"][@"temp"], @"°C" ];
-                    self.minTempLabel.text =[NSString stringWithFormat:@"%@%@", json[@"main"][@"temp_min"], @"°C" ];
-                    self.maxTempLabel.text =[NSString stringWithFormat:@"%@%@", json[@"main"][@"temp_max"], @"°C" ];
-                    self.humidityLabel.text =[NSString stringWithFormat:@"%@%@", json[@"main"][@"humidity"], @"%" ];
-                    self.pressureLabel.text =[NSString stringWithFormat:@"%@ %@", truncatedPressure, @"inHg" ];
-                    self.visibilityLabel.text =[NSString stringWithFormat:@"%@ %@", visibilityInMiles, @"mi" ];
+       dispatch_async(dispatch_get_main_queue(), ^{
+        self.weatherDescription.text=[weatherDescripionVar capitalizedString];
+        self.avgTempLabel.text =[NSString stringWithFormat:@"%@%@", json[@"main"][@"temp"], @"°C" ];
+        self.minTempLabel.text =[NSString stringWithFormat:@"%@%@", json[@"main"][@"temp_min"], @"°C" ];
+        self.maxTempLabel.text =[NSString stringWithFormat:@"%@%@", json[@"main"][@"temp_max"], @"°C" ];
+        self.humidityLabel.text =[NSString stringWithFormat:@"%@%@", json[@"main"][@"humidity"], @"%" ];
+        self.pressureLabel.text =[NSString stringWithFormat:@"%@ %@", truncatedPressure, @"inHg" ];
+        self.visibilityLabel.text =[NSString stringWithFormat:@"%@ %@", visibilityInMiles, @"mi" ];
                     
-                    self.sunriseLabel.text =[NSString stringWithFormat:@"%@ %@", sunriseTime, @"AM" ];
-                    self.sunsetLabel.text =[NSString stringWithFormat:@"%@ %@", sunsetTime, @"PM" ];
+        self.sunriseLabel.text =[NSString stringWithFormat:@"%@ %@", sunriseTime, @"AM" ];
+        self.sunsetLabel.text =[NSString stringWithFormat:@"%@ %@", sunsetTime, @"PM" ];
                     
-                    self.windLabel.text =[NSString stringWithFormat:@"%@ %@ %@", json[@"wind"][@"speed"], @"mph", windDirection ];
+        self.windLabel.text =[NSString stringWithFormat:@"%@ %@ %@", json[@"wind"][@"speed"], @"mph", windDirection ];
                     
                 });
             }

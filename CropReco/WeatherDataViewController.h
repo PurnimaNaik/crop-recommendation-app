@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *sunsetLabel;
 @property (weak, nonatomic) IBOutlet UILabel *windLabel;
 @property (weak, nonatomic) IBOutlet UILabel *visibilityLabel;
+@property (weak, nonatomic) IBOutlet UILabel *weatherDescription;
 
 
 
