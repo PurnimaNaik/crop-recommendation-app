@@ -88,42 +88,35 @@
                 NSNumber* visibilityInMeters=json[@"visibility"];
                 NSNumber* visibilityInMiles= @(ceil([visibilityInMeters doubleValue]*0.00062137));
                 
+                double offset =  [json[@"timezone"]doubleValue];
+                
+                //get sunrise time
                 double sunriseTimestampval =  [json[@"sys"][@"sunrise"]doubleValue];
                 NSTimeInterval sunriseTimestamp = (NSTimeInterval)sunriseTimestampval;
-         NSDate* sunriseDate = [NSDate dateWithTimeIntervalSince1970:sunriseTimestamp];
+                NSDate* sunriseDate = [NSDate dateWithTimeIntervalSince1970:sunriseTimestamp];
+                NSDateFormatter *sunriseDateFormatter = [[NSDateFormatter alloc] init];
                 
                 //for 12 hr
-                NSDateFormatter *sunriseDateFormatter = [[NSDateFormatter alloc] init];
                 [sunriseDateFormatter setDateFormat:@"hh:mm"];
+                //local time
+                [sunriseDateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:offset]]; // For GMT+1
                 NSString *sunriseTime = [sunriseDateFormatter stringFromDate:sunriseDate];
                 //end of 12 hr
                 
-//                NSCalendar *sunriseCalendar = [NSCalendar currentCalendar];
-//                NSDateComponents *sunriseComponents = [sunriseCalendar components:(NSCalendarUnitHour | NSCalendarUnitMinute) fromDate:sunriseDate];
-//                NSInteger sunriseHour = [sunriseComponents hour];
-//                NSInteger sunriseMinute = [sunriseComponents minute];
-//
-//                NSString *sunriseHourString = [NSString stringWithFormat:@"%02ld", (long)sunriseHour];
-//                NSString *sunriseMinuteString = [NSString stringWithFormat:@"%02ld", (long)sunriseMinute];
                 
-                //_____________________________________________________________________
-                
+                //get sunset time
                 double sunsetTimestampval =  [json[@"sys"][@"sunset"]doubleValue];
                 NSTimeInterval sunsetTimestamp = (NSTimeInterval)sunsetTimestampval;
                 NSDate* sunsetDate = [NSDate dateWithTimeIntervalSince1970:sunsetTimestamp];
-                //for 12 hr
                 NSDateFormatter *sunsetDateFormatter = [[NSDateFormatter alloc] init];
+           
+                //for 12 hr
                 [sunsetDateFormatter setDateFormat:@"hh:mm"];
+                //local time
+                [sunsetDateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:offset]]; // For GMT+1
                 NSString *sunsetTime = [sunsetDateFormatter stringFromDate:sunsetDate];
                 //end of 12 hr
-//                NSCalendar *sunsetCalendar = [NSCalendar currentCalendar];
-//                NSDateComponents *sunsetComponents = [sunsetCalendar components:(NSCalendarUnitHour | NSCalendarUnitMinute) fromDate:sunsetDate];
-//
-//                NSInteger sunsetHour = [sunsetComponents hour];
-//                NSInteger sunsetMinute = [sunsetComponents minute];
-//
-//                NSString *sunsetHourString = [NSString stringWithFormat:@"%02ld", (long)sunsetHour];
-//                NSString *sunsetMinuteString = [NSString stringWithFormat:@"%02ld", (long)sunsetMinute];
+                
                 
                 
                 dispatch_async(dispatch_get_main_queue(), ^{
@@ -140,7 +133,7 @@
                     self.windLabel.text =[NSString stringWithFormat:@"%@ %@", json[@"wind"][@"speed"], @"mph" ];
                     
                     
-                    //                     [self.avgTempLabel sizeToFit];
+                   
                     
                     
                     
@@ -152,10 +145,9 @@
     [task resume];
 }
 
-
-
 @end
 
 //                NSDateFormatter *sunsetDateFormatter = [[NSDateFormatter alloc] init];
 //                [sunsetDateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:[[NSLocale currentLocale] localeIdentifier]]];
 //                [sunsetDateFormatter setTimeZone:[NSTimeZone systemTimeZone]];
+//                     [self.avgTempLabel sizeToFit];
