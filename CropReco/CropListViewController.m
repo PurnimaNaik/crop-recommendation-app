@@ -23,6 +23,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+//    [self.searchBar setSearchFieldBackgroundImage:[UIImage imageNamed:@"stagingCard"] forState:UIControlStateNormal];
+    
+//    self.searchBar.barTintColor=[UIColor colorWithRed:0.98 green:0.98 blue:0.98 alpha:0.5];
+ self.searchBar.barTintColor=[UIColor whiteColor];
+    
+    
+    for (UIView *subView in _searchBar.subviews) {
+        for(id field in subView.subviews){
+            if ([field isKindOfClass:[UITextField class]]) {
+                UITextField *textField = (UITextField *)field;
+//                [textField setBackgroundColor:[UIColor colorWithRed:0.98 green:0.98 blue:0.98 alpha:0.5]];
+                [textField setBackgroundColor:[UIColor whiteColor]];
+                [textField setFont:[UIFont fontWithName:@"Optima" size:20]];
+            }
+        }
+    }
     
 //    _cropTable.delegate = self;
 //    _cropTable.dataSource = self;

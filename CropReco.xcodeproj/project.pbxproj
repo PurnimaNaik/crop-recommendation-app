@@ -89,6 +89,8 @@
 		96DFCC8C230307B600319CA9 /* cropListBarIcon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96DFCC86230307B600319CA9 /* cropListBarIcon@3x.png */; };
 		96DFCC8D230307B600319CA9 /* recommendationTabIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96DFCC87230307B600319CA9 /* recommendationTabIcon@2x.png */; };
 		96DFCC8E230307B600319CA9 /* cropListBarIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96DFCC88230307B600319CA9 /* cropListBarIcon@2x.png */; };
+		96DFCC91230312E800319CA9 /* temperature.png in Resources */ = {isa = PBXBuildFile; fileRef = 96DFCC8F230312E800319CA9 /* temperature.png */; };
+		96DFCC92230312E800319CA9 /* rainfall.png in Resources */ = {isa = PBXBuildFile; fileRef = 96DFCC90230312E800319CA9 /* rainfall.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -193,6 +195,8 @@
 		96DFCC86230307B600319CA9 /* cropListBarIcon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cropListBarIcon@3x.png"; sourceTree = "<group>"; };
 		96DFCC87230307B600319CA9 /* recommendationTabIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recommendationTabIcon@2x.png"; sourceTree = "<group>"; };
 		96DFCC88230307B600319CA9 /* cropListBarIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cropListBarIcon@2x.png"; sourceTree = "<group>"; };
+		96DFCC8F230312E800319CA9 /* temperature.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = temperature.png; sourceTree = "<group>"; };
+		96DFCC90230312E800319CA9 /* rainfall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rainfall.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +220,8 @@
 		9661E50F22FC708D000675F4 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				96DFCC90230312E800319CA9 /* rainfall.png */,
+				96DFCC8F230312E800319CA9 /* temperature.png */,
 				96DFCC83230307B600319CA9 /* cropListBarIcon.png */,
 				96DFCC88230307B600319CA9 /* cropListBarIcon@2x.png */,
 				96DFCC86230307B600319CA9 /* cropListBarIcon@3x.png */,
@@ -458,6 +464,7 @@
 				96A012C122FD250A008315FF /* pearl-millet-500x500.jpg in Resources */,
 				96A012AC22FD250A008315FF /* lentil.jpg in Resources */,
 				965DF96F2301F4B400F8448A /* 50d.png in Resources */,
+				96DFCC91230312E800319CA9 /* temperature.png in Resources */,
 				96A012BD22FD250A008315FF /* groundnut.jpg in Resources */,
 				96A012C622FD2D34008315FF /* soil.png in Resources */,
 				965DF95E2301EFD700F8448A /* 02n.png in Resources */,
@@ -470,6 +477,7 @@
 				96D7F22022F7D35F000DD8EC /* LaunchScreen.storyboard in Resources */,
 				965DF94D2301EFD700F8448A /* 10n.jpg in Resources */,
 				96A012BF22FD250A008315FF /* oilseed.jpg in Resources */,
+				96DFCC92230312E800319CA9 /* rainfall.png in Resources */,
 				965DF9592301EFD700F8448A /* 09d.jpg in Resources */,
 				965DF95A2301EFD700F8448A /* 10d.jpg in Resources */,
 				965DF95C2301EFD700F8448A /* 03d.png in Resources */,

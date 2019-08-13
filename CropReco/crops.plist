@@ -6,6 +6,116 @@
 	<array>
 		<dict>
 			<key>CropName</key>
+			<string>Turmeric</string>
+			<key>MinTemp</key>
+			<integer>20</integer>
+			<key>MaxTemp</key>
+			<integer>30</integer>
+			<key>MinRainfall</key>
+			<integer>150</integer>
+			<key>MaxRainfall</key>
+			<integer>250</integer>
+			<key>ImageName</key>
+			<string>tumeric.jpg</string>
+			<key>SoilTypeToDisplay</key>
+			<string>well drained clayey loam or red loamy</string>
+			<key>ProducersToDisplay</key>
+			<string>India (Andhra Pradesh, Karnataka, Kerala)</string>
+			<key>SoilType</key>
+			<array>
+				<string>well-drained clayey loam</string>
+				<string>red loamy soil </string>
+			</array>
+			<key>TopProducers</key>
+			<array>
+				<string>India</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CropName</key>
+			<string>Cotton</string>
+			<key>MinTemp</key>
+			<integer>18</integer>
+			<key>MaxTemp</key>
+			<integer>27</integer>
+			<key>MinRainfall</key>
+			<integer>60</integer>
+			<key>MaxRainfall</key>
+			<integer>110</integer>
+			<key>ImageName</key>
+			<string>cotton.png</string>
+			<key>SoilTypeToDisplay</key>
+			<string>well drained loam, regur (black-earth) </string>
+			<key>ProducersToDisplay</key>
+			<string>China, USA, India</string>
+			<key>SoilType</key>
+			<array>
+				<string>well-drained loam</string>
+				<string>regur (black-earth) </string>
+			</array>
+			<key>TopProducers</key>
+			<array>
+				<string>China</string>
+				<string>India</string>
+				<string>USA</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CropName</key>
+			<string>Coffee</string>
+			<key>MinTemp</key>
+			<integer>15</integer>
+			<key>MaxTemp</key>
+			<integer>28</integer>
+			<key>MinRainfall</key>
+			<integer>125</integer>
+			<key>MaxRainfall</key>
+			<integer>225</integer>
+			<key>ImageName</key>
+			<string>coffee.jpg</string>
+			<key>SoilTypeToDisplay</key>
+			<string>well drained alluvial</string>
+			<key>ProducersToDisplay</key>
+			<string>Brazil, Colombia, Indonesia</string>
+			<key>SoilType</key>
+			<array>
+				<string>well-drained alluvial</string>
+			</array>
+			<key>TopProducers</key>
+			<array>
+				<string>Brazil</string>
+				<string>Colombia</string>
+				<string>Indonesia</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CropName</key>
+			<string>Cardamom</string>
+			<key>MinTemp</key>
+			<integer>10</integer>
+			<key>MaxTemp</key>
+			<integer>35</integer>
+			<key>MinRainfall</key>
+			<integer>150</integer>
+			<key>MaxRainfall</key>
+			<integer>400</integer>
+			<key>ImageName</key>
+			<string>cardamon.jpg</string>
+			<key>SoilTypeToDisplay</key>
+			<string>well drained lateritic </string>
+			<key>ProducersToDisplay</key>
+			<string>India (Kerala, Karnataka, Tamil Nadu)</string>
+			<key>SoilType</key>
+			<array>
+				<string>well-drained lateritic   </string>
+			</array>
+			<key>TopProducers</key>
+			<array>
+				<string>India</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CropName</key>
 			<string>rice</string>
 			<key>MinTemp</key>
 			<integer>15</integer>
@@ -320,35 +430,6 @@
 		</dict>
 		<dict>
 			<key>CropName</key>
-			<string>Cotton</string>
-			<key>MinTemp</key>
-			<integer>18</integer>
-			<key>MaxTemp</key>
-			<integer>27</integer>
-			<key>MinRainfall</key>
-			<integer>60</integer>
-			<key>MaxRainfall</key>
-			<integer>110</integer>
-			<key>ImageName</key>
-			<string>cotton.png</string>
-			<key>SoilTypeToDisplay</key>
-			<string>well drained loam, regur (black-earth) </string>
-			<key>ProducersToDisplay</key>
-			<string>China, USA, India</string>
-			<key>SoilType</key>
-			<array>
-				<string>well-drained loam</string>
-				<string>regur (black-earth) </string>
-			</array>
-			<key>TopProducers</key>
-			<array>
-				<string>China</string>
-				<string>India</string>
-				<string>USA</string>
-			</array>
-		</dict>
-		<dict>
-			<key>CropName</key>
 			<string>Tea</string>
 			<key>MinTemp</key>
 			<integer>15</integer>
@@ -373,34 +454,6 @@
 				<string>India</string>
 				<string>China</string>
 				<string>Sri-Lanka</string>
-			</array>
-		</dict>
-		<dict>
-			<key>CropName</key>
-			<string>Coffee</string>
-			<key>MinTemp</key>
-			<integer>15</integer>
-			<key>MaxTemp</key>
-			<integer>28</integer>
-			<key>MinRainfall</key>
-			<integer>125</integer>
-			<key>MaxRainfall</key>
-			<integer>225</integer>
-			<key>ImageName</key>
-			<string>coffee.jpg</string>
-			<key>SoilTypeToDisplay</key>
-			<string>well drained alluvial</string>
-			<key>ProducersToDisplay</key>
-			<string>Brazil, Colombia, Indonesia</string>
-			<key>SoilType</key>
-			<array>
-				<string>well-drained alluvial</string>
-			</array>
-			<key>TopProducers</key>
-			<array>
-				<string>Brazil</string>
-				<string>Colombia</string>
-				<string>Indonesia</string>
 			</array>
 		</dict>
 		<dict>
@@ -617,59 +670,6 @@
 				<string> red-loam</string>
 				<string>sandy loam</string>
 				<string>red lateritic sandy loam</string>
-			</array>
-			<key>TopProducers</key>
-			<array>
-				<string>India</string>
-			</array>
-		</dict>
-		<dict>
-			<key>CropName</key>
-			<string>Cardamom</string>
-			<key>MinTemp</key>
-			<integer>10</integer>
-			<key>MaxTemp</key>
-			<integer>35</integer>
-			<key>MinRainfall</key>
-			<integer>150</integer>
-			<key>MaxRainfall</key>
-			<integer>400</integer>
-			<key>ImageName</key>
-			<string>cardamon.jpg</string>
-			<key>SoilTypeToDisplay</key>
-			<string>well drained lateritic </string>
-			<key>ProducersToDisplay</key>
-			<string>India (Kerala, Karnataka, Tamil Nadu)</string>
-			<key>SoilType</key>
-			<array>
-				<string>well-drained lateritic   </string>
-			</array>
-			<key>TopProducers</key>
-			<array>
-				<string>India</string>
-			</array>
-		</dict>
-		<dict>
-			<key>CropName</key>
-			<string>Turmeric</string>
-			<key>MinTemp</key>
-			<integer>20</integer>
-			<key>MaxTemp</key>
-			<integer>30</integer>
-			<key>MinRainfall</key>
-			<integer>150</integer>
-			<key>MaxRainfall</key>
-			<integer>250</integer>
-			<key>ImageName</key>
-			<string>tumeric.jpg</string>
-			<key>SoilTypeToDisplay</key>
-			<string>well drained clayey loam or red loamy</string>
-			<key>ProducersToDisplay</key>
-			<string>India (Andhra Pradesh, Karnataka, Kerala)</string>
-			<key>SoilType</key>
-			<array>
-				<string>well-drained clayey loam</string>
-				<string>red loamy soil </string>
 			</array>
 			<key>TopProducers</key>
 			<array>
