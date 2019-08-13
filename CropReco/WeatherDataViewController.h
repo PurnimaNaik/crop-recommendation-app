@@ -24,6 +24,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *weatherDescription;
 @property (weak, nonatomic) IBOutlet UIImageView *weatherIcon;
 @property (weak, nonatomic) IBOutlet UIImageView *weatherBackground;
+@property (weak, nonatomic) IBOutlet UITabBarItem *weatherTabIcon;
 
 
 

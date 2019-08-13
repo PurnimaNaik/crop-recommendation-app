@@ -241,6 +241,7 @@
                         <outlet property="weatherBackground" destination="a7l-7Y-GuV" id="t3V-Fu-ddl"/>
                         <outlet property="weatherDescription" destination="sq7-qQ-Xc0" id="sRy-2r-QgF"/>
                         <outlet property="weatherIcon" destination="FsF-X4-eHh" id="sAf-Yw-7pg"/>
+                        <outlet property="weatherTabIcon" destination="Fhf-cX-fL7" id="G37-5c-VxW"/>
                         <outlet property="windLabel" destination="9pt-O6-qLD" id="xCC-eZ-81e"/>
                     </connections>
                 </viewController>
@@ -295,13 +296,14 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Recommendation" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Recommendation" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="avgTempLabel" destination="FOE-Rh-60Z" id="sXy-Nj-69I"/>
                         <outlet property="humidityLabel" destination="tNL-h0-56S" id="JuC-oE-S2c"/>
                         <outlet property="maxTempLabel" destination="etf-Px-YUK" id="NGJ-2o-Zig"/>
                         <outlet property="minTempLabel" destination="O1S-HL-9Xp" id="Ln2-ZZ-OqJ"/>
                         <outlet property="pressureLabel" destination="rPD-3K-uPG" id="mbx-HR-sTH"/>
+                        <outlet property="recommendationTabIcon" destination="cPa-gy-q4n" id="OG3-He-RFf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
@@ -435,7 +437,10 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="eln-OO-gLs"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Crop List" image="second" id="W82-WF-Nac"/>
+                    <tabBarItem key="tabBarItem" title="Crop List" id="W82-WF-Nac"/>
+                    <connections>
+                        <outlet property="cropListTabIcon" destination="W82-WF-Nac" id="lYT-ty-G7s"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XZA-qQ-UEW" sceneMemberID="firstResponder"/>
             </objects>
@@ -444,7 +449,6 @@
     </scenes>
     <resources>
         <image name="rainfall" width="225" height="225"/>
-        <image name="second" width="30" height="30"/>
         <image name="soil.png" width="512" height="512"/>
         <image name="temperature" width="512" height="512"/>
         <image name="world.png" width="512" height="512"/>

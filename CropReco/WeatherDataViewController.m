@@ -24,6 +24,11 @@ NSString* weatherBackgroundImage;
     [self.disclaimerLabel setTextContainerInset:UIEdgeInsetsZero];
     self.disclaimerLabel.textContainer.lineFragmentPadding = 0;
     self.disclaimerLabel.textContainer.lineFragmentPadding = 0;
+    
+//    self.weatherTabIcon.image=[[UIImage imageNamed:@"weatherTabIcon"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+//    self.weatherTabIcon.selectedImage = [[UIImage imageNamed:@"weatherTabICon" imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+     
 //    [self.avgTempLabel sizeToFit];
     
     [self.view addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self.view action:@selector(endEditing:)]];

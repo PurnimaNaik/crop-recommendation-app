@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *minTempLabel;
 @property (weak, nonatomic) IBOutlet UILabel *maxTempLabel;
 @property (weak, nonatomic) IBOutlet UILabel *humidityLabel;
+@property (weak, nonatomic) IBOutlet UITabBarItem *recommendationTabIcon;
 @property (weak, nonatomic) IBOutlet UILabel *pressureLabel;
 
 @end

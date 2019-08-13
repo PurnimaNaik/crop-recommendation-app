@@ -19,6 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self requestPermission];
+    
+//        self.recommendationTabIcon.image=[[UIImage imageNamed:@"recommendationTabIcon"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
 }
 
 -(void)requestPermission{

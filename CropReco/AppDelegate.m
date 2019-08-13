@@ -19,6 +19,16 @@
     // Override point for customization after application launch.
     UITabBarController *tabBar = (UITabBarController *)self.window.rootViewController;
     tabBar.selectedIndex = 0;
+    
+    [[tabBar.viewControllers objectAtIndex:0] tabBarItem].image=[[UIImage imageNamed:@"weatherTabIcon"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    [[tabBar.viewControllers objectAtIndex:1] tabBarItem].image=[[UIImage imageNamed:@"recommendationTabIcon"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    [[tabBar.viewControllers objectAtIndex:2] tabBarItem].image=[[UIImage imageNamed:@"cropListBarIcon"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    
+ 
+    
+//     [[[[ tabBar.items] objectAtIndex:0] setBadgeValue:[NSString stringWithFormat:@"%d", notificationCount ]];
+    
     return YES;
 }
 
