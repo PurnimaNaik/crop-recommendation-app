@@ -21,10 +21,21 @@
 @property (weak, nonatomic) IBOutlet UILabel *sunsetLabel;
 @property (weak, nonatomic) IBOutlet UILabel *windLabel;
 @property (weak, nonatomic) IBOutlet UILabel *visibilityLabel;
+@property (strong, nonatomic) IBOutlet UILabel *avgTempLabelDescriptor;
 @property (weak, nonatomic) IBOutlet UILabel *weatherDescription;
 @property (weak, nonatomic) IBOutlet UIImageView *weatherIcon;
 @property (weak, nonatomic) IBOutlet UIImageView *weatherBackground;
+@property (strong, nonatomic) IBOutlet UILabel *sunriseLabelDescriptor;
 @property (weak, nonatomic) IBOutlet UITabBarItem *weatherTabIcon;
+@property (strong, nonatomic) IBOutlet UILabel *sunsetLabelDescriptor;
+@property (strong, nonatomic) IBOutlet UILabel *minTempLabelDescriptor;
+@property (strong, nonatomic) IBOutlet UILabel *visibilityLabelDescriptor;
+@property (strong, nonatomic) IBOutlet UILabel *humidityLabelDescriptor;
+@property (strong, nonatomic) IBOutlet UILabel *windLabelDescriptor;
+@property (strong, nonatomic) IBOutlet UILabel *pressureLabelDescriptor;
+@property (strong, nonatomic) IBOutlet UILabel *maxTempLabelDescriptor;
+
+
 
 
 

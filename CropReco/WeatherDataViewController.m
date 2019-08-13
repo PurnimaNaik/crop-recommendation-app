@@ -16,14 +16,13 @@
 NSString* weatherDescripionVar;
 NSString* weatherIconImage;
 NSString* weatherBackgroundImage;
+NSString* dayNightIndicator;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.searchBarOutlet.delegate=self;
     [self.disclaimerLabel setTextContainerInset:UIEdgeInsetsZero];
-    self.disclaimerLabel.textContainer.lineFragmentPadding = 0;
-    self.disclaimerLabel.textContainer.lineFragmentPadding = 0;
     
 //    self.weatherTabIcon.image=[[UIImage imageNamed:@"weatherTabIcon"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
@@ -93,16 +92,11 @@ NSString* weatherBackgroundImage;
                     weatherDescripionVar=dict[@"description"];
                     weatherIconImage=[NSString stringWithFormat:@"%@.png", dict[@"icon"] ];
                     weatherBackgroundImage=[NSString stringWithFormat:@"%@.jpg", dict[@"icon"] ];
-                    
-                    NSLog(@"description %@", dict[@"description"]);
-                    NSLog(@"icon %@", dict[@"icon"]);
-                    NSLog(@"id %@", dict[@"id"]);
-                    NSLog(@"main %@", dict[@"main"]);
+                    NSString* icon=[NSString stringWithFormat:@"%@", dict[@"icon"] ];
+                    dayNightIndicator = [icon substringWithRange:NSMakeRange(2, 1)];
+                        NSLog(@"dayNightIndicator %@", dayNightIndicator);
                 }
                 
-//                 NSLog(@"weather %@", json[@"weather"][description]);
-//                NSLog(@"wind deg %@", json[@"wind"][@"deg"]);
-//                NSLog(@"wind speed %@", json[@"wind"][@"speed"]);
                 
                 NSNumber* pressureInHPA=json[@"main"][@"pressure"];
                 NSNumber* pressureInINHG= @([pressureInHPA doubleValue]/33.86);
@@ -164,7 +158,56 @@ NSString* weatherBackgroundImage;
            
            self.weatherIcon.image=[UIImage imageNamed:weatherIconImage];
            self.weatherBackground.image=[UIImage imageNamed:weatherBackgroundImage];
-                    
+           
+           if([dayNightIndicator isEqual:@"n"]){
+               self.avgTempLabel.textColor=[UIColor whiteColor];
+               self.minTempLabel.textColor=[UIColor whiteColor];
+               self.maxTempLabel.textColor=[UIColor whiteColor];
+               self.humidityLabel.textColor=[UIColor whiteColor];
+               self.pressureLabel.textColor=[UIColor whiteColor];
+               self.sunriseLabel.textColor=[UIColor whiteColor];
+               self.sunsetLabel.textColor=[UIColor whiteColor];
+               self.windLabel.textColor=[UIColor whiteColor];
+               self.visibilityLabel.textColor=[UIColor whiteColor];
+               self.weatherDescription.textColor=[UIColor whiteColor];
+               self.disclaimerLabel.textColor=[UIColor whiteColor];
+               
+               
+               self.avgTempLabelDescriptor.textColor=[UIColor whiteColor];
+               self.minTempLabelDescriptor.textColor=[UIColor whiteColor];
+               self.maxTempLabelDescriptor.textColor=[UIColor whiteColor];
+               self.humidityLabelDescriptor.textColor=[UIColor whiteColor];
+               self.pressureLabelDescriptor.textColor=[UIColor whiteColor];
+               self.sunriseLabelDescriptor.textColor=[UIColor whiteColor];
+               self.sunsetLabelDescriptor.textColor=[UIColor whiteColor];
+               self.windLabelDescriptor.textColor=[UIColor whiteColor];
+               self.visibilityLabelDescriptor.textColor=[UIColor whiteColor];
+           }
+           else{
+               self.avgTempLabel.textColor=[UIColor blackColor];
+               self.minTempLabel.textColor=[UIColor blackColor];
+               self.maxTempLabel.textColor=[UIColor blackColor];
+               self.humidityLabel.textColor=[UIColor blackColor];
+               self.pressureLabel.textColor=[UIColor blackColor];
+               self.sunriseLabel.textColor=[UIColor blackColor];
+               self.sunsetLabel.textColor=[UIColor blackColor];
+               self.windLabel.textColor=[UIColor blackColor];
+               self.visibilityLabel.textColor=[UIColor blackColor];
+               self.weatherDescription.textColor=[UIColor blackColor];
+               self.disclaimerLabel.textColor=[UIColor blackColor];
+               
+               self.avgTempLabelDescriptor.textColor=[UIColor blackColor];
+               self.minTempLabelDescriptor.textColor=[UIColor blackColor];
+               self.maxTempLabelDescriptor.textColor=[UIColor blackColor];
+               self.humidityLabelDescriptor.textColor=[UIColor blackColor];
+               self.pressureLabelDescriptor.textColor=[UIColor blackColor];
+               self.sunriseLabelDescriptor.textColor=[UIColor blackColor];
+               self.sunsetLabelDescriptor.textColor=[UIColor blackColor];
+               self.windLabelDescriptor.textColor=[UIColor blackColor];
+               self.visibilityLabelDescriptor.textColor=[UIColor blackColor];
+           }
+           
+           
                 });
             }
         }
