@@ -341,7 +341,7 @@
                                 <rect key="frame" x="0.0" y="95" width="375" height="523"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="14" reuseIdentifier="SimpleTableItem" rowHeight="162" id="hus-zS-u2M" customClass="CustomCell">
+                                    <tableViewCell clipsSubviews="YES" tag="1" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="14" reuseIdentifier="SimpleTableItem" rowHeight="162" id="hus-zS-u2M" customClass="CustomCell">
                                         <rect key="frame" x="0.0" y="28" width="375" height="162"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hus-zS-u2M" id="LMg-5t-D9f">
@@ -482,14 +482,15 @@
                     <tabBarItem key="tabBarItem" title="Crop List" id="W82-WF-Nac"/>
                     <connections>
                         <outlet property="cropListTabIcon" destination="W82-WF-Nac" id="lYT-ty-G7s"/>
+                        <outlet property="searchBar" destination="QsX-0K-1Ge" id="7hP-R2-l3S"/>
                         <outlet property="searchDisplayController" destination="4yn-SK-et9" id="JTv-Ik-gbD"/>
+                        <outlet property="tableViewCropList" destination="eLv-hm-mxS" id="ci0-T3-4ht"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XZA-qQ-UEW" sceneMemberID="firstResponder"/>
                 <searchDisplayController id="4yn-SK-et9">
                     <connections>
                         <outlet property="delegate" destination="di8-ca-DUP" id="JMh-yB-gev"/>
-                        <outlet property="searchBar" destination="QsX-0K-1Ge" id="mtZ-Wf-3tV"/>
                         <outlet property="searchContentsController" destination="di8-ca-DUP" id="W9P-ID-JCL"/>
                         <outlet property="searchResultsDataSource" destination="di8-ca-DUP" id="02o-Oy-gNo"/>
                         <outlet property="searchResultsDelegate" destination="di8-ca-DUP" id="PI7-2Y-gYp"/>
