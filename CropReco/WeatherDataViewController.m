@@ -108,7 +108,9 @@ NSString* weatherBackgroundImage;
                 
                 NSNumber* visibilityInMeters=json[@"visibility"];
                 NSNumber* visibilityInMiles= @(ceil([visibilityInMeters doubleValue]*0.00062137));
+                
                 NSString* windDirection=[self checkDirection:[json[@"wind"][@"deg"]doubleValue]];
+                NSString* windSpeed=[fmt stringFromNumber:json[@"wind"][@"speed"]];
                 
                 double offset =  [json[@"timezone"]doubleValue];
                 
@@ -153,7 +155,7 @@ NSString* weatherBackgroundImage;
         self.sunriseLabel.text =[NSString stringWithFormat:@"%@ %@", sunriseTime, @"AM" ];
         self.sunsetLabel.text =[NSString stringWithFormat:@"%@ %@", sunsetTime, @"PM" ];
                     
-        self.windLabel.text =[NSString stringWithFormat:@"%@ %@ %@", json[@"wind"][@"speed"], @"mph", windDirection ];
+        self.windLabel.text =[NSString stringWithFormat:@"%@ %@ %@", windSpeed, @"mph", windDirection ];
            
            self.weatherIcon.image=[UIImage imageNamed:weatherIconImage];
            self.weatherBackground.image=[UIImage imageNamed:weatherBackgroundImage];

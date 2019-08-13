@@ -42,71 +42,7 @@
 		965DF9762301F4B400F8448A /* 09n.png in Resources */ = {isa = PBXBuildFile; fileRef = 965DF96C2301F4B300F8448A /* 09n.png */; };
 		965DF9772301F4B400F8448A /* 09d.png in Resources */ = {isa = PBXBuildFile; fileRef = 965DF96D2301F4B400F8448A /* 09d.png */; };
 		965DF97F2302033800F8448A /* stagingCard.png in Resources */ = {isa = PBXBuildFile; fileRef = 965DF97E2302033800F8448A /* stagingCard.png */; };
-		965DF9BF230203FF00F8448A /* world.png in Resources */ = {isa = PBXBuildFile; fileRef = 965DF981230203FF00F8448A /* world.png */; };
-		965DF9C0230203FF00F8448A /* rubber.png in Resources */ = {isa = PBXBuildFile; fileRef = 965DF982230203FF00F8448A /* rubber.png */; };
-		965DF9C1230203FF00F8448A /* 02n.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 965DF983230203FF00F8448A /* 02n.jpg */; };
-		965DF9C2230203FF00F8448A /* coffee.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 965DF984230203FF00F8448A /* coffee.jpg */; };
-		965DF9C3230203FF00F8448A /* 02n.png in Resources */ = {isa = PBXBuildFile; fileRef = 965DF985230203FF00F8448A /* 02n.png */; };
-		965DF9C4230203FF00F8448A /* jute.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 965DF986230203FF00F8448A /* jute.jpg */; };
-		965DF9C5230203FF00F8448A /* 03n.png in Resources */ = {isa = PBXBuildFile; fileRef = 965DF987230203FF00F8448A /* 03n.png */; };
-		965DF9C6230203FF00F8448A /* 03n.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 965DF988230203FF00F8448A /* 03n.jpg */; };
-		965DF9C7230203FF00F8448A /* cocoa.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 965DF989230203FF00F8448A /* cocoa.jpg */; };
-		965DF9C8230203FF00F8448A /* stagingCard.png in Resources */ = {isa = PBXBuildFile; fileRef = 965DF98A230203FF00F8448A /* stagingCard.png */; };
-		965DF9C9230203FF00F8448A /* 01d.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 965DF98B230203FF00F8448A /* 01d.jpg */; };
-		965DF9CA230203FF00F8448A /* 01d.png in Resources */ = {isa = PBXBuildFile; fileRef = 965DF98C230203FF00F8448A /* 01d.png */; };
-		965DF9CB230203FF00F8448A /* tumeric.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 965DF98D230203FF00F8448A /* tumeric.jpg */; };
-		965DF9CC230203FF00F8448A /* bajra.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 965DF98E230203FF00F8448A /* bajra.jpg */; };
-		965DF9CD230203FF00F8448A /* wheat.png in Resources */ = {isa = PBXBuildFile; fileRef = 965DF98F230203FF00F8448A /* wheat.png */; };
-		965DF9CE230203FF00F8448A /* cotton.png in Resources */ = {isa = PBXBuildFile; fileRef = 965DF990230203FF00F8448A /* cotton.png */; };
-		965DF9CF230203FF00F8448A /* 04n.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 965DF991230203FF00F8448A /* 04n.jpg */; };
-		965DF9D0230203FF00F8448A /* coconut.png in Resources */ = {isa = PBXBuildFile; fileRef = 965DF992230203FF00F8448A /* coconut.png */; };
-		965DF9D1230203FF00F8448A /* 04n.png in Resources */ = {isa = PBXBuildFile; fileRef = 965DF993230203FF00F8448A /* 04n.png */; };
-		965DF9D2230203FF00F8448A /* oilpalm.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 965DF994230203FF00F8448A /* oilpalm.jpg */; };
-		965DF9D3230203FF00F8448A /* 10d.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 965DF995230203FF00F8448A /* 10d.jpg */; };
-		965DF9D4230203FF00F8448A /* 10d.png in Resources */ = {isa = PBXBuildFile; fileRef = 965DF996230203FF00F8448A /* 10d.png */; };
-		965DF9D5230203FF00F8448A /* pulses.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 965DF997230203FF00F8448A /* pulses.jpg */; };
-		965DF9D6230203FF00F8448A /* clove.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 965DF998230203FF00F8448A /* clove.jpg */; };
-		965DF9D7230203FF00F8448A /* 09n.png in Resources */ = {isa = PBXBuildFile; fileRef = 965DF999230203FF00F8448A /* 09n.png */; };
-		965DF9D8230203FF00F8448A /* 09n.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 965DF99A230203FF00F8448A /* 09n.jpg */; };
-		965DF9D9230203FF00F8448A /* 50d.png in Resources */ = {isa = PBXBuildFile; fileRef = 965DF99B230203FF00F8448A /* 50d.png */; };
-		965DF9DA230203FF00F8448A /* pearl-millet-500x500.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 965DF99C230203FF00F8448A /* pearl-millet-500x500.jpg */; };
-		965DF9DB230203FF00F8448A /* 50d.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 965DF99D230203FF00F8448A /* 50d.jpg */; };
-		965DF9DC230203FF00F8448A /* 11d.png in Resources */ = {isa = PBXBuildFile; fileRef = 965DF99E230203FF00F8448A /* 11d.png */; };
-		965DF9DD230203FF00F8448A /* 11d.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 965DF99F230203FF00F8448A /* 11d.jpg */; };
-		965DF9DE230203FF00F8448A /* 13n.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 965DF9A0230203FF00F8448A /* 13n.jpg */; };
-		965DF9DF230203FF00F8448A /* millets.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 965DF9A1230203FF00F8448A /* millets.jpg */; };
-		965DF9E0230203FF00F8448A /* maize.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 965DF9A2230203FF00F8448A /* maize.jpg */; };
-		965DF9E1230203FF00F8448A /* sugarcane.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 965DF9A3230203FF00F8448A /* sugarcane.jpg */; };
-		965DF9E2230203FF00F8448A /* sugarbeet.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 965DF9A4230203FF00F8448A /* sugarbeet.jpg */; };
-		965DF9E3230203FF00F8448A /* 10n.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 965DF9A5230203FF00F8448A /* 10n.jpg */; };
-		965DF9E4230203FF00F8448A /* 10n.png in Resources */ = {isa = PBXBuildFile; fileRef = 965DF9A6230203FF00F8448A /* 10n.png */; };
-		965DF9E5230203FF00F8448A /* groundnut.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 965DF9A7230203FF00F8448A /* groundnut.jpg */; };
-		965DF9E6230203FF00F8448A /* 04d.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 965DF9A8230203FF00F8448A /* 04d.jpg */; };
-		965DF9E7230203FF00F8448A /* cardamon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 965DF9A9230203FF00F8448A /* cardamon.jpg */; };
-		965DF9E8230203FF00F8448A /* 04d.png in Resources */ = {isa = PBXBuildFile; fileRef = 965DF9AA230203FF00F8448A /* 04d.png */; };
-		965DF9E9230203FF00F8448A /* soil.png in Resources */ = {isa = PBXBuildFile; fileRef = 965DF9AB230203FF00F8448A /* soil.png */; };
-		965DF9EA230203FF00F8448A /* rice.png in Resources */ = {isa = PBXBuildFile; fileRef = 965DF9AC230203FF00F8448A /* rice.png */; };
-		965DF9EB230203FF00F8448A /* 13d.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 965DF9AD230203FF00F8448A /* 13d.jpg */; };
-		965DF9EC230203FF00F8448A /* 13d.png in Resources */ = {isa = PBXBuildFile; fileRef = 965DF9AE230203FF00F8448A /* 13d.png */; };
-		965DF9ED230203FF00F8448A /* oilseed.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 965DF9AF230203FF00F8448A /* oilseed.jpg */; };
-		965DF9EE230203FF00F8448A /* blackpepper.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 965DF9B0230203FF00F8448A /* blackpepper.jpg */; };
-		965DF9EF230203FF00F8448A /* 09d.png in Resources */ = {isa = PBXBuildFile; fileRef = 965DF9B1230203FF00F8448A /* 09d.png */; };
-		965DF9F0230203FF00F8448A /* lentil.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 965DF9B2230203FF00F8448A /* lentil.jpg */; };
-		965DF9F1230203FF00F8448A /* 09d.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 965DF9B3230203FF00F8448A /* 09d.jpg */; };
-		965DF9F2230203FF00F8448A /* 50n.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 965DF9B4230203FF00F8448A /* 50n.jpg */; };
-		965DF9F3230203FF00F8448A /* 11n.png in Resources */ = {isa = PBXBuildFile; fileRef = 965DF9B5230203FF00F8448A /* 11n.png */; };
-		965DF9F4230203FF00F8448A /* 11n.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 965DF9B6230203FF00F8448A /* 11n.jpg */; };
-		965DF9F5230203FF00F8448A /* 02d.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 965DF9B7230203FF00F8448A /* 02d.jpg */; };
-		965DF9F6230203FF00F8448A /* 02d.png in Resources */ = {isa = PBXBuildFile; fileRef = 965DF9B8230203FF00F8448A /* 02d.png */; };
-		965DF9F7230203FF00F8448A /* flax.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 965DF9B9230203FF00F8448A /* flax.jpg */; };
-		965DF9F8230203FF00F8448A /* 01n.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 965DF9BA230203FF00F8448A /* 01n.jpg */; };
-		965DF9F9230203FF00F8448A /* 01n.png in Resources */ = {isa = PBXBuildFile; fileRef = 965DF9BB230203FF00F8448A /* 01n.png */; };
-		965DF9FA230203FF00F8448A /* tea.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 965DF9BC230203FF00F8448A /* tea.jpg */; };
-		965DF9FB230203FF00F8448A /* 03d.png in Resources */ = {isa = PBXBuildFile; fileRef = 965DF9BD230203FF00F8448A /* 03d.png */; };
-		965DF9FC230203FF00F8448A /* 03d.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 965DF9BE230203FF00F8448A /* 03d.jpg */; };
 		9661E51B22FC7B5F000675F4 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9661E51A22FC7B5F000675F4 /* CustomCell.m */; };
-		96835AE2230211E100CD31F9 /* 50n.png in Resources */ = {isa = PBXBuildFile; fileRef = 96835AE0230211E100CD31F9 /* 50n.png */; };
-		96835AE3230211E100CD31F9 /* 13n.png in Resources */ = {isa = PBXBuildFile; fileRef = 96835AE1230211E100CD31F9 /* 13n.png */; };
 		96855A2122FB64700030411C /* crops.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96855A2022FB64700030411C /* crops.plist */; };
 		969A995022F88D05009513F5 /* CropListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 969A994F22F88D05009513F5 /* CropListViewController.m */; };
 		96A012AA22FD250A008315FF /* tumeric.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96A0129122FD2508008315FF /* tumeric.jpg */; };
@@ -192,72 +128,8 @@
 		965DF96C2301F4B300F8448A /* 09n.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 09n.png; sourceTree = "<group>"; };
 		965DF96D2301F4B400F8448A /* 09d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 09d.png; sourceTree = "<group>"; };
 		965DF97E2302033800F8448A /* stagingCard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stagingCard.png; sourceTree = "<group>"; };
-		965DF981230203FF00F8448A /* world.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = world.png; sourceTree = "<group>"; };
-		965DF982230203FF00F8448A /* rubber.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rubber.png; sourceTree = "<group>"; };
-		965DF983230203FF00F8448A /* 02n.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 02n.jpg; sourceTree = "<group>"; };
-		965DF984230203FF00F8448A /* coffee.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = coffee.jpg; sourceTree = "<group>"; };
-		965DF985230203FF00F8448A /* 02n.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 02n.png; sourceTree = "<group>"; };
-		965DF986230203FF00F8448A /* jute.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = jute.jpg; sourceTree = "<group>"; };
-		965DF987230203FF00F8448A /* 03n.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 03n.png; sourceTree = "<group>"; };
-		965DF988230203FF00F8448A /* 03n.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 03n.jpg; sourceTree = "<group>"; };
-		965DF989230203FF00F8448A /* cocoa.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cocoa.jpg; sourceTree = "<group>"; };
-		965DF98A230203FF00F8448A /* stagingCard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stagingCard.png; sourceTree = "<group>"; };
-		965DF98B230203FF00F8448A /* 01d.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 01d.jpg; sourceTree = "<group>"; };
-		965DF98C230203FF00F8448A /* 01d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 01d.png; sourceTree = "<group>"; };
-		965DF98D230203FF00F8448A /* tumeric.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tumeric.jpg; sourceTree = "<group>"; };
-		965DF98E230203FF00F8448A /* bajra.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bajra.jpg; sourceTree = "<group>"; };
-		965DF98F230203FF00F8448A /* wheat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wheat.png; sourceTree = "<group>"; };
-		965DF990230203FF00F8448A /* cotton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cotton.png; sourceTree = "<group>"; };
-		965DF991230203FF00F8448A /* 04n.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 04n.jpg; sourceTree = "<group>"; };
-		965DF992230203FF00F8448A /* coconut.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coconut.png; sourceTree = "<group>"; };
-		965DF993230203FF00F8448A /* 04n.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 04n.png; sourceTree = "<group>"; };
-		965DF994230203FF00F8448A /* oilpalm.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = oilpalm.jpg; sourceTree = "<group>"; };
-		965DF995230203FF00F8448A /* 10d.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 10d.jpg; sourceTree = "<group>"; };
-		965DF996230203FF00F8448A /* 10d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 10d.png; sourceTree = "<group>"; };
-		965DF997230203FF00F8448A /* pulses.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pulses.jpg; sourceTree = "<group>"; };
-		965DF998230203FF00F8448A /* clove.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = clove.jpg; sourceTree = "<group>"; };
-		965DF999230203FF00F8448A /* 09n.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 09n.png; sourceTree = "<group>"; };
-		965DF99A230203FF00F8448A /* 09n.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 09n.jpg; sourceTree = "<group>"; };
-		965DF99B230203FF00F8448A /* 50d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 50d.png; sourceTree = "<group>"; };
-		965DF99C230203FF00F8448A /* pearl-millet-500x500.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "pearl-millet-500x500.jpg"; sourceTree = "<group>"; };
-		965DF99D230203FF00F8448A /* 50d.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 50d.jpg; sourceTree = "<group>"; };
-		965DF99E230203FF00F8448A /* 11d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 11d.png; sourceTree = "<group>"; };
-		965DF99F230203FF00F8448A /* 11d.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 11d.jpg; sourceTree = "<group>"; };
-		965DF9A0230203FF00F8448A /* 13n.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 13n.jpg; sourceTree = "<group>"; };
-		965DF9A1230203FF00F8448A /* millets.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = millets.jpg; sourceTree = "<group>"; };
-		965DF9A2230203FF00F8448A /* maize.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = maize.jpg; sourceTree = "<group>"; };
-		965DF9A3230203FF00F8448A /* sugarcane.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sugarcane.jpg; sourceTree = "<group>"; };
-		965DF9A4230203FF00F8448A /* sugarbeet.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sugarbeet.jpg; sourceTree = "<group>"; };
-		965DF9A5230203FF00F8448A /* 10n.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 10n.jpg; sourceTree = "<group>"; };
-		965DF9A6230203FF00F8448A /* 10n.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 10n.png; sourceTree = "<group>"; };
-		965DF9A7230203FF00F8448A /* groundnut.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = groundnut.jpg; sourceTree = "<group>"; };
-		965DF9A8230203FF00F8448A /* 04d.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 04d.jpg; sourceTree = "<group>"; };
-		965DF9A9230203FF00F8448A /* cardamon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cardamon.jpg; sourceTree = "<group>"; };
-		965DF9AA230203FF00F8448A /* 04d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 04d.png; sourceTree = "<group>"; };
-		965DF9AB230203FF00F8448A /* soil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soil.png; sourceTree = "<group>"; };
-		965DF9AC230203FF00F8448A /* rice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rice.png; sourceTree = "<group>"; };
-		965DF9AD230203FF00F8448A /* 13d.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 13d.jpg; sourceTree = "<group>"; };
-		965DF9AE230203FF00F8448A /* 13d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 13d.png; sourceTree = "<group>"; };
-		965DF9AF230203FF00F8448A /* oilseed.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = oilseed.jpg; sourceTree = "<group>"; };
-		965DF9B0230203FF00F8448A /* blackpepper.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blackpepper.jpg; sourceTree = "<group>"; };
-		965DF9B1230203FF00F8448A /* 09d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 09d.png; sourceTree = "<group>"; };
-		965DF9B2230203FF00F8448A /* lentil.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lentil.jpg; sourceTree = "<group>"; };
-		965DF9B3230203FF00F8448A /* 09d.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 09d.jpg; sourceTree = "<group>"; };
-		965DF9B4230203FF00F8448A /* 50n.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 50n.jpg; sourceTree = "<group>"; };
-		965DF9B5230203FF00F8448A /* 11n.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 11n.png; sourceTree = "<group>"; };
-		965DF9B6230203FF00F8448A /* 11n.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 11n.jpg; sourceTree = "<group>"; };
-		965DF9B7230203FF00F8448A /* 02d.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 02d.jpg; sourceTree = "<group>"; };
-		965DF9B8230203FF00F8448A /* 02d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 02d.png; sourceTree = "<group>"; };
-		965DF9B9230203FF00F8448A /* flax.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = flax.jpg; sourceTree = "<group>"; };
-		965DF9BA230203FF00F8448A /* 01n.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 01n.jpg; sourceTree = "<group>"; };
-		965DF9BB230203FF00F8448A /* 01n.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 01n.png; sourceTree = "<group>"; };
-		965DF9BC230203FF00F8448A /* tea.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tea.jpg; sourceTree = "<group>"; };
-		965DF9BD230203FF00F8448A /* 03d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 03d.png; sourceTree = "<group>"; };
-		965DF9BE230203FF00F8448A /* 03d.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 03d.jpg; sourceTree = "<group>"; };
 		9661E51A22FC7B5F000675F4 /* CustomCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
 		9661E51C22FC7BE5000675F4 /* CustomCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
-		96835AE0230211E100CD31F9 /* 50n.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 50n.png; sourceTree = "<group>"; };
-		96835AE1230211E100CD31F9 /* 13n.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 13n.png; sourceTree = "<group>"; };
 		96855A2022FB64700030411C /* crops.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = crops.plist; sourceTree = "<group>"; };
 		969A994F22F88D05009513F5 /* CropListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CropListViewController.m; sourceTree = "<group>"; };
 		969A995122F88D1A009513F5 /* CropListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CropListViewController.h; sourceTree = "<group>"; };
@@ -323,81 +195,9 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		965DF980230203FF00F8448A /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				965DF981230203FF00F8448A /* world.png */,
-				965DF982230203FF00F8448A /* rubber.png */,
-				965DF983230203FF00F8448A /* 02n.jpg */,
-				965DF984230203FF00F8448A /* coffee.jpg */,
-				965DF985230203FF00F8448A /* 02n.png */,
-				965DF986230203FF00F8448A /* jute.jpg */,
-				965DF987230203FF00F8448A /* 03n.png */,
-				965DF988230203FF00F8448A /* 03n.jpg */,
-				965DF989230203FF00F8448A /* cocoa.jpg */,
-				965DF98A230203FF00F8448A /* stagingCard.png */,
-				965DF98B230203FF00F8448A /* 01d.jpg */,
-				965DF98C230203FF00F8448A /* 01d.png */,
-				965DF98D230203FF00F8448A /* tumeric.jpg */,
-				965DF98E230203FF00F8448A /* bajra.jpg */,
-				965DF98F230203FF00F8448A /* wheat.png */,
-				965DF990230203FF00F8448A /* cotton.png */,
-				965DF991230203FF00F8448A /* 04n.jpg */,
-				965DF992230203FF00F8448A /* coconut.png */,
-				965DF993230203FF00F8448A /* 04n.png */,
-				965DF994230203FF00F8448A /* oilpalm.jpg */,
-				965DF995230203FF00F8448A /* 10d.jpg */,
-				965DF996230203FF00F8448A /* 10d.png */,
-				965DF997230203FF00F8448A /* pulses.jpg */,
-				965DF998230203FF00F8448A /* clove.jpg */,
-				965DF999230203FF00F8448A /* 09n.png */,
-				965DF99A230203FF00F8448A /* 09n.jpg */,
-				965DF99B230203FF00F8448A /* 50d.png */,
-				965DF99C230203FF00F8448A /* pearl-millet-500x500.jpg */,
-				965DF99D230203FF00F8448A /* 50d.jpg */,
-				965DF99E230203FF00F8448A /* 11d.png */,
-				965DF99F230203FF00F8448A /* 11d.jpg */,
-				965DF9A0230203FF00F8448A /* 13n.jpg */,
-				965DF9A1230203FF00F8448A /* millets.jpg */,
-				965DF9A2230203FF00F8448A /* maize.jpg */,
-				965DF9A3230203FF00F8448A /* sugarcane.jpg */,
-				965DF9A4230203FF00F8448A /* sugarbeet.jpg */,
-				965DF9A5230203FF00F8448A /* 10n.jpg */,
-				965DF9A6230203FF00F8448A /* 10n.png */,
-				965DF9A7230203FF00F8448A /* groundnut.jpg */,
-				965DF9A8230203FF00F8448A /* 04d.jpg */,
-				965DF9A9230203FF00F8448A /* cardamon.jpg */,
-				965DF9AA230203FF00F8448A /* 04d.png */,
-				965DF9AB230203FF00F8448A /* soil.png */,
-				965DF9AC230203FF00F8448A /* rice.png */,
-				965DF9AD230203FF00F8448A /* 13d.jpg */,
-				965DF9AE230203FF00F8448A /* 13d.png */,
-				965DF9AF230203FF00F8448A /* oilseed.jpg */,
-				965DF9B0230203FF00F8448A /* blackpepper.jpg */,
-				965DF9B1230203FF00F8448A /* 09d.png */,
-				965DF9B2230203FF00F8448A /* lentil.jpg */,
-				965DF9B3230203FF00F8448A /* 09d.jpg */,
-				965DF9B4230203FF00F8448A /* 50n.jpg */,
-				965DF9B5230203FF00F8448A /* 11n.png */,
-				965DF9B6230203FF00F8448A /* 11n.jpg */,
-				965DF9B7230203FF00F8448A /* 02d.jpg */,
-				965DF9B8230203FF00F8448A /* 02d.png */,
-				965DF9B9230203FF00F8448A /* flax.jpg */,
-				965DF9BA230203FF00F8448A /* 01n.jpg */,
-				965DF9BB230203FF00F8448A /* 01n.png */,
-				965DF9BC230203FF00F8448A /* tea.jpg */,
-				965DF9BD230203FF00F8448A /* 03d.png */,
-				965DF9BE230203FF00F8448A /* 03d.jpg */,
-			);
-			name = Images;
-			sourceTree = "<group>";
-		};
 		9661E50F22FC708D000675F4 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				96835AE1230211E100CD31F9 /* 13n.png */,
-				96835AE0230211E100CD31F9 /* 50n.png */,
-				965DF980230203FF00F8448A /* Images */,
 				965DF97E2302033800F8448A /* stagingCard.png */,
 				965DF9662301F4B300F8448A /* 04d.png */,
 				965DF9692301F4B300F8448A /* 04n.png */,
@@ -595,132 +395,68 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96835AE2230211E100CD31F9 /* 50n.png in Resources */,
-				965DF9ED230203FF00F8448A /* oilseed.jpg in Resources */,
-				965DF9DC230203FF00F8448A /* 11d.png in Resources */,
-				965DF9C1230203FF00F8448A /* 02n.jpg in Resources */,
 				965DF9572301EFD700F8448A /* 09n.jpg in Resources */,
-				965DF9D2230203FF00F8448A /* oilpalm.jpg in Resources */,
-				965DF9CD230203FF00F8448A /* wheat.png in Resources */,
 				96A012B522FD250A008315FF /* tea.jpg in Resources */,
-				965DF9F5230203FF00F8448A /* 02d.jpg in Resources */,
-				965DF9E8230203FF00F8448A /* 04d.png in Resources */,
 				96A012C222FD250A008315FF /* cardamon.jpg in Resources */,
-				965DF9D1230203FF00F8448A /* 04n.png in Resources */,
-				965DF9EF230203FF00F8448A /* 09d.png in Resources */,
-				965DF9EB230203FF00F8448A /* 13d.jpg in Resources */,
-				965DF9C0230203FF00F8448A /* rubber.png in Resources */,
-				965DF9F0230203FF00F8448A /* lentil.jpg in Resources */,
-				965DF9C8230203FF00F8448A /* stagingCard.png in Resources */,
 				965DF9752301F4B400F8448A /* 11n.png in Resources */,
-				96835AE3230211E100CD31F9 /* 13n.png in Resources */,
 				965DF9712301F4B400F8448A /* 11d.png in Resources */,
 				96A012BA22FD250A008315FF /* flax.jpg in Resources */,
 				965DF9562301EFD700F8448A /* 01d.jpg in Resources */,
-				965DF9C9230203FF00F8448A /* 01d.jpg in Resources */,
 				96A012C022FD250A008315FF /* wheat.png in Resources */,
 				965DF95F2301EFD700F8448A /* 13n.jpg in Resources */,
-				965DF9E4230203FF00F8448A /* 10n.png in Resources */,
-				965DF9EE230203FF00F8448A /* blackpepper.jpg in Resources */,
 				96A012B322FD250A008315FF /* bajra.jpg in Resources */,
 				965DF9722301F4B400F8448A /* 10n.png in Resources */,
-				965DF9DD230203FF00F8448A /* 11d.jpg in Resources */,
 				96A012B922FD250A008315FF /* maize.jpg in Resources */,
 				965DF95B2301EFD700F8448A /* 02n.jpg in Resources */,
-				965DF9D5230203FF00F8448A /* pulses.jpg in Resources */,
 				965DF96E2301F4B400F8448A /* 13d.png in Resources */,
 				965DF9502301EFD700F8448A /* 13d.jpg in Resources */,
 				965DF9542301EFD700F8448A /* 03n.jpg in Resources */,
-				965DF9D9230203FF00F8448A /* 50d.png in Resources */,
-				965DF9D4230203FF00F8448A /* 10d.png in Resources */,
 				965DF9522301EFD700F8448A /* 50d.jpg in Resources */,
-				965DF9CB230203FF00F8448A /* tumeric.jpg in Resources */,
 				965DF9762301F4B400F8448A /* 09n.png in Resources */,
-				965DF9CE230203FF00F8448A /* cotton.png in Resources */,
 				965DF94C2301EFD700F8448A /* 11n.jpg in Resources */,
 				965DF94F2301EFD700F8448A /* 03d.jpg in Resources */,
 				96A012B722FD250A008315FF /* rice.png in Resources */,
-				965DF9E7230203FF00F8448A /* cardamon.jpg in Resources */,
 				965DF9742301F4B400F8448A /* 10d.png in Resources */,
 				96A012B422FD250A008315FF /* jute.jpg in Resources */,
 				96A012B622FD250A008315FF /* rubber.png in Resources */,
 				96A012AE22FD250A008315FF /* coffee.jpg in Resources */,
-				965DF9FA230203FF00F8448A /* tea.jpg in Resources */,
-				965DF9BF230203FF00F8448A /* world.png in Resources */,
 				965DF9772301F4B400F8448A /* 09d.png in Resources */,
-				965DF9D3230203FF00F8448A /* 10d.jpg in Resources */,
 				965DF9582301EFD700F8448A /* 50n.jpg in Resources */,
 				96A012AB22FD250A008315FF /* oilpalm.jpg in Resources */,
-				965DF9E2230203FF00F8448A /* sugarbeet.jpg in Resources */,
-				965DF9C4230203FF00F8448A /* jute.jpg in Resources */,
-				965DF9CF230203FF00F8448A /* 04n.jpg in Resources */,
 				96A012C122FD250A008315FF /* pearl-millet-500x500.jpg in Resources */,
 				96A012AC22FD250A008315FF /* lentil.jpg in Resources */,
 				965DF96F2301F4B400F8448A /* 50d.png in Resources */,
-				965DF9C6230203FF00F8448A /* 03n.jpg in Resources */,
-				965DF9FC230203FF00F8448A /* 03d.jpg in Resources */,
-				965DF9F3230203FF00F8448A /* 11n.png in Resources */,
 				96A012BD22FD250A008315FF /* groundnut.jpg in Resources */,
-				965DF9FB230203FF00F8448A /* 03d.png in Resources */,
-				965DF9CC230203FF00F8448A /* bajra.jpg in Resources */,
-				965DF9D8230203FF00F8448A /* 09n.jpg in Resources */,
-				965DF9C2230203FF00F8448A /* coffee.jpg in Resources */,
 				96A012C622FD2D34008315FF /* soil.png in Resources */,
 				965DF95E2301EFD700F8448A /* 02n.png in Resources */,
-				965DF9E9230203FF00F8448A /* soil.png in Resources */,
 				96A012B822FD250A008315FF /* cotton.png in Resources */,
 				96A012BC22FD250A008315FF /* sugarbeet.jpg in Resources */,
-				965DF9E1230203FF00F8448A /* sugarcane.jpg in Resources */,
-				965DF9F9230203FF00F8448A /* 01n.png in Resources */,
 				96A012C522FD2D34008315FF /* world.png in Resources */,
-				965DF9EC230203FF00F8448A /* 13d.png in Resources */,
-				965DF9C5230203FF00F8448A /* 03n.png in Resources */,
 				965DF9632301EFD700F8448A /* 02d.jpg in Resources */,
 				96A012AF22FD250A008315FF /* pulses.jpg in Resources */,
 				965DF9622301EFD700F8448A /* 02d.png in Resources */,
 				96D7F22022F7D35F000DD8EC /* LaunchScreen.storyboard in Resources */,
-				965DF9F6230203FF00F8448A /* 02d.png in Resources */,
-				965DF9DA230203FF00F8448A /* pearl-millet-500x500.jpg in Resources */,
 				965DF94D2301EFD700F8448A /* 10n.jpg in Resources */,
 				96A012BF22FD250A008315FF /* oilseed.jpg in Resources */,
 				965DF9592301EFD700F8448A /* 09d.jpg in Resources */,
-				965DF9D6230203FF00F8448A /* clove.jpg in Resources */,
 				965DF95A2301EFD700F8448A /* 10d.jpg in Resources */,
-				965DF9F7230203FF00F8448A /* flax.jpg in Resources */,
-				965DF9EA230203FF00F8448A /* rice.png in Resources */,
-				965DF9DE230203FF00F8448A /* 13n.jpg in Resources */,
 				965DF95C2301EFD700F8448A /* 03d.png in Resources */,
 				965DF9602301EFD700F8448A /* 04n.jpg in Resources */,
 				965DF97F2302033800F8448A /* stagingCard.png in Resources */,
-				965DF9CA230203FF00F8448A /* 01d.png in Resources */,
 				965DF9552301EFD700F8448A /* 01n.jpg in Resources */,
 				96A012B222FD250A008315FF /* blackpepper.jpg in Resources */,
 				965DF9532301EFD700F8448A /* 01n.png in Resources */,
 				96A012AA22FD250A008315FF /* tumeric.jpg in Resources */,
 				965DF94E2301EFD700F8448A /* 03n.png in Resources */,
-				965DF9F8230203FF00F8448A /* 01n.jpg in Resources */,
 				965DF9702301F4B400F8448A /* 04d.png in Resources */,
-				965DF9D0230203FF00F8448A /* coconut.png in Resources */,
-				965DF9E0230203FF00F8448A /* maize.jpg in Resources */,
 				96855A2122FB64700030411C /* crops.plist in Resources */,
 				96A012AD22FD250A008315FF /* cocoa.jpg in Resources */,
 				965DF95D2301EFD700F8448A /* 11d.jpg in Resources */,
-				965DF9F2230203FF00F8448A /* 50n.jpg in Resources */,
 				965DF9612301EFD700F8448A /* 04d.jpg in Resources */,
-				965DF9F4230203FF00F8448A /* 11n.jpg in Resources */,
-				965DF9DB230203FF00F8448A /* 50d.jpg in Resources */,
 				96A012B122FD250A008315FF /* millets.jpg in Resources */,
-				965DF9C7230203FF00F8448A /* cocoa.jpg in Resources */,
-				965DF9C3230203FF00F8448A /* 02n.png in Resources */,
 				96D7F21D22F7D35F000DD8EC /* Assets.xcassets in Resources */,
-				965DF9E3230203FF00F8448A /* 10n.jpg in Resources */,
 				965DF9512301EFD700F8448A /* 01d.png in Resources */,
-				965DF9E5230203FF00F8448A /* groundnut.jpg in Resources */,
-				965DF9E6230203FF00F8448A /* 04d.jpg in Resources */,
-				965DF9DF230203FF00F8448A /* millets.jpg in Resources */,
 				96A012BB22FD250A008315FF /* sugarcane.jpg in Resources */,
-				965DF9F1230203FF00F8448A /* 09d.jpg in Resources */,
-				965DF9D7230203FF00F8448A /* 09n.png in Resources */,
 				96A012B022FD250A008315FF /* clove.jpg in Resources */,
 				96A012BE22FD250A008315FF /* coconut.png in Resources */,
 				96D7F21B22F7D35E000DD8EC /* Main.storyboard in Resources */,
