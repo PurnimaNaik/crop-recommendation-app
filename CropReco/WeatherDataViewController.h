@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface WeatherDataViewController : UIViewController <UISearchBarDelegate>
+@interface WeatherDataViewController : UIViewController <UISearchBarDelegate>{
+    CLLocationManager *locationManager;
+}
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBarOutlet;
 @property (weak, nonatomic) IBOutlet UILabel *avgTempLabel;
 @property (weak, nonatomic) IBOutlet UILabel *minTempLabel;
@@ -19,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBarWeatherTab;
 @property (weak, nonatomic) IBOutlet UILabel *sunriseLabel;
 @property (weak, nonatomic) IBOutlet UILabel *sunsetLabel;
+@property (strong, nonatomic) IBOutlet UILabel *searchedPlaceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *windLabel;
 @property (weak, nonatomic) IBOutlet UILabel *visibilityLabel;
 @property (strong, nonatomic) IBOutlet UILabel *avgTempLabelDescriptor;
