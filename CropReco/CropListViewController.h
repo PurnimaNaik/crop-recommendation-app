@@ -9,8 +9,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CropListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate,UISearchDisplayDelegate>
+@interface CropListViewController : UIViewController <UISearchControllerDelegate, UISearchBarDelegate, UISearchDisplayDelegate, UITableViewDataSource, UITableViewDelegate >
 @property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
-@property (weak, nonatomic) IBOutlet UITableView *tableViewCropList;
+@property (strong, nonatomic) IBOutlet UITableView *tableViewCropList;
 @property (weak, nonatomic) IBOutlet UITabBarItem *cropListTabIcon;
 @end
