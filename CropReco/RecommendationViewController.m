@@ -38,7 +38,7 @@ NSString* weatherDescripionVarInReco;
     mainCropArray=[NSMutableArray arrayWithArray:arrayList];
     
     [self requestPermission];
-    
+   
     //   self.recommendationTabIcon.image=[[UIImage imageNamed:@"recommendationTabIcon"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
 }
 
@@ -57,7 +57,7 @@ NSString* weatherDescripionVarInReco;
     NSNumber *score = [NSNumber numberWithInt:0];
     for(NSDictionary * key in mainCropArray){
         score = [NSNumber numberWithInt:0];
-        NSLog(@"---------------------");
+//        NSLog(@"---------------------");
         NSNumberFormatter *mintemp = [[NSNumberFormatter alloc] init];
         mintemp.numberStyle = NSNumberFormatterDecimalStyle;
         NSNumber* minTempNumber = [mintemp numberFromString:[key[@"MinTemp"]stringValue]];
@@ -67,7 +67,7 @@ NSString* weatherDescripionVarInReco;
         NSNumber* maxTempNumber = [maxtemp numberFromString:[key[@"MaxTemp"]stringValue]];
         
         NSArray* topProducers=key[@"TopProducers"];
-        NSLog(@"---topProducers-%@",topProducers);
+//        NSLog(@"---topProducers-%@",topProducers);
         
         if([avgTemp floatValue]>=[minTempNumber floatValue] && [avgTemp floatValue]<=[maxTempNumber floatValue]){
             
@@ -82,7 +82,7 @@ NSString* weatherDescripionVarInReco;
         [cropScoreDict setObject:score forKey:key[@"CropName"]];
         
     }
-    NSLog(@"---cropScoreDict-%@",cropScoreDict);
+//    NSLog(@"---cropScoreDict-%@",cropScoreDict);
     
     
     NSArray *sortedScoreArray = [cropScoreDict keysSortedByValueUsingComparator: ^(id obj1, id obj2) {
@@ -99,7 +99,7 @@ NSString* weatherDescripionVarInReco;
         return (NSComparisonResult)NSOrderedSame;
     }];
     
-    NSLog(@"---sortedScoreArray-%@",sortedScoreArray);
+//    NSLog(@"---sortedScoreArray-%@",sortedScoreArray);
     [self createRecommendedCropsList:sortedScoreArray];
     
     
@@ -125,9 +125,13 @@ NSString* weatherDescripionVarInReco;
         }
     }
     
-    NSLog(@"--self.recommendedCropArray--%@",self.recommendedCropArray);
+//    NSLog(@"--self.recommendedCropArray--%@",self.recommendedCropArray);
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.recommendationTableView reloadData];
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:1 inSection:0];
+        [self.recommendationTableView scrollToRowAtIndexPath:indexPath
+                             atScrollPosition:UITableViewScrollPositionTop
+                                     animated:YES];
     });
 }
 
@@ -145,15 +149,17 @@ NSString* weatherDescripionVarInReco;
     static NSString *tableIdentifier=@"RecommendationsTableItem";
     
     RecommendationsCustomCell *customCell=[tableView dequeueReusableCellWithIdentifier:tableIdentifier];
-    NSLog(@"indexPath.row-----------%ld",(long)indexPath.row);
+
     if([self.recommendedCropArray count]>0){
         
         _crop=self.recommendedCropArray[indexPath.row][0];
+//            NSLog(@"_crop-----------%@",_crop);
         
         NSString *tempRange = [NSString stringWithFormat:@"%@-%@ °C",_crop[@"MinTemp"],_crop[@"MaxTemp"]];
         NSString *rainfallRange = [NSString stringWithFormat:@"%@-%@ cm",_crop[@"MinRainfall"],_crop[@"MaxRainfall"]];
         
         NSString *imageName = _crop[@"ImageName"];
+        NSString *cropName = _crop[@"CropName"];
         UIImage *image =[UIImage imageNamed:imageName];
         NSString* soilTypes=[_crop[@"SoilTypeToDisplay"] capitalizedString];
         NSMutableAttributedString* attsoilTypes = [[NSMutableAttributedString alloc]initWithString:soilTypes];
@@ -186,7 +192,8 @@ NSString* weatherDescripionVarInReco;
 //        else{
             dispatch_async(dispatch_get_main_queue(), ^{
                 
-                customCell.customRecommendationNameLabel.text=[self.crop[@"CropName"] capitalizedString];
+                customCell.customRecommendationNameLabel.text=[cropName capitalizedString];
+//                NSLog(@"CropName-------------%@",self.crop[@"CropName"]);
                 customCell.customRecommendationTempLabel.text=tempRange;
                 customCell.customRecommendationRainfallLabel.text=rainfallRange;
                 customCell.customRecommendationImageView.image=image;
@@ -234,7 +241,7 @@ NSString* weatherDescripionVarInReco;
 
 
 - (void) getDataFrom:(NSString *)url{
-    NSLog(@"url  %@",url);
+//    NSLog(@"url  %@",url);
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     [request setURL:[NSURL URLWithString:url]];
     [request setHTTPMethod:@"GET"];
@@ -267,7 +274,6 @@ NSString* weatherDescripionVarInReco;
                 
                 NSNumber* pressureInHPA=json[@"main"][@"pressure"];
                 //              NSNumber *divider = @([loadTempValue doubleValue] * 0.420);
-                NSNumber* pressureInINHG= @([pressureInHPA doubleValue]/33.86);
                 
                 NSNumberFormatter *fmt = [[NSNumberFormatter alloc] init];
                 [fmt setPositiveFormat:@"0.##"];
