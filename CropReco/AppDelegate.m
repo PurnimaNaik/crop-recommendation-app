@@ -25,9 +25,16 @@
     [[tabBar.viewControllers objectAtIndex:2] tabBarItem].image=[[UIImage imageNamed:@"cropListBarIcon"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
     
- 
+//    [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName: [UIFont fontWithName:@"Optima" size:11.0f]
+//    } forState:UIControlStateNormal];
     
-//     [[[[ tabBar.items] objectAtIndex:0] setBadgeValue:[NSString stringWithFormat:@"%d", notificationCount ]];
+//    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont fontWithName:@"Optima" size:11.f ],  NSFontAttributeName, nil] forState:UIControlStateNormal];
+//
+//    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont fontWithName:@"Optima" size:11.f ], NSFontAttributeName, nil] forState:UIControlStateSelected];
+    
+[[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont fontWithName:@"Optima" size:11.f ], NSFontAttributeName, [UIColor grayColor], NSForegroundColorAttributeName,nil] forState:UIControlStateNormal];
+    
+    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont fontWithName:@"Optima" size:11.f ], NSFontAttributeName, [UIColor blackColor], NSForegroundColorAttributeName,nil] forState:UIControlStateSelected];
     
     return YES;
 }
