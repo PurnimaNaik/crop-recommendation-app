@@ -57,7 +57,7 @@
 			<array>
 				<string>China</string>
 				<string>India</string>
-				<string>USA</string>
+				<string>US</string>
 			</array>
 		</dict>
 		<dict>
@@ -195,7 +195,7 @@
 			<array>
 				<string>China</string>
 				<string>India</string>
-				<string>USA</string>
+				<string>US</string>
 			</array>
 		</dict>
 		<dict>
@@ -251,7 +251,7 @@
 			</array>
 			<key>TopProducers</key>
 			<array>
-				<string>USA</string>
+				<string>US</string>
 				<string>China</string>
 				<string>Brazil</string>
 			</array>
@@ -281,7 +281,7 @@
 			<key>TopProducers</key>
 			<array>
 				<string>China</string>
-				<string>USA</string>
+				<string>US</string>
 				<string>India</string>
 			</array>
 		</dict>
@@ -366,7 +366,7 @@
 			<array>
 				<string>India</string>
 				<string>China</string>
-				<string>USA</string>
+				<string>US</string>
 			</array>
 		</dict>
 		<dict>
@@ -424,7 +424,7 @@
 			<key>TopProducers</key>
 			<array>
 				<string>France</string>
-				<string>USA</string>
+				<string>US</string>
 				<string>Germany</string>
 			</array>
 		</dict>

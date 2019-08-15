@@ -93,6 +93,7 @@
 		96DFCC92230312E800319CA9 /* rainfall.png in Resources */ = {isa = PBXBuildFile; fileRef = 96DFCC90230312E800319CA9 /* rainfall.png */; };
 		96DFCC9723039E7400319CA9 /* 50d.png in Resources */ = {isa = PBXBuildFile; fileRef = 96DFCC9523039E7400319CA9 /* 50d.png */; };
 		96DFCC9823039E7400319CA9 /* 13d.png in Resources */ = {isa = PBXBuildFile; fileRef = 96DFCC9623039E7400319CA9 /* 13d.png */; };
+		96F8B45C2304FB560078D340 /* RecommendationsCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F8B45B2304FB560078D340 /* RecommendationsCustomCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -201,6 +202,8 @@
 		96DFCC90230312E800319CA9 /* rainfall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rainfall.png; sourceTree = "<group>"; };
 		96DFCC9523039E7400319CA9 /* 50d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 50d.png; sourceTree = "<group>"; };
 		96DFCC9623039E7400319CA9 /* 13d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 13d.png; sourceTree = "<group>"; };
+		96F8B45A2304FAEF0078D340 /* RecommendationsCustomCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecommendationsCustomCell.h; sourceTree = "<group>"; };
+		96F8B45B2304FB560078D340 /* RecommendationsCustomCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecommendationsCustomCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -336,6 +339,8 @@
 				969A994F22F88D05009513F5 /* CropListViewController.m */,
 				9661E51C22FC7BE5000675F4 /* CustomCell.h */,
 				9661E51A22FC7B5F000675F4 /* CustomCell.m */,
+				96F8B45A2304FAEF0078D340 /* RecommendationsCustomCell.h */,
+				96F8B45B2304FB560078D340 /* RecommendationsCustomCell.m */,
 				96D7F21922F7D35E000DD8EC /* Main.storyboard */,
 				96D7F21C22F7D35F000DD8EC /* Assets.xcassets */,
 				96D7F21E22F7D35F000DD8EC /* LaunchScreen.storyboard */,
@@ -535,6 +540,7 @@
 				9661E51B22FC7B5F000675F4 /* CustomCell.m in Sources */,
 				969A995022F88D05009513F5 /* CropListViewController.m in Sources */,
 				96D7F22322F7D35F000DD8EC /* main.m in Sources */,
+				96F8B45C2304FB560078D340 /* RecommendationsCustomCell.m in Sources */,
 				96D7F21522F7D35E000DD8EC /* WeatherDataViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

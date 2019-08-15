@@ -33,7 +33,6 @@
     self.filteredCropArray=[[NSMutableArray alloc]init];
     self.cropNameList=[[NSMutableArray alloc]init];
     self.cropSearchController = [[UISearchController alloc] init];
-    self.cropSearchController.searchResultsUpdater = self;
     self.cropSearchController.delegate = self;
     self.cropSearchController.searchBar.delegate = self;
     self.cropSearchController.obscuresBackgroundDuringPresentation = NO;
@@ -61,7 +60,7 @@
     mainCropArray=[NSMutableArray arrayWithArray:arrayList];
 }
 
--(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{    
+-(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
     [self searchCropList];
     [self.tableViewCropList reloadData];
 }

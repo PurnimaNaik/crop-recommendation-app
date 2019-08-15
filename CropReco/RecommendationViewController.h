@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 
-@interface RecommendationViewController : UIViewController{
+@interface RecommendationViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>{
     CLLocationManager *locationManager;
     
 }
@@ -20,6 +20,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *humidityLabel;
 @property (weak, nonatomic) IBOutlet UITabBarItem *recommendationTabIcon;
 @property (weak, nonatomic) IBOutlet UILabel *pressureLabel;
+
+@property (strong, nonatomic) IBOutlet UITableView *recommendationTableView;
 
 @end
 

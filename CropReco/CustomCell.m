@@ -15,8 +15,5 @@
 
 @implementation CustomCell
 
-//- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(nullable NSString *)reuseIdentifier{
-//    
-//}
 
 @end
