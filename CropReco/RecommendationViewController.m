@@ -23,7 +23,7 @@
 @end
 
 @implementation RecommendationViewController
-
+NSString* weatherDescripionVar;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -112,7 +112,7 @@
         [self.recommendedCropArray removeAllObjects];
     }
     
-    for(int i=0;i<3;i++){
+    for(int i=0;i<4;i++){
         
         NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF contains [search] %@",sortedScoreArray[i]];
         
@@ -174,6 +174,7 @@
         customCell.customRecommendationProducersLabel.attributedText = attproducerList;
         
         dispatch_async(dispatch_get_main_queue(), ^{
+            self.recommendedCropName.text=[self.recommendedCropArray[0][0][@"CropName"] capitalizedString];
             customCell.customRecommendationNameLabel.text=[self.crop[@"CropName"] capitalizedString];
             customCell.customRecommendationTempLabel.text=tempRange;
             customCell.customRecommendationRainfallLabel.text=rainfallRange;
@@ -272,12 +273,15 @@
                                            withWeatherID:[weatherid numberFromString:[json[@"weather"][0][@"id"] stringValue]]
                                              withCountry:json[@"sys"][@"country"]];
                 
+                for (NSDictionary *dict in json[@"weather"]) {
+                         weatherDescripionVar=dict[@"description"];
+                     }
+                
                 dispatch_async(dispatch_get_main_queue(), ^{
+                     self.weatherDescriptionLabel.text=[weatherDescripionVar capitalizedString];
                     self.avgTempLabel.text =[NSString stringWithFormat:@"%@", json[@"main"][@"temp"] ];
-                    self.minTempLabel.text =[NSString stringWithFormat:@"%@", json[@"main"][@"temp_min"] ];
-                    self.maxTempLabel.text =[NSString stringWithFormat:@"%@", json[@"main"][@"temp_max"] ];
                     self.humidityLabel.text =[NSString stringWithFormat:@"%@", json[@"main"][@"humidity"] ];
-                    self.pressureLabel.text =truncatedPressure;
+                   self.locationLabel.text =[NSString stringWithFormat:@"%@, %@", json[@"name"], json[@"sys"][@"country"] ];
                 });
             }
         }

@@ -40,8 +40,5 @@
 @property (strong, nonatomic) IBOutlet UILabel *maxTempLabelDescriptor;
 
 
-
-
-
 @end
 
