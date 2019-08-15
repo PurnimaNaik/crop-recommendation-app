@@ -269,6 +269,12 @@ NSString* dayNightIndicator;
     NSURLSessionTask *task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         if (error) {
             NSLog(@"dataTaskWithRequest error: %@", error);
+            
+            NSString *getErrorMessage = error.localizedDescription;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.searchedPlaceLabel.text=@"...";
+                      self.weatherDescription.text=getErrorMessage;
+                  });
         }
         
         if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
