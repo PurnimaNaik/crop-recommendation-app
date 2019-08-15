@@ -241,7 +241,7 @@
 			<key>ImageName</key>
 			<string>maize.jpg</string>
 			<key>SoilTypeToDisplay</key>
-			<string>Deep heavy clay to light sandy loam </string>
+			<string>deep heavy clay to light sandy loam </string>
 			<key>ProducersToDisplay</key>
 			<string>USA, China, Brazil</string>
 			<key>SoilType</key>

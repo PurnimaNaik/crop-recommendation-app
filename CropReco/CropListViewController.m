@@ -100,7 +100,7 @@
         customCell.customImageView.image=image;
         customCell.customProducersLabel.text= _crop[@"ProducersToDisplay"];
         
-        NSString* soilTypes=[_crop[@"SoilTypeToDisplay"] capitalizedString];
+        NSString* soilTypes=_crop[@"SoilTypeToDisplay"];
         NSMutableAttributedString* attsoilTypes = [[NSMutableAttributedString alloc]initWithString:soilTypes];
         NSMutableParagraphStyle *soilParagraphStyle = [[NSMutableParagraphStyle alloc]init];
         soilParagraphStyle.firstLineHeadIndent=0.0f;
@@ -143,7 +143,7 @@
         customCell.customImageView.image=image;
         customCell.customProducersLabel.text= _crop[@"ProducersToDisplay"];
         
-        NSString* soilTypes=[_crop[@"SoilTypeToDisplay"] capitalizedString];
+        NSString* soilTypes=_crop[@"SoilTypeToDisplay"] ;
         NSMutableAttributedString* attsoilTypes = [[NSMutableAttributedString alloc]initWithString:soilTypes];
         NSMutableParagraphStyle *soilParagraphStyle = [[NSMutableParagraphStyle alloc]init];
         soilParagraphStyle.firstLineHeadIndent=0.0f;

@@ -7,55 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "7C927BCD-C47E-4957-8F89-1C992CB335CD"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CropReco/WeatherDataViewController.m"
-            timestampString = "587448738.5790139"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "299"
-            endingLineNumber = "299"
-            landmarkName = "-searchOpenWeatherAPI:"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "7C927BCD-C47E-4957-8F89-1C992CB335CD - 4d1462effff0e501"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__50-[WeatherDataViewController searchOpenWeatherAPI:]_block_invoke"
-                  moduleName = "CropReco"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/purnimanaik/CropReco/CropReco/WeatherDataViewController.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "299"
-                  endingLineNumber = "299"
-                  offsetFromSymbolStart = "1360">
-               </Location>
-               <Location
-                  uuid = "7C927BCD-C47E-4957-8F89-1C992CB335CD - 4d1462effff0e501"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__50-[WeatherDataViewController searchOpenWeatherAPI:]_block_invoke"
-                  moduleName = "CropReco"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/purnimanaik/CropReco/CropReco/WeatherDataViewController.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "299"
-                  endingLineNumber = "299"
-                  offsetFromSymbolStart = "1384">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "8643EA31-5C9F-4E5A-A456-6C46FD621206"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -64,9 +15,9 @@
             timestampString = "587448738.5801131"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "420"
-            endingLineNumber = "420"
-            landmarkName = "-searchOpenWeatherAPI:"
+            startingLineNumber = "492"
+            endingLineNumber = "492"
+            landmarkName = "-checkDirection:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -91,7 +42,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "27BD8F9A-342E-4C94-9E4A-7B62590CE72F"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CropReco/WeatherDataViewController.m"
@@ -108,7 +59,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "F22EEB09-18EE-4074-9BD4-B1327E5BC72B"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CropReco/WeatherDataViewController.m"
@@ -125,7 +76,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "6129D0C4-AE8E-4D7E-BF6C-A4C2B33850A8"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CropReco/WeatherDataViewController.m"
@@ -304,6 +255,38 @@
             startingLineNumber = "195"
             endingLineNumber = "195"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7B9DD99C-EE01-4697-B871-76C616D3C2B0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CropReco/WeatherDataViewController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "467"
+            endingLineNumber = "467"
+            landmarkName = "-clearResponseErrorLabels"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3B9CE6A0-FD83-45F7-A5CB-4A4E8248EFF3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CropReco/WeatherDataViewController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "469"
+            endingLineNumber = "469"
+            landmarkName = "-clearResponseErrorLabels"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

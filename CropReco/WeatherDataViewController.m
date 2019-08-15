@@ -66,18 +66,18 @@ NSString* dayNightIndicator;
                          @"&appid=",
                          @"4c1aa9e27863af68e069647e446328f3"];
         
-        NSLog(@"searchQuery  %@",searchQuery);
+//        NSLog(@"searchQuery  %@",searchQuery);
         
         
         NSString *escapedURL = [url stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
-        NSLog(@"escapedURL: %@", escapedURL);
+//        NSLog(@"escapedURL: %@", escapedURL);
         
         [self getDataFrom:escapedURL];
     }];
 }
 
 - (void) getDataFrom:(NSString *)url{
-    NSLog(@"url  %@",url);
+//    NSLog(@"url  %@",url);
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     [request setURL:[NSURL URLWithString:url]];
     [request setHTTPMethod:@"GET"];
@@ -91,7 +91,28 @@ NSString* dayNightIndicator;
             NSInteger statusCode = [(NSHTTPURLResponse *)response statusCode];
             if (statusCode != 200) {
                 NSLog(@"Expected responseCode == 200; received %ld", (long)statusCode);
-                
+                    NSLog(@"response %@",response);
+                if(statusCode >= 400 && statusCode <500 ){
+                     dispatch_async(dispatch_get_main_queue(), ^{
+                         self.searchedPlaceLabel.text=@"Unable to access loaction";
+                         self.weatherDescription.text=@"Turn on location permission or search for your city";
+                     });
+                 }
+                 else if(statusCode == 429){
+                     dispatch_async(dispatch_get_main_queue(), ^{
+                                self.searchedPlaceLabel.text=@"API limit exceeded";
+                                self.weatherDescription.text=@"Please try after a while";
+                            });
+                 }
+                 else if( statusCode>500){
+                     dispatch_async(dispatch_get_main_queue(), ^{
+                      self.searchedPlaceLabel.text=@"OpenWeather";
+                       self.weatherDescription.text=@"server error";
+                        });
+                 }
+                 
+                 
+                 [self clearLabels];
             }
             else{
                 
@@ -99,13 +120,13 @@ NSString* dayNightIndicator;
                 NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data
                                                                      options:NSJSONReadingMutableContainers
                                                                        error:&jsonError];
-                NSLog(@"json %@", json);
+          
                 
                 NSLog(@"json %@", json);
                 //                NSLog(@"sunrise %@", json[@"sys"][@"sunrise"]);
                 //                NSLog(@"sunset %@", json[@"sys"][@"sunset"]);
                 //                NSLog(@"visibility %@", json[@"visibility"]);
-                NSLog(@"weather %@", json[@"weather"]);
+//                NSLog(@"weather %@", json[@"weather"]);
                 
                 for (NSDictionary *dict in json[@"weather"]) {
                     
@@ -114,19 +135,13 @@ NSString* dayNightIndicator;
                     weatherBackgroundImage=[NSString stringWithFormat:@"%@.jpg", dict[@"icon"] ];
                     NSString* icon=[NSString stringWithFormat:@"%@", dict[@"icon"] ];
                     dayNightIndicator = [icon substringWithRange:NSMakeRange(2, 1)];
-                    NSLog(@"dayNightIndicator %@", dayNightIndicator);
+//                    NSLog(@"dayNightIndicator %@", dayNightIndicator);
                 }
                 
                 
-                NSNumber* pressureInHPA=json[@"main"][@"pressure"];
-                NSNumber* pressureInINHG= @([pressureInHPA doubleValue]/33.86);
                 
                 NSNumberFormatter *fmt = [[NSNumberFormatter alloc] init];
                 [fmt setPositiveFormat:@"0.##"];
-                NSString* truncatedPressure=[fmt stringFromNumber:pressureInINHG];
-                
-                NSNumber* visibilityInMeters=json[@"visibility"];
-                NSNumber* visibilityInMiles= @(ceil([visibilityInMeters doubleValue]*0.00062137));
                 
                 NSString* windDirection=[self checkDirection:[json[@"wind"][@"deg"]doubleValue]];
                 NSString* windSpeed=[fmt stringFromNumber:json[@"wind"][@"speed"]];
@@ -168,9 +183,6 @@ NSString* dayNightIndicator;
                     self.minTempLabel.text =[NSString stringWithFormat:@"%@%@", json[@"main"][@"temp_min"], @"°C" ];
                     self.maxTempLabel.text =[NSString stringWithFormat:@"%@%@", json[@"main"][@"temp_max"], @"°C" ];
                     self.humidityLabel.text =[NSString stringWithFormat:@"%@%@", json[@"main"][@"humidity"], @"%" ];
-                    self.pressureLabel.text =[NSString stringWithFormat:@"%@ %@", truncatedPressure, @"inHg" ];
-                    self.visibilityLabel.text =[NSString stringWithFormat:@"%@ %@", visibilityInMiles, @"mi" ];
-                    
                     self.sunriseLabel.text =[NSString stringWithFormat:@"%@ %@", sunriseTime, @"AM" ];
                     self.sunsetLabel.text =[NSString stringWithFormat:@"%@ %@", sunsetTime, @"PM" ];
                     
@@ -184,11 +196,9 @@ NSString* dayNightIndicator;
                         self.minTempLabel.textColor=[UIColor whiteColor];
                         self.maxTempLabel.textColor=[UIColor whiteColor];
                         self.humidityLabel.textColor=[UIColor whiteColor];
-                        self.pressureLabel.textColor=[UIColor whiteColor];
                         self.sunriseLabel.textColor=[UIColor whiteColor];
                         self.sunsetLabel.textColor=[UIColor whiteColor];
                         self.windLabel.textColor=[UIColor whiteColor];
-                        self.visibilityLabel.textColor=[UIColor whiteColor];
                         self.weatherDescription.textColor=[UIColor whiteColor];
                         self.disclaimerLabel.textColor=[UIColor whiteColor];
                         self.searchedPlaceLabel.textColor=[UIColor whiteColor];
@@ -198,22 +208,18 @@ NSString* dayNightIndicator;
                         self.minTempLabelDescriptor.textColor=[UIColor whiteColor];
                         self.maxTempLabelDescriptor.textColor=[UIColor whiteColor];
                         self.humidityLabelDescriptor.textColor=[UIColor whiteColor];
-                        self.pressureLabelDescriptor.textColor=[UIColor whiteColor];
                         self.sunriseLabelDescriptor.textColor=[UIColor whiteColor];
                         self.sunsetLabelDescriptor.textColor=[UIColor whiteColor];
                         self.windLabelDescriptor.textColor=[UIColor whiteColor];
-                        self.visibilityLabelDescriptor.textColor=[UIColor whiteColor];
                     }
                     else{
                         self.avgTempLabel.textColor=[UIColor blackColor];
                         self.minTempLabel.textColor=[UIColor blackColor];
                         self.maxTempLabel.textColor=[UIColor blackColor];
                         self.humidityLabel.textColor=[UIColor blackColor];
-                        self.pressureLabel.textColor=[UIColor blackColor];
                         self.sunriseLabel.textColor=[UIColor blackColor];
                         self.sunsetLabel.textColor=[UIColor blackColor];
                         self.windLabel.textColor=[UIColor blackColor];
-                        self.visibilityLabel.textColor=[UIColor blackColor];
                         self.weatherDescription.textColor=[UIColor blackColor];
                         self.disclaimerLabel.textColor=[UIColor blackColor];
                         self.searchedPlaceLabel.textColor=[UIColor blackColor];
@@ -222,11 +228,9 @@ NSString* dayNightIndicator;
                         self.minTempLabelDescriptor.textColor=[UIColor blackColor];
                         self.maxTempLabelDescriptor.textColor=[UIColor blackColor];
                         self.humidityLabelDescriptor.textColor=[UIColor blackColor];
-                        self.pressureLabelDescriptor.textColor=[UIColor blackColor];
                         self.sunriseLabelDescriptor.textColor=[UIColor blackColor];
                         self.sunsetLabelDescriptor.textColor=[UIColor blackColor];
                         self.windLabelDescriptor.textColor=[UIColor blackColor];
-                        self.visibilityLabelDescriptor.textColor=[UIColor blackColor];
                     }
                 });
             }
@@ -241,8 +245,12 @@ NSString* dayNightIndicator;
     [searchBar resignFirstResponder];
 }
 
+-(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
+//    [self clearResponseErrorLabels];
+}
+
 - (void) searchOpenWeatherAPI:(NSString *)searchText{
-    
+
     NSString *escapedsearchText = [searchText stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     
     NSString *url = [NSString stringWithFormat:@"%@%@%@%@%@",
@@ -252,12 +260,7 @@ NSString* dayNightIndicator;
                      @"&appid=",
                      @"4c1aa9e27863af68e069647e446328f3"];
     
-    NSLog(@"searchQuery  %@",searchText);
-    
-    NSString *escapedURL = [url stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
-    NSLog(@"escapedURL: %@", escapedURL);
-    
-    NSLog(@"url  %@",url);
+//    NSLog(@"searchQuery  %@",searchText);
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     [request setURL:[NSURL URLWithString:url]];
@@ -272,7 +275,29 @@ NSString* dayNightIndicator;
             NSInteger statusCode = [(NSHTTPURLResponse *)response statusCode];
             if (statusCode != 200) {
                 NSLog(@"Expected responseCode == 200; received %ld", (long)statusCode);
+                   NSLog(@"response %@",response);
                 
+                if(statusCode >= 400 && statusCode <500 ){
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        self.searchedPlaceLabel.text=self.searchBarWeatherTab.text;
+                        self.weatherDescription.text=@"City not found, please try another city";
+                    });
+                }
+                else if(statusCode == 429){
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                               self.searchedPlaceLabel.text=@"API limit exceeded";
+                               self.weatherDescription.text=@"Please try after a while";
+                           });
+                }
+                else if( statusCode>500){
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                     self.searchedPlaceLabel.text=@"OpenWeather";
+                      self.weatherDescription.text=@"server error";
+                       });
+                }
+                
+                
+                [self clearLabels];
             }
             else{
                 
@@ -280,13 +305,13 @@ NSString* dayNightIndicator;
                 NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data
                                                                      options:NSJSONReadingMutableContainers
                                                                        error:&jsonError];
-                NSLog(@"json %@", json);
+      
                 
                 NSLog(@"json %@", json);
 //                NSLog(@"sunrise %@", json[@"sys"][@"sunrise"]);
 //                NSLog(@"sunset %@", json[@"sys"][@"sunset"]);
 //                NSLog(@"visibility %@", json[@"visibility"]);
-                NSLog(@"weather %@", json[@"weather"]);
+//                NSLog(@"weather %@", json[@"weather"]);
                 
                 for (NSDictionary *dict in json[@"weather"]) {
                     
@@ -298,17 +323,9 @@ NSString* dayNightIndicator;
                         NSLog(@"dayNightIndicator %@", dayNightIndicator);
                 }
                 
-                
-                NSNumber* pressureInHPA=json[@"main"][@"pressure"];
-                NSNumber* pressureInINHG= @([pressureInHPA doubleValue]/33.86);
-                
                 NSNumberFormatter *fmt = [[NSNumberFormatter alloc] init];
                 [fmt setPositiveFormat:@"0.##"];
-                NSString* truncatedPressure=[fmt stringFromNumber:pressureInINHG];
-                
-                NSNumber* visibilityInMeters=json[@"visibility"];
-                NSNumber* visibilityInMiles= @(ceil([visibilityInMeters doubleValue]*0.00062137));
-                
+
                 NSString* windDirection=[self checkDirection:[json[@"wind"][@"deg"]doubleValue]];
                 NSString* windSpeed=[fmt stringFromNumber:json[@"wind"][@"speed"]];
                 
@@ -350,8 +367,6 @@ NSString* dayNightIndicator;
         self.minTempLabel.text =[NSString stringWithFormat:@"%@%@", json[@"main"][@"temp_min"], @"°C" ];
         self.maxTempLabel.text =[NSString stringWithFormat:@"%@%@", json[@"main"][@"temp_max"], @"°C" ];
         self.humidityLabel.text =[NSString stringWithFormat:@"%@%@", json[@"main"][@"humidity"], @"%" ];
-        self.pressureLabel.text =[NSString stringWithFormat:@"%@ %@", truncatedPressure, @"inHg" ];
-        self.visibilityLabel.text =[NSString stringWithFormat:@"%@ %@", visibilityInMiles, @"mi" ];
                     
         self.sunriseLabel.text =[NSString stringWithFormat:@"%@ %@", sunriseTime, @"AM" ];
         self.sunsetLabel.text =[NSString stringWithFormat:@"%@ %@", sunsetTime, @"PM" ];
@@ -366,11 +381,9 @@ NSString* dayNightIndicator;
                self.minTempLabel.textColor=[UIColor whiteColor];
                self.maxTempLabel.textColor=[UIColor whiteColor];
                self.humidityLabel.textColor=[UIColor whiteColor];
-               self.pressureLabel.textColor=[UIColor whiteColor];
                self.sunriseLabel.textColor=[UIColor whiteColor];
                self.sunsetLabel.textColor=[UIColor whiteColor];
                self.windLabel.textColor=[UIColor whiteColor];
-               self.visibilityLabel.textColor=[UIColor whiteColor];
                self.weatherDescription.textColor=[UIColor whiteColor];
                self.disclaimerLabel.textColor=[UIColor whiteColor];
                self.searchedPlaceLabel.textColor=[UIColor whiteColor];
@@ -380,22 +393,18 @@ NSString* dayNightIndicator;
                self.minTempLabelDescriptor.textColor=[UIColor whiteColor];
                self.maxTempLabelDescriptor.textColor=[UIColor whiteColor];
                self.humidityLabelDescriptor.textColor=[UIColor whiteColor];
-               self.pressureLabelDescriptor.textColor=[UIColor whiteColor];
                self.sunriseLabelDescriptor.textColor=[UIColor whiteColor];
                self.sunsetLabelDescriptor.textColor=[UIColor whiteColor];
                self.windLabelDescriptor.textColor=[UIColor whiteColor];
-               self.visibilityLabelDescriptor.textColor=[UIColor whiteColor];
            }
            else{
                self.avgTempLabel.textColor=[UIColor blackColor];
                self.minTempLabel.textColor=[UIColor blackColor];
                self.maxTempLabel.textColor=[UIColor blackColor];
                self.humidityLabel.textColor=[UIColor blackColor];
-               self.pressureLabel.textColor=[UIColor blackColor];
                self.sunriseLabel.textColor=[UIColor blackColor];
                self.sunsetLabel.textColor=[UIColor blackColor];
                self.windLabel.textColor=[UIColor blackColor];
-               self.visibilityLabel.textColor=[UIColor blackColor];
                self.weatherDescription.textColor=[UIColor blackColor];
                self.disclaimerLabel.textColor=[UIColor blackColor];
                self.searchedPlaceLabel.textColor=[UIColor blackColor];
@@ -404,11 +413,9 @@ NSString* dayNightIndicator;
                self.minTempLabelDescriptor.textColor=[UIColor blackColor];
                self.maxTempLabelDescriptor.textColor=[UIColor blackColor];
                self.humidityLabelDescriptor.textColor=[UIColor blackColor];
-               self.pressureLabelDescriptor.textColor=[UIColor blackColor];
                self.sunriseLabelDescriptor.textColor=[UIColor blackColor];
                self.sunsetLabelDescriptor.textColor=[UIColor blackColor];
                self.windLabelDescriptor.textColor=[UIColor blackColor];
-               self.visibilityLabelDescriptor.textColor=[UIColor blackColor];
            }
            
            
@@ -419,6 +426,50 @@ NSString* dayNightIndicator;
     [task resume];
 }
 
+-(void)clearLabels{
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.avgTempLabel.text =@"...";
+        self.minTempLabel.text =@"...";
+        self.maxTempLabel.text =@"...";
+        self.humidityLabel.text =@"...";
+        self.sunriseLabel.text =@"...";
+        self.sunsetLabel.text =@"...";
+                    
+        self.windLabel.text =@"...";;
+           
+        self.weatherIcon.image=nil;
+        self.weatherBackground.image=nil;
+        
+        self.avgTempLabel.textColor=[UIColor blackColor];
+        self.minTempLabel.textColor=[UIColor blackColor];
+        self.maxTempLabel.textColor=[UIColor blackColor];
+        self.humidityLabel.textColor=[UIColor blackColor];
+        self.sunriseLabel.textColor=[UIColor blackColor];
+        self.sunsetLabel.textColor=[UIColor blackColor];
+        self.windLabel.textColor=[UIColor blackColor];
+        self.weatherDescription.textColor=[UIColor blackColor];
+        self.disclaimerLabel.textColor=[UIColor blackColor];
+        self.searchedPlaceLabel.textColor=[UIColor blackColor];
+        
+        self.avgTempLabelDescriptor.textColor=[UIColor blackColor];
+        self.minTempLabelDescriptor.textColor=[UIColor blackColor];
+        self.maxTempLabelDescriptor.textColor=[UIColor blackColor];
+        self.humidityLabelDescriptor.textColor=[UIColor blackColor];
+        self.sunriseLabelDescriptor.textColor=[UIColor blackColor];
+        self.sunsetLabelDescriptor.textColor=[UIColor blackColor];
+        self.windLabelDescriptor.textColor=[UIColor blackColor];
+        
+    
+       });
+}
+
+-(void)clearResponseErrorLabels{
+//    dispatch_async(dispatch_get_main_queue(), ^{
+                      self.searchedPlaceLabel.text=@"...";
+                      self.weatherDescription.text=@"...";
+//                  });
+}
 
 -(NSString*) checkDirection:(double)degree{
     NSString* direction=@"N";

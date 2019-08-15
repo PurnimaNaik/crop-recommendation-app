@@ -161,7 +161,7 @@ NSString* weatherDescripionVarInReco;
         NSString *imageName = _crop[@"ImageName"];
         NSString *cropName = _crop[@"CropName"];
         UIImage *image =[UIImage imageNamed:imageName];
-        NSString* soilTypes=[_crop[@"SoilTypeToDisplay"] capitalizedString];
+        NSString* soilTypes=_crop[@"SoilTypeToDisplay"];
         NSMutableAttributedString* attsoilTypes = [[NSMutableAttributedString alloc]initWithString:soilTypes];
         NSMutableParagraphStyle *soilParagraphStyle = [[NSMutableParagraphStyle alloc]init];
         soilParagraphStyle.firstLineHeadIndent=0.0f;
