@@ -15,10 +15,13 @@
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *avgTempLabelinReco;
-@property (weak, nonatomic) IBOutlet UILabel *humidityLabelinReco;
+@property (strong, nonatomic) IBOutlet UILabel *cropTemperatureLabel;
+
 @property (weak, nonatomic) IBOutlet UITabBarItem *recommendationTabIcon;
 @property (strong, nonatomic) IBOutlet UILabel *recommendedCropName;
 @property (strong, nonatomic) IBOutlet UILabel *locationLabel;
+@property (strong, nonatomic) IBOutlet UILabel *cropRainfallLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *recommendedCropImage;
 
 @property (strong, nonatomic) IBOutlet UILabel *weatherDescriptionLabel;
 @property (strong, nonatomic) IBOutlet UITableView *recommendationTableView;

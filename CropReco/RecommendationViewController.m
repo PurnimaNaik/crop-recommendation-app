@@ -23,7 +23,7 @@
 @end
 
 @implementation RecommendationViewController
-NSString* weatherDescripionVar;
+NSString* weatherDescripionVarInReco;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -145,8 +145,9 @@ NSString* weatherDescripionVar;
     static NSString *tableIdentifier=@"RecommendationsTableItem";
     
     RecommendationsCustomCell *customCell=[tableView dequeueReusableCellWithIdentifier:tableIdentifier];
-    
+    NSLog(@"indexPath.row-----------%ld",(long)indexPath.row);
     if([self.recommendedCropArray count]>0){
+        
         _crop=self.recommendedCropArray[indexPath.row][0];
         
         NSString *tempRange = [NSString stringWithFormat:@"%@-%@ °C",_crop[@"MinTemp"],_crop[@"MaxTemp"]];
@@ -172,19 +173,32 @@ NSString* weatherDescripionVar;
                                 value:producerParagraphStyle
                                 range:NSMakeRange(0, attproducerList.length)];
         customCell.customRecommendationProducersLabel.attributedText = attproducerList;
+
         
-        dispatch_async(dispatch_get_main_queue(), ^{
+        if(indexPath.row==0){
+            dispatch_async(dispatch_get_main_queue(), ^{
+            self.recommendedCropImage.image=image;
             self.recommendedCropName.text=[self.recommendedCropArray[0][0][@"CropName"] capitalizedString];
-            customCell.customRecommendationNameLabel.text=[self.crop[@"CropName"] capitalizedString];
-            customCell.customRecommendationTempLabel.text=tempRange;
-            customCell.customRecommendationRainfallLabel.text=rainfallRange;
-            customCell.customRecommendationImageView.image=image;
-            customCell.customRecommendationProducersLabel.text= self.crop[@"ProducersToDisplay"];
-            customCell.customRecommendationSoilLabel.attributedText = attsoilTypes;
-            customCell.customRecommendationSoilLabel.adjustsFontSizeToFitWidth = true;
-            customCell.customRecommendationProducersLabel.adjustsFontSizeToFitWidth = true;
-            //    [myLabel sizeToFit];
-        });
+                self.cropRainfallLabel.text=rainfallRange;
+                self.cropTemperatureLabel.text=tempRange;
+            });
+        }
+//        else{
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                customCell.customRecommendationNameLabel.text=[self.crop[@"CropName"] capitalizedString];
+                customCell.customRecommendationTempLabel.text=tempRange;
+                customCell.customRecommendationRainfallLabel.text=rainfallRange;
+                customCell.customRecommendationImageView.image=image;
+                customCell.customRecommendationProducersLabel.text= self.crop[@"ProducersToDisplay"];
+                customCell.customRecommendationSoilLabel.attributedText = attsoilTypes;
+                customCell.customRecommendationSoilLabel.adjustsFontSizeToFitWidth = true;
+                customCell.customRecommendationProducersLabel.adjustsFontSizeToFitWidth = true;
+                //    [myLabel sizeToFit];
+            });
+//        }
+
+
     }
     return customCell;
 }
@@ -257,7 +271,6 @@ NSString* weatherDescripionVar;
                 
                 NSNumberFormatter *fmt = [[NSNumberFormatter alloc] init];
                 [fmt setPositiveFormat:@"0.##"];
-                NSString* truncatedPressure=[fmt stringFromNumber:pressureInINHG];
                 
                 NSNumberFormatter *weatherid = [[NSNumberFormatter alloc] init];
                 weatherid.numberStyle = NSNumberFormatterDecimalStyle;
@@ -274,14 +287,13 @@ NSString* weatherDescripionVar;
                                              withCountry:json[@"sys"][@"country"]];
                 
                 for (NSDictionary *dict in json[@"weather"]) {
-                         weatherDescripionVar=dict[@"description"];
+                         weatherDescripionVarInReco=dict[@"description"];
                      }
                 
                 dispatch_async(dispatch_get_main_queue(), ^{
-                     self.weatherDescriptionLabel.text=[weatherDescripionVar capitalizedString];
-                    self.avgTempLabel.text =[NSString stringWithFormat:@"%@", json[@"main"][@"temp"] ];
-                    self.humidityLabel.text =[NSString stringWithFormat:@"%@", json[@"main"][@"humidity"] ];
-                   self.locationLabel.text =[NSString stringWithFormat:@"%@, %@", json[@"name"], json[@"sys"][@"country"] ];
+                           self.locationLabel.text =[NSString stringWithFormat:@"%@, %@", json[@"name"], json[@"sys"][@"country"] ];
+                     self.weatherDescriptionLabel.text=[weatherDescripionVarInReco capitalizedString];
+                    self.avgTempLabelinReco.text =[NSString stringWithFormat:@"%@ °C", json[@"main"][@"temp"] ];
                 });
             }
         }
