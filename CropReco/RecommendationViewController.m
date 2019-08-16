@@ -38,8 +38,6 @@ NSString* weatherDescripionVarInReco;
     mainCropArray=[NSMutableArray arrayWithArray:arrayList];
     
     [self requestPermission];
-   
-    //   self.recommendationTabIcon.image=[[UIImage imageNamed:@"recommendationTabIcon"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
 }
 
 
@@ -47,17 +45,12 @@ NSString* weatherDescripionVarInReco;
                             withWeatherID:(NSNumber*)weatherID  withCountry:(NSString*)country{
     
     
-    
-    //      NSLog(@"---weatherID-%@",weatherID);
-    //      NSLog(@"---avgTemp-%@",avgTemp);
-    //      NSLog(@"---country-%@",country);
-    
     NSMutableDictionary* cropScoreDict=[[NSMutableDictionary alloc]init];
     
     NSNumber *score = [NSNumber numberWithInt:0];
     for(NSDictionary * key in mainCropArray){
         score = [NSNumber numberWithInt:0];
-//        NSLog(@"---------------------");
+        //        NSLog(@"---------------------");
         NSNumberFormatter *mintemp = [[NSNumberFormatter alloc] init];
         mintemp.numberStyle = NSNumberFormatterDecimalStyle;
         NSNumber* minTempNumber = [mintemp numberFromString:[key[@"MinTemp"]stringValue]];
@@ -67,7 +60,7 @@ NSString* weatherDescripionVarInReco;
         NSNumber* maxTempNumber = [maxtemp numberFromString:[key[@"MaxTemp"]stringValue]];
         
         NSArray* topProducers=key[@"TopProducers"];
-//        NSLog(@"---topProducers-%@",topProducers);
+        //        NSLog(@"---topProducers-%@",topProducers);
         
         if([avgTemp floatValue]>=[minTempNumber floatValue] && [avgTemp floatValue]<=[maxTempNumber floatValue]){
             
@@ -82,7 +75,7 @@ NSString* weatherDescripionVarInReco;
         [cropScoreDict setObject:score forKey:key[@"CropName"]];
         
     }
-//    NSLog(@"---cropScoreDict-%@",cropScoreDict);
+    //    NSLog(@"---cropScoreDict-%@",cropScoreDict);
     
     
     NSArray *sortedScoreArray = [cropScoreDict keysSortedByValueUsingComparator: ^(id obj1, id obj2) {
@@ -99,7 +92,7 @@ NSString* weatherDescripionVarInReco;
         return (NSComparisonResult)NSOrderedSame;
     }];
     
-//    NSLog(@"---sortedScoreArray-%@",sortedScoreArray);
+    //    NSLog(@"---sortedScoreArray-%@",sortedScoreArray);
     [self createRecommendedCropsList:sortedScoreArray];
     
     
@@ -125,13 +118,13 @@ NSString* weatherDescripionVarInReco;
         }
     }
     
-//    NSLog(@"--self.recommendedCropArray--%@",self.recommendedCropArray);
+    //    NSLog(@"--self.recommendedCropArray--%@",self.recommendedCropArray);
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.recommendationTableView reloadData];
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:1 inSection:0];
         [self.recommendationTableView scrollToRowAtIndexPath:indexPath
-                             atScrollPosition:UITableViewScrollPositionTop
-                                     animated:YES];
+                                            atScrollPosition:UITableViewScrollPositionTop
+                                                    animated:YES];
     });
 }
 
@@ -149,11 +142,11 @@ NSString* weatherDescripionVarInReco;
     static NSString *tableIdentifier=@"RecommendationsTableItem";
     
     RecommendationsCustomCell *customCell=[tableView dequeueReusableCellWithIdentifier:tableIdentifier];
-
+    
     if([self.recommendedCropArray count]>0){
         
         _crop=self.recommendedCropArray[indexPath.row][0];
-//            NSLog(@"_crop-----------%@",_crop);
+        //            NSLog(@"_crop-----------%@",_crop);
         
         NSString *tempRange = [NSString stringWithFormat:@"%@-%@ °C",_crop[@"MinTemp"],_crop[@"MaxTemp"]];
         NSString *rainfallRange = [NSString stringWithFormat:@"%@-%@ cm",_crop[@"MinRainfall"],_crop[@"MaxRainfall"]];
@@ -179,33 +172,33 @@ NSString* weatherDescripionVarInReco;
                                 value:producerParagraphStyle
                                 range:NSMakeRange(0, attproducerList.length)];
         customCell.customRecommendationProducersLabel.attributedText = attproducerList;
-
+        
         
         if(indexPath.row==0){
             dispatch_async(dispatch_get_main_queue(), ^{
-            self.recommendedCropImage.image=image;
-            self.recommendedCropName.text=[self.recommendedCropArray[0][0][@"CropName"] capitalizedString];
+                self.recommendedCropImage.image=image;
+                self.recommendedCropName.text=[self.recommendedCropArray[0][0][@"CropName"] capitalizedString];
                 self.cropRainfallLabel.text=rainfallRange;
                 self.cropTemperatureLabel.text=tempRange;
             });
         }
-//        else{
-            dispatch_async(dispatch_get_main_queue(), ^{
-                
-                customCell.customRecommendationNameLabel.text=[cropName capitalizedString];
-//                NSLog(@"CropName-------------%@",self.crop[@"CropName"]);
-                customCell.customRecommendationTempLabel.text=tempRange;
-                customCell.customRecommendationRainfallLabel.text=rainfallRange;
-                customCell.customRecommendationImageView.image=image;
-                customCell.customRecommendationProducersLabel.text= self.crop[@"ProducersToDisplay"];
-                customCell.customRecommendationSoilLabel.attributedText = attsoilTypes;
-                customCell.customRecommendationSoilLabel.adjustsFontSizeToFitWidth = true;
-                customCell.customRecommendationProducersLabel.adjustsFontSizeToFitWidth = true;
-                //    [myLabel sizeToFit];
-            });
-//        }
-
-
+        //        else{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            customCell.customRecommendationNameLabel.text=[cropName capitalizedString];
+            //                NSLog(@"CropName-------------%@",self.crop[@"CropName"]);
+            customCell.customRecommendationTempLabel.text=tempRange;
+            customCell.customRecommendationRainfallLabel.text=rainfallRange;
+            customCell.customRecommendationImageView.image=image;
+            customCell.customRecommendationProducersLabel.text= self.crop[@"ProducersToDisplay"];
+            customCell.customRecommendationSoilLabel.attributedText = attsoilTypes;
+            customCell.customRecommendationSoilLabel.adjustsFontSizeToFitWidth = true;
+            customCell.customRecommendationProducersLabel.adjustsFontSizeToFitWidth = true;
+            //    [myLabel sizeToFit];
+        });
+        //        }
+        
+        
     }
     return customCell;
 }
@@ -241,7 +234,7 @@ NSString* weatherDescripionVarInReco;
 
 
 - (void) getDataFrom:(NSString *)url{
-//    NSLog(@"url  %@",url);
+    //    NSLog(@"url  %@",url);
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     [request setURL:[NSURL URLWithString:url]];
     [request setHTTPMethod:@"GET"];
@@ -249,12 +242,79 @@ NSString* weatherDescripionVarInReco;
     NSURLSessionTask *task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         if (error) {
             NSLog(@"dataTaskWithRequest error: %@", error);
+            
+            NSString *getErrorMessage = error.localizedDescription;
+            
+            
+            UIAlertController * alert = [UIAlertController
+                                         alertControllerWithTitle:@"Error"
+                                         message:getErrorMessage
+                                         preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction* okButton = [UIAlertAction
+                                       actionWithTitle:@"OK"
+                                       style:UIAlertActionStyleDefault
+                                       handler:^(UIAlertAction * action) {
+                //Handle your yes please button action here
+            }];
+            [alert addAction:okButton];
+            [self presentViewController:alert animated:YES completion:nil];
+            
         }
         
         if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
             NSInteger statusCode = [(NSHTTPURLResponse *)response statusCode];
             if (statusCode != 200) {
                 NSLog(@"Expected responseCode == 200; received %ld", (long)statusCode);
+                
+                if(statusCode >= 400 && statusCode <500 ){
+                    
+                    UIAlertController * alert = [UIAlertController
+                                                 alertControllerWithTitle:@"Location cannot be determined"
+                                                 message:@"Please check your location permissions. Crop Reco cannot recommend crops without knowing the current weather of your location."
+                                                 preferredStyle:UIAlertControllerStyleAlert];
+                    
+                    UIAlertAction* okButton = [UIAlertAction
+                                               actionWithTitle:@"OK"
+                                               style:UIAlertActionStyleDefault
+                                               handler:^(UIAlertAction * action) {
+                        //Handle your yes please button action here
+                    }];
+                    [alert addAction:okButton];
+                    [self presentViewController:alert animated:YES completion:nil];
+                    
+                }
+                else if(statusCode == 429){
+                    
+                    
+                    UIAlertController * alert = [UIAlertController
+                                                 alertControllerWithTitle:@"API limit exceeded"
+                                                 message:@"Please try after a while."
+                                                 preferredStyle:UIAlertControllerStyleAlert];
+                    UIAlertAction* okButton = [UIAlertAction
+                                               actionWithTitle:@"OK"
+                                               style:UIAlertActionStyleDefault
+                                               handler:^(UIAlertAction * action) {
+                        //Handle your yes please button action here
+                    }];
+                    [alert addAction:okButton];
+                    [self presentViewController:alert animated:YES completion:nil];
+                    
+                    
+                }
+                else if( statusCode>500){
+                    UIAlertController * alert = [UIAlertController
+                                                 alertControllerWithTitle:@"OpenWeather API"
+                                                 message:@"server error"
+                                                 preferredStyle:UIAlertControllerStyleAlert];
+                    UIAlertAction* okButton = [UIAlertAction
+                                               actionWithTitle:@"OK"
+                                               style:UIAlertActionStyleDefault
+                                               handler:^(UIAlertAction * action) {
+                        //Handle your yes please button action here
+                    }];
+                    [alert addAction:okButton];
+                    [self presentViewController:alert animated:YES completion:nil];
+                }
                 
             }
             else{
@@ -263,17 +323,6 @@ NSString* weatherDescripionVarInReco;
                 NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data
                                                                      options:NSJSONReadingMutableContainers
                                                                        error:&jsonError];
-                //                                NSLog(@"json %@", json);
-                //                NSLog(@"sunrise %@", json[@"sys"][@"sunrise"]);
-                //                NSLog(@"sunset %@", json[@"sys"][@"sunset"]);
-                //                NSLog(@"visibility %@", json[@"visibility"]);
-                //                NSLog(@"weather %@", json[@"weather"]);
-                //                NSLog(@"wind deg %@", json[@"wind"][@"deg"]);
-                //                NSLog(@"wind speed %@", json[@"wind"][@"speed"]);
-                
-                
-                NSNumber* pressureInHPA=json[@"main"][@"pressure"];
-                //              NSNumber *divider = @([loadTempValue doubleValue] * 0.420);
                 
                 NSNumberFormatter *fmt = [[NSNumberFormatter alloc] init];
                 [fmt setPositiveFormat:@"0.##"];
@@ -293,12 +342,12 @@ NSString* weatherDescripionVarInReco;
                                              withCountry:json[@"sys"][@"country"]];
                 
                 for (NSDictionary *dict in json[@"weather"]) {
-                         weatherDescripionVarInReco=dict[@"description"];
-                     }
+                    weatherDescripionVarInReco=dict[@"description"];
+                }
                 
                 dispatch_async(dispatch_get_main_queue(), ^{
-                           self.locationLabel.text =[NSString stringWithFormat:@"%@, %@", json[@"name"], json[@"sys"][@"country"] ];
-                     self.weatherDescriptionLabel.text=[weatherDescripionVarInReco capitalizedString];
+                    self.locationLabel.text =[NSString stringWithFormat:@"%@, %@", json[@"name"], json[@"sys"][@"country"] ];
+                    self.weatherDescriptionLabel.text=[weatherDescripionVarInReco capitalizedString];
                     self.avgTempLabelinReco.text =[NSString stringWithFormat:@"%@ °C", json[@"main"][@"temp"] ];
                 });
             }

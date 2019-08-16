@@ -61,6 +61,8 @@
 }
 
 -(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
+    
+    
     [self searchCropList];
     [self.tableViewCropList reloadData];
 }
@@ -172,19 +174,33 @@
 }
 
 -(void)searchCropList{
-    if(self.filteredCropArray.count>0){
-        [self.filteredCropArray removeAllObjects];
+    NSString *searchText = self.searchBar.text;
+//    BOOL isMatch = [searchText isMatchedByRegex:@"^[a-zA-Z]+$"];
+    
+    NSString *alpha = @"[a-zA-Z]+";
+    NSPredicate *regexTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", alpha];
+
+    BOOL isMatch= [regexTest evaluateWithObject:searchText];
+    
+    if(isMatch){
+        NSLog(@"searchText %@", searchText);
+        NSLog(@"Its all alphabets ");
+        if(self.filteredCropArray.count>0){
+            [self.filteredCropArray removeAllObjects];
+        }
+        
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.CropName MATCHES[c] %@", [NSString stringWithFormat: @".*\\b%@.*",self.searchBar.text]];
+        
+        NSArray* matches=[[NSArray alloc]init];
+        
+        matches = [mainCropArray filteredArrayUsingPredicate:predicate];
+        
+        if([matches count] > 0){
+            self.filteredCropArray=[NSMutableArray arrayWithArray:matches];
+        }
+        
     }
     
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.CropName MATCHES[c] %@", [NSString stringWithFormat: @".*\\b%@.*",self.searchBar.text]];
-    
-    NSArray* matches=[[NSArray alloc]init];
-    
-    matches = [mainCropArray filteredArrayUsingPredicate:predicate];
-    
-    if([matches count] > 0){
-        self.filteredCropArray=[NSMutableArray arrayWithArray:matches];
-    }
     
 }
 

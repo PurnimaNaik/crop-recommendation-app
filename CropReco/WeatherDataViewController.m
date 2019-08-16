@@ -275,6 +275,8 @@ NSString* dayNightIndicator;
                 self.searchedPlaceLabel.text=@"...";
                       self.weatherDescription.text=getErrorMessage;
                   });
+            [self clearLabels];
+//            [self clearResponseErrorLabels];
         }
         
         if ([response isKindOfClass:[NSHTTPURLResponse class]]) {

@@ -18,7 +18,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     UITabBarController *tabBar = (UITabBarController *)self.window.rootViewController;
-    tabBar.selectedIndex = 1;
+    tabBar.selectedIndex = 0;
     
     [[tabBar.viewControllers objectAtIndex:0] tabBarItem].image=[[UIImage imageNamed:@"weatherTabIcon"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     [[tabBar.viewControllers objectAtIndex:1] tabBarItem].image=[[UIImage imageNamed:@"recommendationTabIcon"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
