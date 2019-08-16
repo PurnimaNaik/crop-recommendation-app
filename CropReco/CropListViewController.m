@@ -174,6 +174,12 @@
 }
 
 -(void)searchCropList{
+    
+    if(self.filteredCropArray.count>0){
+        [self.filteredCropArray removeAllObjects];
+    }
+    
+    
     NSString *searchText = self.searchBar.text;
 //    BOOL isMatch = [searchText isMatchedByRegex:@"^[a-zA-Z]+$"];
     
@@ -185,10 +191,7 @@
     if(isMatch){
         NSLog(@"searchText %@", searchText);
         NSLog(@"Its all alphabets ");
-        if(self.filteredCropArray.count>0){
-            [self.filteredCropArray removeAllObjects];
-        }
-        
+
         NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.CropName MATCHES[c] %@", [NSString stringWithFormat: @".*\\b%@.*",self.searchBar.text]];
         
         NSArray* matches=[[NSArray alloc]init];
@@ -200,6 +203,7 @@
         }
         
     }
+    
     
     
 }
