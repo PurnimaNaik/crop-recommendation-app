@@ -126,7 +126,7 @@
 			<key>MaxRainfall</key>
 			<integer>150</integer>
 			<key>ImageName</key>
-			<string>rice.png</string>
+			<string>rice.jpg</string>
 			<key>SoilTypeToDisplay</key>
 			<string>heavy clayey to clayey loam </string>
 			<key>ProducersToDisplay</key>
@@ -181,7 +181,7 @@
 			<key>MaxRainfall</key>
 			<integer>75</integer>
 			<key>ImageName</key>
-			<string>wheat.png</string>
+			<string>wheat.jpg</string>
 			<key>SoilTypeToDisplay</key>
 			<string>well drained light clay to heavy clay  </string>
 			<key>ProducersToDisplay</key>
@@ -496,7 +496,7 @@
 			<key>MaxRainfall</key>
 			<integer>250</integer>
 			<key>ImageName</key>
-			<string>rubber.png</string>
+			<string>rubber.jpg</string>
 			<key>SoilTypeToDisplay</key>
 			<string>rich well drained alluvial</string>
 			<key>ProducersToDisplay</key>

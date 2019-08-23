@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9608DC61230FD57F006BF180 /* wheat.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9608DC5F230FD57F006BF180 /* wheat.jpg */; };
+		9608DC62230FD57F006BF180 /* rice.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9608DC60230FD57F006BF180 /* rice.jpg */; };
+		9608DC64230FD811006BF180 /* rubber.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9608DC63230FD811006BF180 /* rubber.jpg */; };
 		965DF94C2301EFD700F8448A /* 11n.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 965DF9342301EFD100F8448A /* 11n.jpg */; };
 		965DF94D2301EFD700F8448A /* 10n.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 965DF9352301EFD100F8448A /* 10n.jpg */; };
 		965DF94E2301EFD700F8448A /* 03n.png in Resources */ = {isa = PBXBuildFile; fileRef = 965DF9362301EFD200F8448A /* 03n.png */; };
@@ -57,8 +60,6 @@
 		96A012B322FD250A008315FF /* bajra.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96A0129A22FD2509008315FF /* bajra.jpg */; };
 		96A012B422FD250A008315FF /* jute.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96A0129B22FD2509008315FF /* jute.jpg */; };
 		96A012B522FD250A008315FF /* tea.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96A0129C22FD2509008315FF /* tea.jpg */; };
-		96A012B622FD250A008315FF /* rubber.png in Resources */ = {isa = PBXBuildFile; fileRef = 96A0129D22FD2509008315FF /* rubber.png */; };
-		96A012B722FD250A008315FF /* rice.png in Resources */ = {isa = PBXBuildFile; fileRef = 96A0129E22FD2509008315FF /* rice.png */; };
 		96A012B822FD250A008315FF /* cotton.png in Resources */ = {isa = PBXBuildFile; fileRef = 96A0129F22FD2509008315FF /* cotton.png */; };
 		96A012B922FD250A008315FF /* maize.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96A012A022FD2509008315FF /* maize.jpg */; };
 		96A012BA22FD250A008315FF /* flax.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96A012A122FD2509008315FF /* flax.jpg */; };
@@ -67,8 +68,6 @@
 		96A012BD22FD250A008315FF /* groundnut.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96A012A422FD2509008315FF /* groundnut.jpg */; };
 		96A012BE22FD250A008315FF /* coconut.png in Resources */ = {isa = PBXBuildFile; fileRef = 96A012A522FD2509008315FF /* coconut.png */; };
 		96A012BF22FD250A008315FF /* oilseed.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96A012A622FD250A008315FF /* oilseed.jpg */; };
-		96A012C022FD250A008315FF /* wheat.png in Resources */ = {isa = PBXBuildFile; fileRef = 96A012A722FD250A008315FF /* wheat.png */; };
-		96A012C122FD250A008315FF /* pearl-millet-500x500.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96A012A822FD250A008315FF /* pearl-millet-500x500.jpg */; };
 		96A012C222FD250A008315FF /* cardamon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96A012A922FD250A008315FF /* cardamon.jpg */; };
 		96A012C522FD2D34008315FF /* world.png in Resources */ = {isa = PBXBuildFile; fileRef = 96A012C322FD2D34008315FF /* world.png */; };
 		96A012C622FD2D34008315FF /* soil.png in Resources */ = {isa = PBXBuildFile; fileRef = 96A012C422FD2D34008315FF /* soil.png */; };
@@ -107,6 +106,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9608DC5F230FD57F006BF180 /* wheat.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wheat.jpg; sourceTree = "<group>"; };
+		9608DC60230FD57F006BF180 /* rice.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rice.jpg; sourceTree = "<group>"; };
+		9608DC63230FD811006BF180 /* rubber.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rubber.jpg; sourceTree = "<group>"; };
 		965DF9342301EFD100F8448A /* 11n.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 11n.jpg; sourceTree = "<group>"; };
 		965DF9352301EFD100F8448A /* 10n.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 10n.jpg; sourceTree = "<group>"; };
 		965DF9362301EFD200F8448A /* 03n.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 03n.png; sourceTree = "<group>"; };
@@ -159,8 +161,6 @@
 		96A0129A22FD2509008315FF /* bajra.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bajra.jpg; sourceTree = "<group>"; };
 		96A0129B22FD2509008315FF /* jute.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = jute.jpg; sourceTree = "<group>"; };
 		96A0129C22FD2509008315FF /* tea.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tea.jpg; sourceTree = "<group>"; };
-		96A0129D22FD2509008315FF /* rubber.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rubber.png; sourceTree = "<group>"; };
-		96A0129E22FD2509008315FF /* rice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rice.png; sourceTree = "<group>"; };
 		96A0129F22FD2509008315FF /* cotton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cotton.png; sourceTree = "<group>"; };
 		96A012A022FD2509008315FF /* maize.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = maize.jpg; sourceTree = "<group>"; };
 		96A012A122FD2509008315FF /* flax.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = flax.jpg; sourceTree = "<group>"; };
@@ -169,8 +169,6 @@
 		96A012A422FD2509008315FF /* groundnut.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = groundnut.jpg; sourceTree = "<group>"; };
 		96A012A522FD2509008315FF /* coconut.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coconut.png; sourceTree = "<group>"; };
 		96A012A622FD250A008315FF /* oilseed.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = oilseed.jpg; sourceTree = "<group>"; };
-		96A012A722FD250A008315FF /* wheat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wheat.png; sourceTree = "<group>"; };
-		96A012A822FD250A008315FF /* pearl-millet-500x500.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "pearl-millet-500x500.jpg"; sourceTree = "<group>"; };
 		96A012A922FD250A008315FF /* cardamon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cardamon.jpg; sourceTree = "<group>"; };
 		96A012C322FD2D34008315FF /* world.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = world.png; sourceTree = "<group>"; };
 		96A012C422FD2D34008315FF /* soil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soil.png; sourceTree = "<group>"; };
@@ -227,6 +225,9 @@
 		9661E50F22FC708D000675F4 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				9608DC63230FD811006BF180 /* rubber.jpg */,
+				9608DC60230FD57F006BF180 /* rice.jpg */,
+				9608DC5F230FD57F006BF180 /* wheat.jpg */,
 				96DFCC9623039E7400319CA9 /* 13d.png */,
 				96DFCC9523039E7400319CA9 /* 50d.png */,
 				96DFCC90230312E800319CA9 /* rainfall.png */,
@@ -293,15 +294,11 @@
 				96A0129822FD2509008315FF /* millets.jpg */,
 				96A0129222FD2508008315FF /* oilpalm.jpg */,
 				96A012A622FD250A008315FF /* oilseed.jpg */,
-				96A012A822FD250A008315FF /* pearl-millet-500x500.jpg */,
 				96A0129622FD2509008315FF /* pulses.jpg */,
-				96A0129E22FD2509008315FF /* rice.png */,
-				96A0129D22FD2509008315FF /* rubber.png */,
 				96A012A322FD2509008315FF /* sugarbeet.jpg */,
 				96A012A222FD2509008315FF /* sugarcane.jpg */,
 				96A0129C22FD2509008315FF /* tea.jpg */,
 				96A0129122FD2508008315FF /* tumeric.jpg */,
-				96A012A722FD250A008315FF /* wheat.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -448,9 +445,9 @@
 				96DFCC8C230307B600319CA9 /* cropListBarIcon@3x.png in Resources */,
 				965DF9712301F4B400F8448A /* 11d.png in Resources */,
 				96A012BA22FD250A008315FF /* flax.jpg in Resources */,
+				9608DC61230FD57F006BF180 /* wheat.jpg in Resources */,
 				965DF9562301EFD700F8448A /* 01d.jpg in Resources */,
 				96DFCC8D230307B600319CA9 /* recommendationTabIcon@2x.png in Resources */,
-				96A012C022FD250A008315FF /* wheat.png in Resources */,
 				965DF95F2301EFD700F8448A /* 13n.jpg in Resources */,
 				96A012B322FD250A008315FF /* bajra.jpg in Resources */,
 				965DF9722301F4B400F8448A /* 10n.png in Resources */,
@@ -463,18 +460,17 @@
 				965DF9762301F4B400F8448A /* 09n.png in Resources */,
 				965DF94C2301EFD700F8448A /* 11n.jpg in Resources */,
 				965DF94F2301EFD700F8448A /* 03d.jpg in Resources */,
-				96A012B722FD250A008315FF /* rice.png in Resources */,
+				9608DC62230FD57F006BF180 /* rice.jpg in Resources */,
 				965DF9742301F4B400F8448A /* 10d.png in Resources */,
 				96A012B422FD250A008315FF /* jute.jpg in Resources */,
-				96A012B622FD250A008315FF /* rubber.png in Resources */,
 				96A012AE22FD250A008315FF /* coffee.jpg in Resources */,
 				96DFCC802303009B00319CA9 /* weatherTabIcon.png in Resources */,
 				965DF9772301F4B400F8448A /* 09d.png in Resources */,
 				965DF9582301EFD700F8448A /* 50n.jpg in Resources */,
 				96A012AB22FD250A008315FF /* oilpalm.jpg in Resources */,
-				96A012C122FD250A008315FF /* pearl-millet-500x500.jpg in Resources */,
 				96A012AC22FD250A008315FF /* lentil.jpg in Resources */,
 				965DF96F2301F4B400F8448A /* 50n.png in Resources */,
+				9608DC64230FD811006BF180 /* rubber.jpg in Resources */,
 				96DFCC91230312E800319CA9 /* temperature.png in Resources */,
 				96A012BD22FD250A008315FF /* groundnut.jpg in Resources */,
 				96A012C622FD2D34008315FF /* soil.png in Resources */,
