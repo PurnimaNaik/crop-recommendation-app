@@ -194,6 +194,12 @@ NSString* weatherDescripionVarInReco;
             customCell.customRecommendationSoilLabel.attributedText = attsoilTypes;
             customCell.customRecommendationSoilLabel.adjustsFontSizeToFitWidth = true;
             customCell.customRecommendationProducersLabel.adjustsFontSizeToFitWidth = true;
+            
+       [customCell.customRecommendationImageView.layer setShadowColor: [UIColor grayColor].CGColor];
+                   [customCell.customRecommendationImageView.layer setShadowOpacity:0.8];
+                   [customCell.customRecommendationImageView.layer setShadowRadius:3.0];
+                   [customCell.customRecommendationImageView.layer setShadowOffset:CGSizeMake(0.0, 0.0)];
+            
             //    [myLabel sizeToFit];
         });
         //        }

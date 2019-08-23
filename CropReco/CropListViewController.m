@@ -102,6 +102,12 @@
         customCell.customImageView.image=image;
         customCell.customProducersLabel.text= _crop[@"ProducersToDisplay"];
         
+        
+        [customCell.customImageView.layer setShadowColor: [UIColor grayColor].CGColor];
+        [customCell.customImageView.layer setShadowOpacity:0.8];
+        [customCell.customImageView.layer setShadowRadius:3.0];
+        [customCell.customImageView.layer setShadowOffset:CGSizeMake(0.0, 0.0)];
+        
         NSString* soilTypes=_crop[@"SoilTypeToDisplay"];
         NSMutableAttributedString* attsoilTypes = [[NSMutableAttributedString alloc]initWithString:soilTypes];
         NSMutableParagraphStyle *soilParagraphStyle = [[NSMutableParagraphStyle alloc]init];
