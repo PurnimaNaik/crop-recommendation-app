@@ -88,6 +88,14 @@ NSString* dayNightIndicator;
     NSURLSessionTask *task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         if (error) {
             NSLog(@"dataTaskWithRequest error: %@", error);
+            
+            NSString *getErrorMessage = error.localizedDescription;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.searchedPlaceLabel.text=@"...";
+                self.weatherDescription.text=getErrorMessage;
+                 [self.loader stopAnimating];
+            });
+            [self clearLabels];
         }
         
         if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
@@ -95,22 +103,26 @@ NSString* dayNightIndicator;
             if (statusCode != 200) {
                 NSLog(@"Expected responseCode == 200; received %ld", (long)statusCode);
                 NSLog(@"response %@",response);
-                if(statusCode >= 400 && statusCode <500 ){
+                 if(statusCode == 429){
+                     dispatch_async(dispatch_get_main_queue(), ^{
+                         self.searchedPlaceLabel.text=@"API limit exceeded";
+                         self.weatherDescription.text=@"Please try after a while";
+                          [self.loader stopAnimating];
+                     });
+                 }
+                else if(statusCode >= 400 && statusCode <500 ){
                     dispatch_async(dispatch_get_main_queue(), ^{
                         self.searchedPlaceLabel.text=@"Unable to access loaction";
                         self.weatherDescription.text=@"Turn on location permission or search for your city";
+                         [self.loader stopAnimating];
                     });
                 }
-                else if(statusCode == 429){
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        self.searchedPlaceLabel.text=@"API limit exceeded";
-                        self.weatherDescription.text=@"Please try after a while";
-                    });
-                }
+ 
                 else if( statusCode>500){
                     dispatch_async(dispatch_get_main_queue(), ^{
                         self.searchedPlaceLabel.text=@"OpenWeather";
                         self.weatherDescription.text=@"server error";
+                         [self.loader stopAnimating];
                     });
                 }
                 
@@ -280,6 +292,7 @@ NSString* dayNightIndicator;
             dispatch_async(dispatch_get_main_queue(), ^{
                 self.searchedPlaceLabel.text=@"...";
                 self.weatherDescription.text=getErrorMessage;
+                 [self.loader stopAnimating];
             });
             [self clearLabels];
             //            [self clearResponseErrorLabels];
@@ -290,23 +303,26 @@ NSString* dayNightIndicator;
             if (statusCode != 200) {
                 NSLog(@"Expected responseCode == 200; received %ld", (long)statusCode);
                 NSLog(@"response %@",response);
-                
-                if(statusCode >= 400 && statusCode <500 ){
+                if(statusCode == 429){
+                                 dispatch_async(dispatch_get_main_queue(), ^{
+                                     self.searchedPlaceLabel.text=@"API limit exceeded";
+                                     self.weatherDescription.text=@"Please try after a while";
+                                      [self.loader stopAnimating];
+                                 });
+                             }
+                else if(statusCode >= 400 && statusCode <500 ){
                     dispatch_async(dispatch_get_main_queue(), ^{
                         self.searchedPlaceLabel.text=self.searchBarWeatherTab.text;
                         self.weatherDescription.text=@"City not found, please try another city";
+                         [self.loader stopAnimating];
                     });
                 }
-                else if(statusCode == 429){
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        self.searchedPlaceLabel.text=@"API limit exceeded";
-                        self.weatherDescription.text=@"Please try after a while";
-                    });
-                }
+             
                 else if( statusCode>500){
                     dispatch_async(dispatch_get_main_queue(), ^{
                         self.searchedPlaceLabel.text=@"OpenWeather";
                         self.weatherDescription.text=@"server error";
+                         [self.loader stopAnimating];
                     });
                 }
                 
