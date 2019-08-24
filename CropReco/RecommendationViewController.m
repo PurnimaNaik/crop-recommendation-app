@@ -267,6 +267,7 @@ NSString* weatherDescripionVarInReco;
                                        style:UIAlertActionStyleDefault
                                        handler:^(UIAlertAction * action) {
                 //Handle your yes please button action here
+                [self.loader stopAnimating];
             }];
             [alert addAction:okButton];
             [self presentViewController:alert animated:YES completion:nil];
@@ -277,8 +278,22 @@ NSString* weatherDescripionVarInReco;
             NSInteger statusCode = [(NSHTTPURLResponse *)response statusCode];
             if (statusCode != 200) {
                 NSLog(@"Expected responseCode == 200; received %ld", (long)statusCode);
-                
-                if(statusCode >= 400 && statusCode <500 ){
+                 if(statusCode == 429){
+                    UIAlertController * alert = [UIAlertController
+                                                 alertControllerWithTitle:@"API limit exceeded"
+                                                 message:@"Please try after a while."
+                                                 preferredStyle:UIAlertControllerStyleAlert];
+                    UIAlertAction* okButton = [UIAlertAction
+                                               actionWithTitle:@"OK"
+                                               style:UIAlertActionStyleDefault
+                                               handler:^(UIAlertAction * action) {
+                        //Handle your yes please button action here
+                        [self.loader stopAnimating];
+                    }];
+                    [alert addAction:okButton];
+                    [self presentViewController:alert animated:YES completion:nil];
+                }
+               else if(statusCode >= 400 && statusCode <500 ){
                     
                     UIAlertController * alert = [UIAlertController
                                                  alertControllerWithTitle:@"Location cannot be determined"
@@ -290,29 +305,13 @@ NSString* weatherDescripionVarInReco;
                                                style:UIAlertActionStyleDefault
                                                handler:^(UIAlertAction * action) {
                         //Handle your yes please button action here
+                        [self.loader stopAnimating];
                     }];
                     [alert addAction:okButton];
                     [self presentViewController:alert animated:YES completion:nil];
                     
                 }
-                else if(statusCode == 429){
-                    
-                    
-                    UIAlertController * alert = [UIAlertController
-                                                 alertControllerWithTitle:@"API limit exceeded"
-                                                 message:@"Please try after a while."
-                                                 preferredStyle:UIAlertControllerStyleAlert];
-                    UIAlertAction* okButton = [UIAlertAction
-                                               actionWithTitle:@"OK"
-                                               style:UIAlertActionStyleDefault
-                                               handler:^(UIAlertAction * action) {
-                        //Handle your yes please button action here
-                    }];
-                    [alert addAction:okButton];
-                    [self presentViewController:alert animated:YES completion:nil];
-                    
-                    
-                }
+
                 else if( statusCode>500){
                     UIAlertController * alert = [UIAlertController
                                                  alertControllerWithTitle:@"OpenWeather API"
@@ -323,6 +322,7 @@ NSString* weatherDescripionVarInReco;
                                                style:UIAlertActionStyleDefault
                                                handler:^(UIAlertAction * action) {
                         //Handle your yes please button action here
+                        [self.loader stopAnimating];
                     }];
                     [alert addAction:okButton];
                     [self presentViewController:alert animated:YES completion:nil];
