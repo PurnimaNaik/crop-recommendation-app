@@ -27,6 +27,12 @@ NSString* weatherDescripionVarInReco;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+//    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+//    spinner.center = CGPointMake(160, 240);
+//    spinner.tag = 12;
+//    [self.view addSubview:spinner];
+
+    
     self.recommendedCropArray=[[NSMutableArray alloc]init];
     
     mainCropArray=[[NSMutableArray alloc]init];
@@ -129,7 +135,7 @@ NSString* weatherDescripionVarInReco;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    
+       [self.loader startAnimating];
     if( [self.recommendedCropArray count]>0){
         return [self.recommendedCropArray count];
     }
@@ -184,7 +190,7 @@ NSString* weatherDescripionVarInReco;
         }
         //        else{
         dispatch_async(dispatch_get_main_queue(), ^{
-            
+            [self.loader stopAnimating];
             customCell.customRecommendationNameLabel.text=[cropName capitalizedString];
             //                NSLog(@"CropName-------------%@",self.crop[@"CropName"]);
             customCell.customRecommendationTempLabel.text=tempRange;

@@ -34,6 +34,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *humidityLabelDescriptor;
 @property (strong, nonatomic) IBOutlet UILabel *windLabelDescriptor;
 @property (strong, nonatomic) IBOutlet UILabel *maxTempLabelDescriptor;
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *loader;
 
 
 @end

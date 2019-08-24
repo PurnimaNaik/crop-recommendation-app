@@ -25,6 +25,7 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *weatherDescriptionLabel;
 @property (strong, nonatomic) IBOutlet UITableView *recommendationTableView;
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *loader;
 
 @end
 

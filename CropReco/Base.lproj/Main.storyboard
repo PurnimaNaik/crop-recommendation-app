@@ -246,6 +246,12 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="qtO-KS-jJb">
+                                <rect key="frame" x="0.0" y="0.0" width="377" height="729"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.77892904510000005" green="0.77892904510000005" blue="0.77892904510000005" alpha="0.35256901839999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="color" cocoaTouchSystemColor="darkTextColor"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -327,6 +333,7 @@
                         <outlet property="disclaimerLabel" destination="u8y-2q-O5o" id="Nbe-Kq-dww"/>
                         <outlet property="humidityLabel" destination="Scg-od-j6s" id="MQR-6B-hEl"/>
                         <outlet property="humidityLabelDescriptor" destination="Vq9-6P-9kt" id="W8U-7N-S75"/>
+                        <outlet property="loader" destination="qtO-KS-jJb" id="kkL-2c-7jp"/>
                         <outlet property="maxTempLabel" destination="QaS-Dy-roJ" id="YTg-NA-YU7"/>
                         <outlet property="maxTempLabelDescriptor" destination="jDx-M3-kND" id="8LK-OT-Vor"/>
                         <outlet property="minTempLabel" destination="ngg-PY-z2p" id="4uV-Gu-ZCi"/>
@@ -629,6 +636,12 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="kHH-Ld-cVc">
+                                <rect key="frame" x="0.0" y="44" width="375" height="723"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.77892904509283822" green="0.77892904509283822" blue="0.77892904509283822" alpha="0.35256901840490795" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="color" cocoaTouchSystemColor="darkTextColor"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
@@ -638,6 +651,7 @@
                         <outlet property="avgTempLabelinReco" destination="FOE-Rh-60Z" id="WNi-4Q-igr"/>
                         <outlet property="cropRainfallLabel" destination="Yk1-1b-sXz" id="u7Y-IE-G4x"/>
                         <outlet property="cropTemperatureLabel" destination="Ba7-X8-Ieb" id="yZX-zU-MVC"/>
+                        <outlet property="loader" destination="kHH-Ld-cVc" id="fyQ-Vo-6ex"/>
                         <outlet property="locationLabel" destination="ULu-uh-toD" id="4tU-fn-aI9"/>
                         <outlet property="recommendationTabIcon" destination="cPa-gy-q4n" id="OG3-He-RFf"/>
                         <outlet property="recommendationTableView" destination="Rx4-JK-6fA" id="yZc-LZ-blB"/>
