@@ -48,6 +48,10 @@ NSString* dayNightIndicator;
     
 }
 
+-(void)viewWillAppear{
+     [self requestPermission];
+}
+
 -(void)requestPermission{
     
     locationManager=[[CLLocationManager alloc]init];

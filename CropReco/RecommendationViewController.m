@@ -46,6 +46,10 @@ NSString* weatherDescripionVarInReco;
     [self requestPermission];
 }
 
+-(void)viewWillAppear{
+NSLog(@"---------viewWillAppearviewWillAppear------------");
+     [self requestPermission];
+}
 
 -(void)findWeatherCompatibleCropsWithTemp:(NSNumber*)avgTemp
                             withWeatherID:(NSNumber*)weatherID  withCountry:(NSString*)country{
