@@ -70,9 +70,9 @@ NSString* dayNightIndicator;
                          searchQuery,
                          @"&units=metric",
                          @"&appid=",
-                         @"4c1aa9e27863af68e069647e446328f3"];
+                         @""];
         
-        //        NSLog(@"searchQuery  %@",searchQuery);
+                NSLog(@"searchQuery->  %@",searchQuery);
         
         
         NSString *escapedURL = [url stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
@@ -280,7 +280,7 @@ NSString* dayNightIndicator;
                      escapedsearchText,
                      @"&units=metric",
                      @"&appid=",
-                     @"4c1aa9e27863af68e069647e446328f3"];
+                     @""];
     
     //    NSLog(@"searchQuery  %@",searchText);
     

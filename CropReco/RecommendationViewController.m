@@ -24,6 +24,9 @@
 
 @implementation RecommendationViewController
 NSString* weatherDescripionVarInReco;
+CLLocationManager *locationManager;
+CLGeocoder *geocoder;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -31,25 +34,49 @@ NSString* weatherDescripionVarInReco;
 //    spinner.center = CGPointMake(160, 240);
 //    spinner.tag = 12;
 //    [self.view addSubview:spinner];
-
+//[self requestPermission];
     
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.delegate = self;
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    geocoder = [[CLGeocoder alloc] init];
+        if ([locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+            [locationManager requestWhenInUseAuthorization];
+        }
+ [locationManager startUpdatingLocation];
+    
+
     self.recommendedCropArray=[[NSMutableArray alloc]init];
-    
     mainCropArray=[[NSMutableArray alloc]init];
-    
     NSDictionary *rootDictinary=[NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"crops" ofType:@"plist"]];
-    
     NSArray *arrayList=[NSArray arrayWithArray:[rootDictinary objectForKey:@"CropList"]];
-    
     mainCropArray=[NSMutableArray arrayWithArray:arrayList];
-    
-    [self requestPermission];
 }
 
--(void)viewWillAppear{
-NSLog(@"---------viewWillAppearviewWillAppear------------");
-     [self requestPermission];
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations{
+    [geocoder reverseGeocodeLocation:locationManager.location completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
+            
+            NSString *searchQuery = [NSString stringWithFormat:@"%@,%@", [placemarks objectAtIndex:0].locality, [placemarks objectAtIndex:0].ISOcountryCode];
+            
+            //        https://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=YOUR_API_KEY
+            
+            NSString *url = [NSString stringWithFormat:@"%@%@%@%@%@",
+                             @"https://api.openweathermap.org/data/2.5/weather?q=",
+                             searchQuery,
+                             @"&units=metric",
+                             @"&appid=",
+                             @""];
+          
+                    NSLog(@"searchQuery-  %@",searchQuery);
+            
+            
+            NSString *escapedURL = [url stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+    //                NSLog(@"escapedURL:-> %@", escapedURL);
+            
+            [self getDataFrom:escapedURL];
+        }];
 }
+
 
 -(void)findWeatherCompatibleCropsWithTemp:(NSNumber*)avgTemp
                             withWeatherID:(NSNumber*)weatherID  withCountry:(NSString*)country{
@@ -219,38 +246,10 @@ NSLog(@"---------viewWillAppearviewWillAppear------------");
     return customCell;
 }
 
--(void)requestPermission{
-    locationManager=[[CLLocationManager alloc]init];
-    [locationManager requestWhenInUseAuthorization];
-    locationManager.desiredAccuracy=kCLLocationAccuracyBest;
-    
-    CLGeocoder *geocoder =[[CLGeocoder alloc] init];
-    [geocoder reverseGeocodeLocation:locationManager.location completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
-        
-        NSString *searchQuery = [NSString stringWithFormat:@"%@,%@", [placemarks objectAtIndex:0].locality, [placemarks objectAtIndex:0].ISOcountryCode];
-        
-        //        https://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=YOUR_API_KEY
-        
-        NSString *url = [NSString stringWithFormat:@"%@%@%@%@%@",
-                         @"https://api.openweathermap.org/data/2.5/weather?q=",
-                         searchQuery,
-                         @"&units=metric",
-                         @"&appid=",
-                         @"4c1aa9e27863af68e069647e446328f3"];
-        
-        //        NSLog(@"searchQuery  %@",searchQuery);
-        
-        
-        NSString *escapedURL = [url stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
-        //        NSLog(@"escapedURL: %@", escapedURL);
-        
-        [self getDataFrom:escapedURL];
-    }];
-}
 
 
 - (void) getDataFrom:(NSString *)url{
-    //    NSLog(@"url  %@",url);
+        NSLog(@"url--  %@",url);
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     [request setURL:[NSURL URLWithString:url]];
     [request setHTTPMethod:@"GET"];

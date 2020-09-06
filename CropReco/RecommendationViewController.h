@@ -9,11 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 
-@interface RecommendationViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>{
-    CLLocationManager *locationManager;
+@interface RecommendationViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, CLLocationManagerDelegate>{
+//    CLLocationManager *locationManager;
     
 }
-
+//@property (nonatomic,retain) CLLocationManager
 @property (weak, nonatomic) IBOutlet UILabel *avgTempLabelinReco;
 @property (strong, nonatomic) IBOutlet UILabel *cropTemperatureLabel;
 
